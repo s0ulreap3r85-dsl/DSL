@@ -1,0 +1,6 @@
+preview.html
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
