@@ -156,7 +156,7 @@ select:hover{border-color:var(--volt-dim)}
 .warpanel{border:1px solid var(--line);background:var(--steel);padding:18px;border-radius:2px;position:relative}
 .warpanel::after{content:"";position:absolute;inset-inline-start:0;top:0;width:3px;height:100%;background:var(--ember)}
 .warpanel__label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--ember);text-transform:uppercase}
-.warpanel__t{font-family:var(--mono);font-size:34px;font-weight:700;font-variant-numeric:tabular-nums;margin:10px 0 2px;letter-spacing:-.02em;direction:ltr;text-align:start}
+.warpanel__t{font-family:var(--mono);font-size:clamp(26px,2.3vw,32px);font-weight:700;font-variant-numeric:tabular-nums;margin:10px 0 2px;letter-spacing:-.02em;direction:ltr;text-align:start;white-space:nowrap}
 .warpanel__sub{font-family:var(--mono);font-size:11px;color:var(--muted)}
 
 .readout{
