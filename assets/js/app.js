@@ -4,16 +4,22 @@
   'use strict';
   var el = DSL.el;
 
-  function head(s) {
-    return el('div', { class: 'sec__head' }, [
+  function head(s, id) {
+    var img = id ? DSL.sectionImage(id, s.imageAlt, 'sec__img') : null;
+    var txt = el('div', null, [
       el('span', { class: 'eyebrow', text: s.eyebrow }),
       el('h2', { text: s.title }),
       s.text ? el('p', { text: s.text }) : null
     ]);
+    return el('div', { class: 'sec__head' + (img ? ' sec__head--pic' : '') }, [txt, img]);
   }
 
   function render(d, ctx) {
     /* cabecera */
+    var emblem = document.getElementById('emblem');
+    emblem.textContent = '';
+    emblem.appendChild(DSL.pic('emblema', d.meta.emblemAlt, 'emblem__img', '30px'));
+
     var brand = document.getElementById('brand');
     brand.textContent = d.meta.brand + ' ';
     brand.appendChild(el('em', { text: d.meta.brandAccent }));
@@ -34,11 +40,16 @@
 
     /* portada */
     var cd = el('div', { class: 'warpanel__t' });
+    var banner = el('div', { class: 'banner' }, [
+      DSL.pic('banner', d.hero.bannerAlt, 'banner__img', '100vw')
+    ]);
+
     var hero = el('section', { class: 'hero' }, [
+      banner,
       el('div', { class: 'hero__grid' }, [
         el('div', null, [
           el('span', { class: 'eyebrow', text: d.hero.eyebrow }),
-          el('h1', { text: d.hero.title }, [el('span', { text: d.hero.subtitle })]),
+          el('h1', { class: 'sr', text: d.hero.title + ' ' + d.hero.subtitle }),
           el('p', { class: 'hero__lead', text: d.hero.lead }),
           el('div', { class: 'hero__cta' }, [
             el('a', { class: 'btn btn--solid', href: '#alta', text: d.hero.primaryButton }),
@@ -60,7 +71,7 @@
     ]);
 
     var about = el('section', { class: 'sec', id: 'clan' }, [
-      head(d.about),
+      head(d.about, 'clan'),
       el('div', { class: 'reqs' }, d.about.requirements.map(function (r) {
         return el('div', { class: 'req' }, [
           el('span', { class: 'req__k', text: r.key }),
@@ -71,7 +82,7 @@
     ]);
 
     var rules = el('section', { class: 'sec', id: 'protocolos' }, [
-      head(d.rules),
+      head(d.rules, 'protocolos'),
       el('div', { class: 'protos' }, d.rules.items.map(function (r, i) {
         var det = el('details', { class: 'proto' }, [
           el('summary', null, [
@@ -87,7 +98,7 @@
     ]);
 
     var command = el('section', { class: 'sec', id: 'mando' }, [
-      head(d.command),
+      head(d.command, 'mando'),
       el('div', { class: 'ranks' }, d.command.ranks.map(function (r) {
         return el('article', { class: 'rank' + (r.highlight ? ' rank--lead' : '') }, [
           el('div', { class: 'rank__top' }, [
@@ -104,7 +115,7 @@
 
     var pill = { must: 'pill pill--must', ok: 'pill pill--ok', free: 'pill pill--free' };
     var schedule = el('section', { class: 'sec', id: 'operaciones' }, [
-      head(d.schedule),
+      head(d.schedule, 'operaciones'),
       el('div', { class: 'tablewrap' }, [
         el('table', null, [
           el('thead', null, [el('tr', null, d.schedule.columns.map(function (c) {

@@ -122,3 +122,15 @@ tr.hot td:first-child{color:var(--red)}
 footer{margin-top:clamp(40px,6vw,70px);border-top:1px solid var(--grid);padding:20px 0 40px}
 footer p{margin:0;font-size:12px;color:var(--p-dim);line-height:1.8}
 footer .draft{color:var(--red);margin-top:8px}
+
+/* ---------- imagenes en monocromo de fosforo ---------- */
+.crt{border:1px solid var(--grid);background:#0A2413;line-height:0;overflow:hidden;position:relative}
+.crt img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.2) brightness(.95);mix-blend-mode:luminosity;opacity:.9}
+.crt::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(180deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px)}
+.crt--wide{margin:14px 0 18px}
+.crt--wide img{aspect-ratio:1920/440}
+.hd--pic{display:grid;grid-template-columns:1fr clamp(130px,18vw,190px);gap:clamp(16px,3vw,32px);align-items:center}
+.hd--pic > div:first-child{max-width:62ch}
+@media(max-width:720px){.hd--pic{grid-template-columns:1fr}.hd--pic .crt{max-width:190px}}

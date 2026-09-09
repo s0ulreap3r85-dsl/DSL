@@ -3,10 +3,16 @@
   'use strict';
   var el = DSL.el, root = document.getElementById('root');
 
-  function bandHead(s, paper) {
-    return [el('span', { class: 'lab', text: s.eyebrow }),
-            el('h2', { text: s.title }),
-            s.text ? el('p', { class: 'int', text: s.text }) : null];
+  function bandHead(s, paper, id) {
+    var img = id ? DSL.sectionImage(id, s.imageAlt, null) : null;
+    return [el('div', { class: 'hd' + (img ? ' hd--pic' : '') }, [
+      el('div', null, [
+        el('span', { class: 'lab', text: s.eyebrow }),
+        el('h2', { text: s.title }),
+        s.text ? el('p', { class: 'int', text: s.text }) : null
+      ]),
+      img ? el('div', { class: 'shot' }, [img]) : null
+    ])];
   }
 
   function render(d, ctx) {
@@ -16,6 +22,7 @@
 
     var bar = el('header', { class: 'bar' }, [
       el('div', { class: 'bar__in' }, [
+        DSL.pic('emblema', d.meta.emblemAlt, 'seal', '34px'),
         el('span', { class: 'mark', text: d.meta.brand + ' ' + d.meta.brandAccent }),
         d.meta.badge ? el('span', { class: 'tag', text: d.meta.badge }) : null,
         el('nav', { class: 'menu' }, d.nav.map(function (n) {
@@ -26,6 +33,7 @@
     ]);
 
     var hero = el('section', { class: 'wrap hero' }, [
+      el('div', { class: 'strip' }, [DSL.pic('banner', d.hero.bannerAlt, null, '100vw')]),
       el('span', { class: 'lab', text: d.hero.eyebrow }),
       el('h1', { text: d.hero.title }, [el('b', { text: d.hero.subtitle })]),
       el('p', { class: 'hero__lead', text: d.hero.lead }),
@@ -47,7 +55,7 @@
     ]);
 
     var about = el('section', { class: 'band band--paper', id: 'clan' }, [
-      el('div', { class: 'wrap' }, bandHead(d.about).concat([
+      el('div', { class: 'wrap' }, bandHead(d.about, null, 'clan').concat([
         el('div', { class: 'req4' }, d.about.requirements.map(function (r) {
           return el('div', null, [
             el('span', { text: r.key }),
@@ -59,7 +67,7 @@
     ]);
 
     var rules = el('section', { class: 'band', id: 'protocolos' }, [
-      el('div', { class: 'wrap' }, bandHead(d.rules).concat([
+      el('div', { class: 'wrap' }, bandHead(d.rules, null, 'protocolos').concat([
         el('div', { class: 'laws' }, d.rules.items.map(function (r, i) {
           return el('div', { class: 'law' }, [
             el('span', { class: 'law__n', text: String(i + 1).padStart(2, '0') }),
@@ -70,7 +78,7 @@
     ]);
 
     var command = el('section', { class: 'band', id: 'mando' }, [
-      el('div', { class: 'wrap' }, bandHead(d.command).concat([
+      el('div', { class: 'wrap' }, bandHead(d.command, null, 'mando').concat([
         el('div', { class: 'crew' }, d.command.ranks.map(function (r) {
           return el('article', r.highlight ? { class: 'crew--lead' } : null, [
             el('h3', { text: r.title }),
@@ -83,7 +91,7 @@
     ]);
 
     var schedule = el('section', { class: 'band band--paper', id: 'operaciones' }, [
-      el('div', { class: 'wrap' }, bandHead(d.schedule).concat([
+      el('div', { class: 'wrap' }, bandHead(d.schedule, null, 'operaciones').concat([
         el('div', { class: 'grid7' }, [
           el('table', null, [
             el('thead', null, [el('tr', null, d.schedule.columns.map(function (c) {

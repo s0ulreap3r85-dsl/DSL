@@ -3,11 +3,15 @@
   'use strict';
   var el = DSL.el, root = document.getElementById('root');
 
-  function secHead(s, n) {
-    return el('div', { class: 'sec__h' }, [
-      el('span', { class: 'sec__n', text: s.eyebrow }),
-      el('h2', { text: s.title }),
-      s.text ? el('p', { class: 'int', text: s.text }) : null
+  function secHead(s, id) {
+    var img = id ? DSL.sectionImage(id, s.imageAlt, null) : null;
+    return el('div', { class: 'sec__h' + (img ? ' sec__h--pic' : '') }, [
+      el('div', null, [
+        el('span', { class: 'sec__n', text: s.eyebrow }),
+        el('h2', { text: s.title }),
+        s.text ? el('p', { class: 'int', text: s.text }) : null
+      ]),
+      img ? el('figure', { class: 'photo' }, [img]) : null
     ]);
   }
 
@@ -18,6 +22,7 @@
 
     var bar = el('header', { class: 'bar' }, [
       el('div', { class: 'bar__in' }, [
+        DSL.pic('emblema', d.meta.emblemAlt, 'crest', '28px'),
         el('span', { class: 'ref', text: d.meta.brand + ' / ' + d.meta.brandAccent }),
         d.meta.badge ? el('span', { class: 'cls', text: d.meta.badge }) : null,
         el('nav', { class: 'menu' }, d.nav.map(function (n) {
@@ -33,6 +38,10 @@
         el('span', { text: d.meta.brand + ' · ' + d.meta.brandAccent })
       ]),
       el('h1', { text: d.hero.title }, [el('em', { text: d.hero.subtitle })]),
+      el('figure', { class: 'photo photo--wide' }, [
+        DSL.pic('banner', d.hero.bannerAlt, null, '100vw'),
+        el('figcaption', { text: d.meta.brand + ' · ' + d.meta.brandAccent })
+      ]),
       el('p', { class: 'lead', text: d.hero.lead }),
       el('div', { class: 'acts' }, [
         el('a', { class: 'btn btn--ink', href: '#alta', text: d.hero.primaryButton }),
@@ -52,7 +61,7 @@
     ]);
 
     var about = el('section', { class: 'wrap sec', id: 'clan' }, [
-      secHead(d.about),
+      secHead(d.about, 'clan'),
       el('div', { class: 'terms' }, d.about.requirements.map(function (r) {
         return el('div', null, [
           el('span', { text: r.key }),
@@ -63,7 +72,7 @@
     ]);
 
     var rules = el('section', { class: 'wrap sec', id: 'protocolos' }, [
-      secHead(d.rules),
+      secHead(d.rules, 'protocolos'),
       el('div', { class: 'arts' }, d.rules.items.map(function (r, i) {
         var det = el('details', { class: 'art' }, [
           el('summary', null, [
@@ -79,7 +88,7 @@
     ]);
 
     var command = el('section', { class: 'wrap sec', id: 'mando' }, [
-      secHead(d.command),
+      secHead(d.command, 'mando'),
       el('div', { class: 'roll' }, d.command.ranks.map(function (r) {
         return el('article', r.highlight ? { class: 'roll--lead' } : null, [
           el('span', { class: 'roll__c', text: r.count }),
@@ -91,7 +100,7 @@
     ]);
 
     var schedule = el('section', { class: 'wrap sec', id: 'operaciones' }, [
-      secHead(d.schedule),
+      secHead(d.schedule, 'operaciones'),
       el('div', { class: 'sched' }, [
         el('table', null, [
           el('thead', null, [el('tr', null, d.schedule.columns.map(function (c) {

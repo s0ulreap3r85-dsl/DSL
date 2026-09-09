@@ -38,6 +38,25 @@ Si un texto falta en un idioma, la web muestra el español en su lugar, nunca un
 
 Si el idioma usa un alfabeto que no es latino, como el ruso, el chino, el japonés, el coreano, o el tailandés, hay que cargar una tipografía adicional en `index.html`. Avisa antes de traducir.
 
+## Las imágenes
+
+Están en `assets/img/`, ya optimizadas. Las originales pesaban casi 10 MB entre todas, y comprimidas se quedan en 2 MB, con dos tamaños de cada una para que el móvil se descargue la pequeña.
+
+```
+banner-1920.webp / banner-960.webp     El banner del clan
+emblema-800.webp / emblema-160.webp    El escudo, también se usa de icono
+textura.webp                           El fondo metálico
+normas / guias / academia / guerra     Las cuatro ilustraciones
+compartir.jpg                          La imagen que sale al pegar el enlace
+icono-192.png / icono-512.png          Iconos de la pantalla de inicio del móvil
+```
+
+Qué ilustración va en cada sección se decide en `content/media.json`. El texto alternativo de cada imagen, el que leen los buscadores y los lectores de pantalla, va traducido en cada `content/site.XX.json`.
+
+Para cambiar una imagen basta con sustituir el fichero manteniendo el nombre. Si es una foto nueva, hay que generar los dos tamaños en formato webp.
+
+**Pendiente al cambiar de dirección:** la etiqueta `og:image` de cada `index.html` lleva la dirección completa escrita a mano. Cuando la web pase a Cloudflare hay que actualizarla, si no la vista previa al compartir el enlace seguirá apuntando a la dirección vieja.
+
 ## Cómo se publica
 
 El sitio se publica en Cloudflare Pages. Cada vez que se sube un cambio a la rama `main`, la web se actualiza sola en unos segundos, sin hacer nada más.
@@ -69,6 +88,5 @@ bash tools/build-preview.sh
 * [ ] Sustituir los nombres y rangos de ejemplo por los reales
 * [ ] Poner el enlace de invitación de Discord, ahora apunta a ninguna parte
 * [ ] Confirmar los horarios reales de guerra y eventos
-* [ ] Subir el banner y el logo originales en buena resolución
 * [ ] Revisar las normas con el líder del clan
 * [ ] Conectar Cloudflare Pages y quitar la etiqueta MAQUETA de la cabecera

@@ -12,7 +12,8 @@ css  = open('assets/css/style.css', encoding='utf-8').read()
 app  = open('assets/js/core.js', encoding='utf-8').read() + '\n' + open('assets/js/app.js', encoding='utf-8').read()
 
 langs = json.load(open('content/languages.json', encoding='utf-8'))
-bundle = {'languages': langs, 'content': {}}
+bundle = {'languages': langs, 'content': {},
+          'media': json.load(open('content/media.json', encoding='utf-8'))}
 for l in langs:
     p = 'content/site.%s.json' % l['code']
     if os.path.exists(p):

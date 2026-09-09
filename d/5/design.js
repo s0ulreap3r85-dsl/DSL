@@ -4,13 +4,17 @@
   var el = DSL.el, root = document.getElementById('root');
 
   function chapter(s, n, id, kids) {
+    var img = DSL.sectionImage(id, s.imageAlt, null);
     return el('section', { class: 'wrap ch', id: id }, [
-      el('div', { class: 'ch__h' }, [
-        el('span', { class: 'ch__n', text: String(n).padStart(2, '0') }),
-        el('div', null, [
-          el('h2', { text: s.title }),
-          s.text ? el('p', { class: 'int', text: s.text }) : null
-        ])
+      el('div', { class: 'ch__h' + (img ? ' ch__h--pic' : '') }, [
+        el('div', { class: 'ch__t' }, [
+          el('span', { class: 'ch__n', text: String(n).padStart(2, '0') }),
+          el('div', null, [
+            el('h2', { text: s.title }),
+            s.text ? el('p', { class: 'int', text: s.text }) : null
+          ])
+        ]),
+        img ? el('div', { class: 'p cut' }, [img]) : null
       ])
     ].concat(kids));
   }
@@ -22,6 +26,7 @@
 
     var bar = el('header', { class: 'bar' }, [
       el('div', { class: 'bar__in' }, [
+        DSL.pic('emblema', d.meta.emblemAlt, 'badge', '32px'),
         el('span', { class: 'logo' }, [
           document.createTextNode(d.meta.brand),
           el('b', { text: d.meta.brandAccent })
@@ -37,6 +42,7 @@
     var open = el('div', { class: 'wrap' }, [
       el('div', { class: 'open' }, [
         el('div', { class: 'p p--ink splash' }, [
+          el('div', { class: 'cut cut--wide' }, [DSL.pic('banner', d.hero.bannerAlt, null, '100vw')]),
           el('span', { class: 'kicker', text: d.hero.eyebrow }),
           el('h1', { text: d.hero.title }, [el('i', { text: d.hero.subtitle })]),
           el('p', { text: d.hero.lead }),

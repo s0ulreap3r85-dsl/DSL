@@ -4,7 +4,8 @@
     "direction": "ltr",
     "brand": "DsL",
     "brandAccent": "770",
-    "badge": "MAQUETA"
+    "badge": "MAQUETA",
+    "emblemAlt": "Emblema del clan DsL con un águila y el lema Clan Server 770"
   },
   "nav": [
     {
@@ -41,7 +42,8 @@
     "secondaryButton": "Leer los protocolos",
     "countdownLabel": "Próxima guerra de clanes",
     "countdownNote": "Viernes 21:00, hora peninsular",
-    "daysSuffix": "d"
+    "daysSuffix": "d",
+    "bannerAlt": "Escudo del clan DsL Demon Slayer League, servidor 770 de Last Z"
   },
   "stats": [
     {
@@ -90,7 +92,8 @@
         "value": "Obligatorio",
         "note": "Ahí se coordinan los ataques y los relevos."
       }
-    ]
+    ],
+    "imageAlt": "Miembro del clan mostrando los requisitos de ingreso"
   },
   "rules": {
     "eyebrow": "02 · Protocolos",
@@ -129,7 +132,8 @@
         "title": "Reclutar es cosa de oficiales",
         "text": "Si conoces a alguien que encaja, pásaselo a un oficial y él lo valora. Nadie invita por su cuenta, así evitamos espías de otros clanes en semana de guerra."
       }
-    ]
+    ],
+    "imageAlt": "Miembro del clan señalando las normas de convivencia"
   },
   "command": {
     "eyebrow": "03 · Cadena de mando",
@@ -194,7 +198,8 @@
         "note": "Periodo de prueba. Se valora actividad y participación, no poder.",
         "highlight": false
       }
-    ]
+    ],
+    "imageAlt": "Manual de estrategia del clan con los rangos y las funciones"
   },
   "schedule": {
     "eyebrow": "04 · Semana tipo",
@@ -263,7 +268,8 @@
         "level": "free",
         "highlight": false
       }
-    ]
+    ],
+    "imageAlt": "Preparativos de guerra, vehículos, tropas y armamento del clan"
   },
   "board": {
     "eyebrow": "05 · Tablón",

@@ -275,3 +275,31 @@ footer{margin-top:clamp(56px,8vw,96px);border-top:1px solid var(--line);padding:
 }
 
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- imagenes ---------- */
+.emblem{display:flex;flex:none}
+.emblem__img{width:30px;height:30px;object-fit:contain;display:block}
+
+.banner{position:relative;margin:0 0 clamp(26px,4vw,44px);border:1px solid var(--line);
+  border-radius:2px;overflow:hidden;background:var(--steel)}
+.banner__img{display:block;width:100%;height:auto;aspect-ratio:1920/600;object-fit:cover}
+.banner::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,11,16,.12) 0%,rgba(8,11,16,0) 45%,rgba(8,11,16,.55) 100%)}
+
+.sec__head--pic{display:grid;grid-template-columns:1fr clamp(140px,20vw,210px);
+  gap:clamp(18px,3vw,38px);align-items:center;max-width:none}
+.sec__head--pic > div{max-width:62ch}
+.sec__img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:2px;
+  aspect-ratio:1/1;object-fit:cover;filter:saturate(.85) contrast(1.05)}
+@media(max-width:720px){
+  .sec__head--pic{grid-template-columns:1fr}
+  .sec__img{max-width:200px}
+}
+
+/* la textura del clan, muy atenuada para que no compita con el texto */
+body{
+  background-color:var(--void);
+  background-image:linear-gradient(rgba(8,11,16,.94),rgba(8,11,16,.94)),url("../img/textura.webp");
+  background-size:auto,520px;
+  background-attachment:fixed,fixed;
+}

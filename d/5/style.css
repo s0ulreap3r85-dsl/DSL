@@ -121,3 +121,17 @@ footer{margin-top:clamp(38px,5vw,64px);border-top:3px solid var(--ink);padding:2
 footer p{margin:0;font-size:12px;color:var(--grey);line-height:1.85}
 footer .draft{color:var(--red);font-weight:700;margin-top:8px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}.codex article{transform:none}}
+
+/* ---------- imagenes tramadas en blanco y negro ---------- */
+.badge{width:32px;height:32px;object-fit:contain;display:block;flex:none}
+.cut{line-height:0;overflow:hidden;background:var(--ink)}
+.cut img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.4) brightness(1.06)}
+.cut--wide{border:3px solid var(--page);margin-bottom:22px}
+.cut--wide img{aspect-ratio:1920/470}
+.ch__h--pic{display:grid;grid-template-columns:1fr clamp(140px,20vw,210px);gap:clamp(16px,3vw,34px);
+  align-items:center}
+.ch__t{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.ch__h--pic .cut{transform:rotate(-1deg)}
+@media(max-width:760px){.ch__h--pic{grid-template-columns:1fr}.ch__h--pic .cut{max-width:210px}}
+@media(prefers-reduced-motion:reduce){.ch__h--pic .cut{transform:none}}

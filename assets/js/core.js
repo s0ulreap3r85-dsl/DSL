@@ -43,6 +43,42 @@ window.DSL = (function () {
     cdNode = node; cdSuffix = suffix || 'd'; tick(); return node;
   }
 
+  /* imagenes. media guarda las rutas, el alt viene traducido del idioma */
+  var MEDIA = null;
+  function assets() { return window.ASSET_BASE || ''; }
+
+  function pic(name, alt, cls, sizes) {
+    var m = MEDIA || { base: 'assets/img/', ilustraciones: { widths: [400, 800], w: 800, h: 800 } };
+    var conf = m[name] || m.ilustraciones;
+    var file = conf.file || name;
+    var ws = conf.widths || [800];
+    var src = assets() + m.base + file + '-' + ws[ws.length - 1] + '.webp';
+    var set = ws.map(function (w) {
+      return assets() + m.base + file + '-' + w + '.webp ' + w + 'w';
+    }).join(', ');
+    /* el banner y el emblema se ven nada mas entrar, no se difieren */
+    var first = name === 'banner' || name === 'emblema';
+    return el('img', {
+      src: src, srcset: set, sizes: sizes || '(max-width: 700px) 100vw, 800px',
+      alt: alt || '', class: cls || null,
+      loading: first ? 'eager' : 'lazy',
+      fetchpriority: name === 'banner' ? 'high' : null,
+      decoding: 'async', width: conf.w, height: conf.h
+    });
+  }
+
+  function sectionImage(id, alt, cls) {
+    var m = MEDIA;
+    if (!m || !m.secciones || !m.secciones[id]) return null;
+    return pic(m.secciones[id], alt, cls);
+  }
+
+  function texture() {
+    var m = MEDIA;
+    if (!m || !m.textura) return null;
+    return assets() + m.base + m.textura.file + '-' + m.textura.widths[0] + '.webp';
+  }
+
   function fetchJSON(url) {
     return fetch(url, { cache: 'no-cache' }).then(function (r) {
       if (!r.ok) throw new Error(url + ' ' + r.status);
@@ -59,12 +95,16 @@ window.DSL = (function () {
 
     var getLangs = bundle ? Promise.resolve(bundle.languages)
                           : fetchJSON(base + 'languages.json');
+    var getMedia = bundle ? Promise.resolve(bundle.media)
+                          : fetchJSON(base + 'media.json').catch(function () { return null; });
     var getContent = function (code) {
       return bundle ? Promise.resolve(bundle.content[code])
                     : fetchJSON(base + 'site.' + code + '.json');
     };
 
-    return getLangs.then(function (langs) {
+    return Promise.all([getLangs, getMedia]).then(function (res) {
+      var langs = res[0];
+      MEDIA = res[1];
       var codes = langs.map(function (l) { return l.code; });
       var saved = load('dsl770.lang');
       var guess = (navigator.language || '').slice(0, 2).toLowerCase();
@@ -111,5 +151,6 @@ window.DSL = (function () {
   }
 
   return { el: el, init: init, countdown: countdown, langSelect: langSelect,
-           store: store, load: load };
+           store: store, load: load, pic: pic, sectionImage: sectionImage,
+           texture: texture, media: function () { return MEDIA; } };
 })();

@@ -17,9 +17,15 @@
     ]);
   }
 
-  function secHead(s, cmd) {
-    return [prompt(cmd), el('h2', { text: s.title }),
-            s.text ? el('p', { class: 'int', text: s.text }) : null];
+  function secHead(s, cmd, id) {
+    var img = id ? DSL.sectionImage(id, s.imageAlt, null) : null;
+    return [prompt(cmd), el('div', { class: 'hd' + (img ? ' hd--pic' : '') }, [
+      el('div', null, [
+        el('h2', { text: s.title }),
+        s.text ? el('p', { class: 'int', text: s.text }) : null
+      ]),
+      img ? el('div', { class: 'crt' }, [img]) : null
+    ])];
   }
 
   function render(d, ctx) {
@@ -44,6 +50,7 @@
     var boot = el('section', { class: 'wrap boot' }, [
       prompt('./iniciar_refugio.sh'),
       el('pre', { class: 'ascii', text: LOGO }),
+      el('div', { class: 'crt crt--wide' }, [DSL.pic('banner', d.hero.bannerAlt, null, '100vw')]),
       el('h1', { text: d.hero.title + ' ' + d.hero.subtitle }, [el('span', { class: 'cur' })]),
       el('p', { class: 'sub', text: d.hero.eyebrow }),
       el('p', { class: 'lead', text: d.hero.lead }),
@@ -67,7 +74,7 @@
     ]);
 
     var about = el('section', { class: 'wrap sec', id: 'clan' },
-      secHead(d.about, 'cat quienes_somos.txt').concat([
+      secHead(d.about, 'cat quienes_somos.txt', 'clan').concat([
         el('div', { class: 'reqs' }, d.about.requirements.map(function (r) {
           return el('div', null, [
             el('span', { text: r.key }),
@@ -78,7 +85,7 @@
       ]));
 
     var rules = el('section', { class: 'wrap sec', id: 'protocolos' },
-      secHead(d.rules, 'cat /etc/normas.conf').concat([
+      secHead(d.rules, 'cat /etc/normas.conf', 'protocolos').concat([
         el('div', { class: 'rules' }, d.rules.items.map(function (r, i) {
           var det = el('details', { class: 'rule' }, [
             el('summary', null, [
@@ -94,7 +101,7 @@
       ]));
 
     var command = el('section', { class: 'wrap sec', id: 'mando' },
-      secHead(d.command, 'who --ranks').concat([
+      secHead(d.command, 'who --ranks', 'mando').concat([
         el('div', { class: 'crew' }, d.command.ranks.map(function (r) {
           return el('article', r.highlight ? { class: 'crew--lead' } : null, [
             el('span', { class: 'crew__c', text: r.count }),
@@ -106,7 +113,7 @@
       ]));
 
     var schedule = el('section', { class: 'wrap sec', id: 'operaciones' },
-      secHead(d.schedule, 'crontab -l').concat([
+      secHead(d.schedule, 'crontab -l', 'operaciones').concat([
         el('div', { class: 'tbl' }, [
           el('table', null, [
             el('thead', null, [el('tr', null, d.schedule.columns.map(function (c) {

@@ -4,7 +4,8 @@
     "direction": "ltr",
     "brand": "DsL",
     "brandAccent": "770",
-    "badge": "DRAFT"
+    "badge": "DRAFT",
+    "emblemAlt": "DsL clan emblem with an eagle and the motto Clan Server 770"
   },
   "nav": [
     {
@@ -41,7 +42,8 @@
     "secondaryButton": "Read the protocols",
     "countdownLabel": "Next clan war",
     "countdownNote": "Friday 21:00, Spanish time",
-    "daysSuffix": "d"
+    "daysSuffix": "d",
+    "bannerAlt": "Crest of the DsL Demon Slayer League clan, server 770 of Last Z"
   },
   "stats": [
     {
@@ -90,7 +92,8 @@
         "value": "Required",
         "note": "That is where attacks and shifts get coordinated."
       }
-    ]
+    ],
+    "imageAlt": "Clan member showing the requirements to join"
   },
   "rules": {
     "eyebrow": "02 · Protocols",
@@ -129,7 +132,8 @@
         "title": "Recruiting is an officer job",
         "text": "If you know someone who fits, pass them to an officer and they decide. Nobody invites on their own, that is how we keep rival scouts out during war week."
       }
-    ]
+    ],
+    "imageAlt": "Clan member pointing at the house rules"
   },
   "command": {
     "eyebrow": "03 · Chain of command",
@@ -194,7 +198,8 @@
         "note": "Trial period. We look at activity and turnout, not power.",
         "highlight": false
       }
-    ]
+    ],
+    "imageAlt": "Clan strategy manual with ranks and duties"
   },
   "schedule": {
     "eyebrow": "04 · Typical week",
@@ -263,7 +268,8 @@
         "level": "free",
         "highlight": false
       }
-    ]
+    ],
+    "imageAlt": "War preparations, vehicles, troops and clan weaponry"
   },
   "board": {
     "eyebrow": "05 · Board",
