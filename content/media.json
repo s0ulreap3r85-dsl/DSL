@@ -1,11 +1,42 @@
 {
   "base": "assets/img/",
-  "banner": { "file": "banner", "widths": [960, 1920], "w": 1920, "h": 600 },
-  "emblema": { "file": "emblema", "widths": [160, 800], "w": 800, "h": 800 },
-  "textura": { "file": "textura", "widths": [1024], "w": 1024, "h": 545 },
-  "ilustraciones": { "file": "", "widths": [400, 800], "w": 800, "h": 800 },
+  "banner": {
+    "file": "banner",
+    "widths": [
+      960,
+      1920
+    ],
+    "w": 1920,
+    "h": 600
+  },
+  "emblema": {
+    "file": "emblema",
+    "widths": [
+      160,
+      800
+    ],
+    "w": 800,
+    "h": 800
+  },
+  "textura": {
+    "file": "textura",
+    "widths": [
+      1024
+    ],
+    "w": 1024,
+    "h": 545
+  },
+  "ilustraciones": {
+    "file": "",
+    "widths": [
+      400,
+      800
+    ],
+    "w": 800,
+    "h": 800
+  },
   "secciones": {
-    "clan": "guias",
+    "clan": "poder",
     "protocolos": "normas",
     "mando": "academia",
     "operaciones": "guerra"

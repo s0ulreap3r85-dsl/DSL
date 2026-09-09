@@ -4,7 +4,13 @@ Web oficial del clan, para el juego Last Z: Survival Shooter.
 
 Sitio estático, sin base de datos y sin servidor. Se publica gratis, carga en menos de un segundo, y funciona igual de bien en el móvil que en el ordenador.
 
-> **Estado actual: maqueta.** Los nombres, las cifras, y los anuncios son de ejemplo. Hay que sustituirlos por los reales antes de enseñar la web al clan. Ver la sección Pendientes.
+> **Estado actual: contenido real, diseño por decidir.** Las guías son las del clan, escritas por FrosSit0. Lo que sigue sin ser real es el contador de la guerra y las cifras de la cabecera.
+
+## Aviso sobre la tabla de cuarteles generales
+
+Las versiones inglesa, alemana, y francesa de la infografía coinciden entre sí y siguen un ciclo regular de cinco edificios. La versión española se desalinea a partir del nivel 11, y además llama Campamento de Francotiradores al nivel 15 donde las otras tres dicen Campamento de Tiradores.
+
+La web usa la secuencia de las tres versiones coincidentes. Conviene que el autor lo confirme y corrija la infografía española.
 
 ## Qué hay dentro
 
@@ -83,10 +89,9 @@ bash tools/build-preview.sh
 
 ## Pendientes
 
-* [ ] Confirmar la lista definitiva de los nueve idiomas
-* [ ] Traducir a los cinco idiomas que faltan
-* [ ] Sustituir los nombres y rangos de ejemplo por los reales
+* [ ] Confirmar si hacen falta más idiomas, ahora hay cinco
+* [ ] Que el autor revise la tabla española de cuarteles generales
+* [ ] Cifras reales de la cabecera, ahora dicen servidor, temporada, guías, e idiomas
 * [ ] Poner el enlace de invitación de Discord, ahora apunta a ninguna parte
-* [ ] Confirmar los horarios reales de guerra y eventos
-* [ ] Revisar las normas con el líder del clan
+* [ ] Confirmar el horario real de la guerra, el contador asume viernes a las 21:00
 * [ ] Conectar Cloudflare Pages y quitar la etiqueta MAQUETA de la cabecera

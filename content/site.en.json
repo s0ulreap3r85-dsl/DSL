@@ -14,32 +14,32 @@
     },
     {
       "target": "protocolos",
-      "label": "Protocols"
+      "label": "Beginners"
     },
     {
       "target": "mando",
-      "label": "Command"
+      "label": "Guides"
     },
     {
       "target": "operaciones",
-      "label": "Operations"
+      "label": "Headquarters"
     },
     {
       "target": "tablon",
-      "label": "Board"
+      "label": "Modules"
     },
     {
       "target": "alta",
-      "label": "Enlist"
+      "label": "Join"
     }
   ],
   "hero": {
-    "eyebrow": "Last Z: Survival Shooter · Server 770",
+    "eyebrow": "Last Z: Survival Shooter · Server 770 · Season 1",
     "title": "Demon Slayer",
     "subtitle": "League",
-    "lead": "We are the clan holding sector 770. War every Friday, clan help around the clock, and a seat for anyone who shows up when it counts.",
-    "primaryButton": "Request to join",
-    "secondaryButton": "Read the protocols",
+    "lead": "The clan guide hub. What you need to know so you do not get lost on 770, explained straight, in five languages.",
+    "primaryButton": "Start from scratch",
+    "secondaryButton": "Modules guide",
     "countdownLabel": "Next clan war",
     "countdownNote": "Friday 21:00, Spanish time",
     "daysSuffix": "d",
@@ -52,261 +52,492 @@
       "note": ""
     },
     {
-      "label": "Members",
-      "value": "47",
-      "note": " / 50"
+      "label": "Season",
+      "value": "1",
+      "note": ""
     },
     {
-      "label": "Clan power",
-      "value": "412",
-      "note": " M"
+      "label": "Guides",
+      "value": "3",
+      "note": ""
     },
     {
-      "label": "Wars won",
-      "value": "28",
-      "note": " / 34"
+      "label": "Languages",
+      "value": "5",
+      "note": ""
     }
   ],
   "about": {
-    "eyebrow": "01 · Who we are",
-    "title": "An active clan, not a list of names",
-    "text": "We have been here since the server opened. We do not ask you to be the strongest, we ask you to show up. Join, help, and be there on Friday, and you have a seat for the long run.",
+    "eyebrow": "01 · What is here",
+    "title": "Clan guides, nothing else",
+    "text": "Everything on this site was written by clan members playing on 770. If we do not know something yet, we say so instead of making it up.",
+    "imageAlt": "Clan member explaining the types of power on a blackboard",
     "requirements": [
       {
-        "key": "Minimum shelter",
-        "value": "Level 25",
-        "note": "Below that we take you in as a recruit on trial."
+        "key": "Beginner's guide",
+        "value": "9 points",
+        "note": "The basics, so you do not start badly."
       },
       {
-        "key": "Combat power",
-        "value": "8 M",
-        "note": "A guideline only, consistency matters more."
+        "key": "Modules guide",
+        "value": "10 points",
+        "note": "The new vehicle system."
       },
       {
-        "key": "Language",
-        "value": "ES / EN",
-        "note": "War voice chat runs in Spanish."
+        "key": "Headquarters",
+        "value": "30 levels",
+        "note": "What each level needs to unlock."
       },
       {
-        "key": "Discord",
-        "value": "Required",
-        "note": "That is where attacks and shifts get coordinated."
+        "key": "Written by",
+        "value": "FrosSit0",
+        "note": "Clan member, server 770."
       }
-    ],
-    "imageAlt": "Clan member showing the requirements to join"
+    ]
   },
   "rules": {
-    "eyebrow": "02 · Protocols",
-    "title": "The eight clan rules",
-    "text": "Short, clear, and no fine print. Breaking one gets you a warning, breaking the sixth does not.",
+    "eyebrow": "02 · Beginner's guide",
+    "title": "What we wish someone had told us on day one",
+    "text": "Nine things in order of importance. New on 770, start right here.",
+    "imageAlt": "Clan member pointing at the house rules",
     "items": [
       {
-        "title": "Daily activity",
-        "text": "Log in at least once a day. If you will be away more than three days, say so on Discord and we hold your seat. Seven days of silence and the seat opens up."
+        "title": "Your HQ",
+        "text": "Your base. The higher it is, the more you unlock. HQ level lets you take heroes five levels above it, sets the maximum level for every other building, and raises the daily raid limit on other bases. Priority number one."
       },
       {
-        "title": "Always hit clan help",
-        "text": "Tap help every time you log in. Five seconds that save everyone hours of building, and it is what separates a good clan from an average one."
+        "title": "Resources",
+        "text": "Food, wood and metal produce themselves or come from mines and raids. The genuinely hard ones are Zenith, the special currency, and laboratory badges. Look after those two."
       },
       {
-        "title": "Friday war is mandatory",
-        "text": "Spend your attacks before the window closes. If you cannot log in that day, say so in advance in the war channel and an officer covers your turn."
+        "title": "Trucks",
+        "text": "Only send the orange ones, top quality. You do not lose troops if they get stolen, so there is no real risk. Send them one at a time with your best escort army. They can be stolen twice at most."
       },
       {
-        "title": "Respect, inside and out",
-        "text": "No insults, no racism, no disrespect, not in game chat, not on Discord, not in private. We do not argue here, we remove people."
+        "title": "Mines",
+        "text": "Farmed outside your base. In the daily Mine Battle event you look for Gold and Crystal mines, and Crystal is hero experience. You start with three attacks a day and later get four. You can spend diamonds to detect new ones. Tip, at night send your second and third armies to mine and keep the first one free."
       },
       {
-        "title": "Chat languages",
-        "text": "Spanish and English in general chat. If someone writes in another language, translate it before replying, do not ignore them."
+        "title": "Heroes",
+        "text": "They level with experience, best during happy hour. Weapons are levelled with other material weapons, without spending iron, thinking ahead to the weekly VS. There are three factions in a cycle, Wings of Dawn, Blood Rose, and Guardians of Order. It does not affect your opponent, it affects your own army bonus. Three of the same faction give 105% attack, three plus two mixed give 107%, four the same give 110%, and five the same give 115%, the holy grail."
       },
       {
-        "title": "No cheats, no shared accounts",
-        "text": "Third party software, bots, or handing your account to someone else. Immediate removal, no appeal. It is the one thing that can take the whole clan down."
+        "title": "Troops",
+        "text": "Trained in the barracks, they attack and defend. Each faction is tied to one troop type, and that barracks sits behind the matching faction building, which you have to unlock first. Blood Rose gives Raiders, Wings of Dawn gives Shooters, and Guardians of Order gives Motorcyclists."
       },
       {
-        "title": "The clan bank is for war",
-        "text": "Shared resources are kept for server events. Before spending from the common pool, ask an officer in the right channel."
+        "title": "Events",
+        "text": "Total Preparation, Zombie Boss, Arena. They give extra rewards and are not mandatory, but they speed things up a lot. The next guide covers them one by one."
       },
       {
-        "title": "Recruiting is an officer job",
-        "text": "If you know someone who fits, pass them to an officer and they decide. Nobody invites on their own, that is how we keep rival scouts out during war week."
+        "title": "HQ Chest",
+        "text": "It fills on its own for up to eight hours. After that it stops accumulating, so do not leave it full. It gives resources and free hero weapons. The easiest thing to collect every day."
+      },
+      {
+        "title": "Pro tips",
+        "text": "Alliance donations, when you donate technology hold the button down instead of tapping one by one, that is how you get critical donations of x2, x5, x10, and once even x270. To move around the map, when a helicopter appears find the nearest allied base, reinforce it, and leave from there, because you travel three times faster between allied bases. And on village resources, upgrading production buildings above level 16 or 17 is not worth it, since attacking a single enemy player gives you more than twenty four hours of production."
       }
-    ],
-    "imageAlt": "Clan member pointing at the house rules"
+    ]
   },
   "command": {
-    "eyebrow": "03 · Chain of command",
-    "title": "Who decides what",
-    "text": "If you have a question, go up one step. If you have a problem with someone, message an officer directly, never general chat.",
+    "eyebrow": "03 · Library",
+    "title": "The guides, and what languages they are in",
+    "text": "Each guide is written by someone in the clan and translated into the languages we speak inside. If yours is missing, say so on Discord.",
+    "imageAlt": "Clan strategy manual with ranks and duties",
     "ranks": [
       {
-        "title": "Leader",
-        "count": "01",
+        "title": "Beginners",
+        "count": "9",
         "members": [
-          "Kurogane"
+          "Español",
+          "English",
+          "العربية"
         ],
-        "note": "Final call on alliances, removals, and war strategy.",
+        "note": "HQ, resources, trucks, mines, heroes, troops, events, chest, and tips.",
         "highlight": true
       },
       {
-        "title": "Co leaders",
-        "count": "02",
+        "title": "Vehicle modules",
+        "count": "10",
         "members": [
-          "V1PER",
-          "NoraX"
+          "Español",
+          "English",
+          "Français",
+          "Deutsch",
+          "العربية"
         ],
-        "note": "Run the war when the leader is away, and manage the clan bank.",
+        "note": "The new vehicle system, what to keep, and when to spend it.",
         "highlight": false
       },
       {
-        "title": "Officers",
-        "count": "04",
+        "title": "Headquarters",
+        "count": "30",
         "members": [
-          "ShadowFang",
-          "Mireia",
-          "Draco77",
-          "Tanko"
+          "Español",
+          "English",
+          "Français",
+          "Deutsch"
         ],
-        "note": "Recruit, settle disputes, and assign siege targets.",
+        "note": "Which two buildings unlock each level.",
         "highlight": false
       },
       {
-        "title": "Veterans",
-        "count": "12",
+        "title": "What power is",
+        "count": "5",
         "members": [
-          "Over six months in the clan"
+          "Español",
+          "English"
         ],
-        "note": "Access to the strategy channel and a vote on server alliances.",
+        "note": "Building, technology, troop, hero, and modified vehicle.",
         "highlight": false
       },
       {
-        "title": "Members",
-        "count": "24",
+        "title": "Top power buildings",
+        "count": "5",
         "members": [
-          "Core roster"
+          "Español",
+          "English",
+          "العربية"
         ],
-        "note": "Full clan, shop, and rally rights.",
+        "note": "Headquarters, laboratory, formations, alliance center, and production.",
         "highlight": false
       },
       {
-        "title": "Recruits",
-        "count": "04",
+        "title": "Coming next",
+        "count": "—",
         "members": [
-          "First two weeks"
+          "Events",
+          "Factions"
         ],
-        "note": "Trial period. We look at activity and turnout, not power.",
+        "note": "The next clan guides are already being written.",
         "highlight": false
       }
-    ],
-    "imageAlt": "Clan strategy manual with ranks and duties"
+    ]
   },
   "schedule": {
-    "eyebrow": "04 · Typical week",
-    "title": "Operations calendar",
-    "text": "Times are Spanish mainland. In Latin America subtract six hours for Mexico, and five for Colombia and Peru.",
+    "eyebrow": "04 · Reference",
+    "title": "Headquarters unlock requirements",
+    "text": "The two buildings needed to unlock each headquarters level, from 1 to 30.",
+    "imageAlt": "War preparations, vehicles, troops and clan weaponry",
     "columns": [
-      "Day",
-      "Operation",
-      "Time",
-      "Attendance"
+      "To unlock",
+      "Condition 1",
+      "Condition 2"
     ],
     "rows": [
       {
-        "day": "Monday",
-        "operation": "Gathering and resource sharing",
-        "time": "All day",
-        "attendance": "Optional",
-        "level": "free",
+        "cells": [
+          "Headquarters Level 1",
+          "—",
+          "—"
+        ],
         "highlight": false
       },
       {
-        "day": "Tuesday",
-        "operation": "Siege on infected outposts",
-        "time": "21:30",
-        "attendance": "Recommended",
-        "level": "rec",
+        "cells": [
+          "Headquarters Level 2",
+          "—",
+          "—"
+        ],
         "highlight": false
       },
       {
-        "day": "Wednesday",
-        "operation": "Clan donations and shop",
-        "time": "All day",
-        "attendance": "Recommended",
-        "level": "rec",
+        "cells": [
+          "Headquarters Level 3",
+          "—",
+          "—"
+        ],
         "highlight": false
       },
       {
-        "day": "Thursday",
-        "operation": "Troop prep and shield check",
-        "time": "22:00",
-        "attendance": "Recommended",
-        "level": "rec",
+        "cells": [
+          "Headquarters Level 4",
+          "City Wall",
+          "—"
+        ],
         "highlight": false
       },
       {
-        "day": "Friday",
-        "operation": "Clan war",
-        "time": "21:00",
-        "attendance": "Mandatory",
-        "level": "must",
+        "cells": [
+          "Headquarters Level 5",
+          "Radar",
+          "Assault Camp"
+        ],
         "highlight": true
       },
       {
-        "day": "Saturday",
-        "operation": "Clan boss and coordinated rally",
-        "time": "20:00",
-        "attendance": "Recommended",
-        "level": "rec",
+        "cells": [
+          "Headquarters Level 6",
+          "Military Center",
+          "—"
+        ],
         "highlight": false
       },
       {
-        "day": "Sunday",
-        "operation": "Internal tournament and rest",
-        "time": "19:00",
-        "attendance": "Optional",
-        "level": "free",
+        "cells": [
+          "Headquarters Level 7",
+          "Alliance Center",
+          "Training Ground"
+        ],
         "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 8",
+          "Laboratory",
+          "Assault Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 9",
+          "Laboratory",
+          "Emergency Hospital"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 10",
+          "Laboratory",
+          "Shooter Camp"
+        ],
+        "highlight": true
+      },
+      {
+        "cells": [
+          "Headquarters Level 11",
+          "Laboratory",
+          "Rider Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 12",
+          "Laboratory",
+          "City Wall"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 13",
+          "Laboratory",
+          "Alliance Center"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 14",
+          "Laboratory",
+          "Assault Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 15",
+          "Laboratory",
+          "Shooter Camp"
+        ],
+        "highlight": true
+      },
+      {
+        "cells": [
+          "Headquarters Level 16",
+          "Laboratory",
+          "Rider Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 17",
+          "Laboratory",
+          "City Wall"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 18",
+          "Laboratory",
+          "Alliance Center"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 19",
+          "Laboratory",
+          "Assault Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 20",
+          "Laboratory",
+          "Shooter Camp"
+        ],
+        "highlight": true
+      },
+      {
+        "cells": [
+          "Headquarters Level 21",
+          "Laboratory",
+          "Rider Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 22",
+          "Laboratory",
+          "City Wall"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 23",
+          "Laboratory",
+          "Alliance Center"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 24",
+          "Laboratory",
+          "Assault Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 25",
+          "Laboratory",
+          "Shooter Camp"
+        ],
+        "highlight": true
+      },
+      {
+        "cells": [
+          "Headquarters Level 26",
+          "Laboratory",
+          "Rider Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 27",
+          "Laboratory",
+          "City Wall"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 28",
+          "Laboratory",
+          "Alliance Center"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 29",
+          "Laboratory",
+          "Assault Camp"
+        ],
+        "highlight": false
+      },
+      {
+        "cells": [
+          "Headquarters Level 30",
+          "Laboratory",
+          "Shooter Camp"
+        ],
+        "highlight": true
       }
-    ],
-    "imageAlt": "War preparations, vehicles, troops and clan weaponry"
+    ]
   },
   "board": {
-    "eyebrow": "05 · Board",
-    "title": "Latest announcements",
-    "text": "Anything important goes up here and on Discord at the same time. If it is not in both places, it is not official.",
+    "eyebrow": "05 · Modules guide",
+    "title": "Vehicle modules, no mystery",
+    "text": "For server 770, season 1. We have no idea what this is yet, but we want to be ready.",
     "posts": [
       {
-        "date": "06.09.2026",
-        "title": "War against [VRX] won",
-        "text": "We closed round 34 with 28 wins. Credit to the ones who logged in at dawn to finish the last outpost, without that the numbers did not add up."
+        "date": "01",
+        "title": "First, let us not mix things up",
+        "text": "If you already know that blueprints and wrenches are the normal vehicle upgrades, perfect, that still exists and is not what we explain here. Modules are a separate system."
       },
       {
-        "date": "02.09.2026",
-        "title": "New shelter requirement for recruits",
-        "text": "We are raising the minimum from level 20 to level 25. Recruits already inside keep their seat, nothing changes for them."
+        "date": "02",
+        "title": "What a module is",
+        "text": "Think Fast and Furious. You take a car that is already good and tune it further with engine, wheels, body, performance. Modules are that, applied to the Last Z vehicle. There are six types, Radar, Wheels, Armour, Solar Battery, Nitro, and Artillery. No need to memorise them, just understand that the vehicle carries modules, they give extra stats, and they can be upgraded."
       },
       {
-        "date": "28.08.2026",
-        "title": "Non aggression pact with [KRN] and [S7]",
-        "text": "Agreed until the end of the season. Do not attack their bases or their gatherers, even unshielded. Any incident, tell an officer before you react."
+        "date": "03",
+        "title": "Where they come from",
+        "text": "Trucks can carry component chests. In the alliance shop, the Random Module Box Lv.1 costs 4,500 alliance coins and gives a random Lv.1 exterior module. They also show up in events, shops, activity rewards, and various chests. There is no single source."
+      },
+      {
+        "date": "04",
+        "title": "What to do with them",
+        "text": "You combine them. Three identical modules of the same level give one of the next level. A Lv.2 module needs 3 of Lv.1, a Lv.3 needs 9, a Lv.4 needs 27, and a Lv.5 needs 81. And that is for one module type only. With several types at once you see why so many resources are needed."
+      },
+      {
+        "date": "05",
+        "title": "And components",
+        "text": "A different resource within the vehicle system. They also come from chests, trucks, events, and rewards. Module and component are not the same thing, treat them as different resources until we see the full interface."
+      },
+      {
+        "date": "06",
+        "title": "And chips",
+        "text": "They exist, and they are not components under another name either. Three separate resources, modules, components, and chips. Chips have their own progression, but since 770 is still in season 1 and we do not have the full interface, we will not invent explanations taken from other servers that may run another version. When the chip screen shows up, we will explain it."
+      },
+      {
+        "date": "07",
+        "title": "When to spend all this",
+        "text": "The Alliance Duel event has a Modded Vehicle Boost day, the famous vehicle day. That day you score points using component chests, chip chests, blueprints, wrenches, and certain radar tasks. Opening a chest during the event gives the resource plus points. Opening it any other day gives only the resource. So save your resources for vehicle day."
+      },
+      {
+        "date": "08",
+        "title": "What we do on 770 right now",
+        "text": "We are in season 1, the system is not fully unlocked, and that is fine. The mission is not to be experts yet, it is to recognise this stuff and not waste it. Module box, keep. Components, keep. Chips, keep. Truck with related chests, take it. Module box in the shop, judge if it is worth it. Blueprints and wrenches, save for vehicle day. Something new you do not understand, do not touch."
+      },
+      {
+        "date": "09",
+        "title": "The most important rule",
+        "text": "Do not open things just because. Faced with a new chest, ask first what it is, what it does, whether it scores in any event, whether you need it now, and whether it is worth keeping. If you do not know, keep it and look later, it does not expire in your inventory."
+      },
+      {
+        "date": "10",
+        "title": "Summary for the most lost member",
+        "text": "Modules are parts to tune a vehicle that is already built. Several types, each with its own bonuses. You get them from trucks, chests, shops, events, and rewards. You upgrade them by combining identical ones of the same level. Components are another resource, chips are yet another. All of this is separate from the normal blueprint and wrench upgrades. There is a specific Alliance Duel day for the vehicle, so save up. We do not need to be first to understand it, we need to be the ones who say, we have had this saved since season 1."
       }
     ]
   },
   "join": {
-    "eyebrow": "06 · Enlist",
-    "title": "3 seats open",
-    "text": "Join the Discord, introduce yourself in the applications channel, and tell us your in game name, your shelter level, and when you usually play. An officer answers the same day.",
+    "eyebrow": "06 · Join",
+    "title": "Get into the clan",
+    "text": "If you play on server 770 and want a clan where things get explained, look us up in game. And if you spot something wrong in a guide, say so and it gets fixed.",
     "findText": "Find us in game as",
     "clanName": "[DsL] Demon Slayer League",
     "serverText": "server",
     "server": "770",
-    "buttonLabel": "Join the Discord",
+    "buttonLabel": "How to join",
     "buttonUrl": "#alta"
   },
   "footer": {
     "line1": "[DsL] Demon Slayer League · Server 770",
-    "line2": "Player clan of Last Z: Survival Shooter",
-    "draft": "Proposal mockup. Names, figures, and announcements are examples, and get replaced with the real ones before going live."
+    "line2": "Clan guides for Last Z: Survival Shooter · by FrosSit0",
+    "draft": "Draft for choosing a design. The guides are real, the countdown and header figures are not yet."
   }
 }

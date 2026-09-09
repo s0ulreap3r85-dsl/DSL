@@ -107,12 +107,10 @@
             return el('th', { scope: 'col', text: c });
           }))]),
           el('tbody', null, d.schedule.rows.map(function (r) {
-            return el('tr', r.highlight ? { class: 'hot' } : null, [
-              el('td', { text: r.day }),
-              el('td', { text: r.operation }),
-              el('td', { class: 'time', text: r.time }),
-              el('td', null, [el('span', { class: mk[r.level] || mk.free, text: r.attendance })])
-            ]);
+            return el('tr', r.highlight ? { class: 'hot' } : null,
+              r.cells.map(function (c, i) {
+                return el('td', i > 0 ? { class: 'time' } : null, [document.createTextNode(c)]);
+              }));
           }))
         ])
       ])

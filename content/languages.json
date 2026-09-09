@@ -10,8 +10,13 @@
     "direction": "ltr"
   },
   {
-    "code": "pt",
-    "name": "Português",
+    "code": "fr",
+    "name": "Français",
+    "direction": "ltr"
+  },
+  {
+    "code": "de",
+    "name": "Deutsch",
     "direction": "ltr"
   },
   {

@@ -103,12 +103,8 @@
             return el('th', { scope: 'col', text: c });
           }))]),
           el('tbody', null, d.schedule.rows.map(function (r) {
-            return el('tr', r.highlight ? { class: 'hot' } : null, [
-              el('td', { text: r.day }),
-              el('td', { text: r.operation }),
-              el('td', { text: r.time }),
-              el('td', null, [el('span', { class: tg[r.level] || tg.free, text: r.attendance })])
-            ]);
+            return el('tr', r.highlight ? { class: 'hot' } : null,
+              r.cells.map(function (c) { return el('td', { text: c }); }));
           }))
         ])
       ])
