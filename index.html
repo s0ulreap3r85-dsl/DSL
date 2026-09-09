@@ -2,7 +2,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Noto+Kufi+Arabic:wght@600;800&family=Noto+Sans+Arabic:wght@400;600&display=swap">
-
 <link rel="stylesheet" href="assets/css/style.css">
 
 <header class="topbar">
@@ -13,231 +12,29 @@
         <polygon points="20,9 30,14.5 30,25.5 20,31 10,25.5 10,14.5" fill="none" stroke="#0E7FA0" stroke-width="1"></polygon>
         <text x="20" y="24.5" text-anchor="middle" fill="#E6EDF5" font-family="Saira Condensed, sans-serif" font-size="13" font-weight="800">DsL</text>
       </svg>
-      <span class="brand__txt">DsL <em>770</em></span>
+      <span class="brand__txt" id="brand"></span>
     </div>
-    <span class="chip">MAQUETA</span>
-    <nav class="nav">
-      <a href="#clan" data-t="n1">El clan</a>
-      <a href="#protocolos" data-t="n2">Protocolos</a>
-      <a href="#mando" data-t="n3">Mando</a>
-      <a href="#operaciones" data-t="n4">Operaciones</a>
-      <a href="#tablon" data-t="n5">Tablón</a>
-      <a href="#alta" data-t="n6">Alistarse</a>
-    </nav>
+    <span class="chip" id="badge" hidden></span>
+    <nav class="nav" id="nav"></nav>
     <div class="lang">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A9AAE" stroke-width="1.6" aria-hidden="true">
         <circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"></path>
       </svg>
-      <label for="lang" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Idioma</label>
-      <select id="lang">
-        <option value="es">Español</option>
-        <option value="en">English</option>
-        <option value="pt">Português</option>
-        <option value="ar">العربية</option>
-      </select>
+      <label class="sr" for="lang">Idioma</label>
+      <select id="lang"></select>
     </div>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="app"></main>
 
-  <section class="hero">
-    <div class="hero__grid">
-      <div>
-        <span class="eyebrow" data-t="h.eye">Last Z: Survival Shooter · Servidor 770</span>
-        <h1>Demon Slayer<span data-t="h.t2">League</span></h1>
-        <p class="hero__lead" data-t="h.lead">Somos el clan que sostiene el sector 770. Guerra todos los viernes, ayuda de clan sin descanso, y un puesto para quien aparezca cuando toca aparecer.</p>
-        <div class="hero__cta">
-          <a class="btn btn--solid" href="#alta" data-t="h.cta1">Solicitar ingreso</a>
-          <a class="btn btn--ghost" href="#protocolos" data-t="h.cta2">Leer los protocolos</a>
-        </div>
-      </div>
-      <aside class="warpanel">
-        <span class="warpanel__label" data-t="h.war">Próxima guerra de clanes</span>
-        <div class="warpanel__t" id="cd">--d --:--:--</div>
-        <span class="warpanel__sub" data-t="h.warsub">Viernes 21:00, hora peninsular</span>
-      </aside>
-    </div>
+<footer><div class="wrap foot" id="foot"></div></footer>
 
-    <dl class="readout">
-      <div><dt data-t="r1">Servidor</dt><dd>770</dd></div>
-      <div><dt data-t="r2">Miembros</dt><dd>47<small> / 50</small></dd></div>
-      <div><dt data-t="r3">Poder del clan</dt><dd>412<small> M</small></dd></div>
-      <div><dt data-t="r4">Guerras ganadas</dt><dd>28<small> / 34</small></dd></div>
-    </dl>
-  </section>
-
-  <section class="sec" id="clan">
-    <div class="sec__head">
-      <span class="eyebrow" data-t="s1.eye">01 · Quiénes somos</span>
-      <h2 data-t="s1.h">Un clan activo, no una lista de nombres</h2>
-      <p data-t="s1.p">Llevamos desde el primer mes del servidor. No pedimos que seas el más fuerte, pedimos que estés. Si entras, ayudas, y apareces el viernes, aquí tienes sitio para largo.</p>
-    </div>
-    <div class="reqs">
-      <div class="req"><span class="req__k" data-t="q1k">Refugio mínimo</span><div class="req__v" data-t="q1v">Nivel 25</div><p class="req__n" data-t="q1n">Con menos te aceptamos como recluta a prueba.</p></div>
-      <div class="req"><span class="req__k" data-t="q2k">Poder de combate</span><div class="req__v">8 M</div><p class="req__n" data-t="q2n">Orientativo, importa más la constancia.</p></div>
-      <div class="req"><span class="req__k" data-t="q3k">Idioma</span><div class="req__v">ES / EN</div><p class="req__n" data-t="q3n">El chat de voz de la guerra va en español.</p></div>
-      <div class="req"><span class="req__k">Discord</span><div class="req__v" data-t="q4v">Obligatorio</div><p class="req__n" data-t="q4n">Ahí se coordinan los ataques y los relevos.</p></div>
-    </div>
-  </section>
-
-  <section class="sec" id="protocolos">
-    <div class="sec__head">
-      <span class="eyebrow" data-t="s2.eye">02 · Protocolos</span>
-      <h2 data-t="s2.h">Las ocho normas del clan</h2>
-      <p data-t="s2.p">Cortas, claras, y sin letra pequeña. Saltarse una tiene aviso, saltarse la sexta no.</p>
-    </div>
-    <div class="protos">
-      <details class="proto" open>
-        <summary><span class="proto__n">P01</span><span class="proto__t" data-t="p1t">Actividad diaria</span><span class="proto__x">+</span></summary>
-        <p data-t="p1d">Conéctate al menos una vez al día. Si vas a estar fuera más de tres días, avisa en Discord y te guardamos la plaza. Siete días en silencio y la plaza se libera.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P02</span><span class="proto__t" data-t="p2t">Ayuda de clan siempre</span><span class="proto__x">+</span></summary>
-        <p data-t="p2d">Pulsa ayuda cada vez que entres. Son cinco segundos que le ahorran horas de construcción a todo el mundo, y es lo que separa a un clan bueno de uno normal.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P03</span><span class="proto__t" data-t="p3t">La guerra del viernes es obligatoria</span><span class="proto__x">+</span></summary>
-        <p data-t="p3d">Gasta tus ataques antes del cierre. Si no puedes entrar ese día, dilo con antelación en el canal de guerra y un oficial cubre tu turno.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P04</span><span class="proto__t" data-t="p4t">Respeto dentro y fuera</span><span class="proto__x">+</span></summary>
-        <p data-t="p4d">Nada de insultos, racismo, ni faltar al respeto, ni en el chat del juego, ni en Discord, ni por privado. Aquí no se discute, se expulsa.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P05</span><span class="proto__t" data-t="p5t">Idiomas del chat</span><span class="proto__x">+</span></summary>
-        <p data-t="p5d">Español e inglés en el chat general. Si alguien escribe en otro idioma, tradúcelo antes de responder, no lo ignores.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P06</span><span class="proto__t" data-t="p6t">Nada de trampas ni cuentas compartidas</span><span class="proto__x">+</span></summary>
-        <p data-t="p6d">Programas externos, bots, o pasar tu cuenta a otra persona. Expulsión inmediata y sin vuelta. Es lo único que nos puede tumbar el clan entero.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P07</span><span class="proto__t" data-t="p7t">El banco del clan es para la guerra</span><span class="proto__x">+</span></summary>
-        <p data-t="p7d">Los recursos comunes se guardan para los eventos de servidor. Antes de gastar del fondo común, pregunta a un oficial en el canal correspondiente.</p>
-      </details>
-      <details class="proto">
-        <summary><span class="proto__n">P08</span><span class="proto__t" data-t="p8t">Reclutar es cosa de oficiales</span><span class="proto__x">+</span></summary>
-        <p data-t="p8d">Si conoces a alguien que encaja, pásaselo a un oficial y él lo valora. Nadie invita por su cuenta, así evitamos espías de otros clanes en semana de guerra.</p>
-      </details>
-    </div>
-  </section>
-
-  <section class="sec" id="mando">
-    <div class="sec__head">
-      <span class="eyebrow" data-t="s3.eye">03 · Cadena de mando</span>
-      <h2 data-t="s3.h">Quién decide qué</h2>
-      <p data-t="s3.p">Si tienes una duda, sube un escalón. Si tienes un problema con alguien, escríbele directo a un oficial, nunca al chat general.</p>
-    </div>
-    <div class="ranks">
-      <article class="rank rank--lead">
-        <div class="rank__top"><h3 class="rank__ttl" data-t="g1">Líder</h3><span class="rank__count">01</span></div>
-        <ul class="rank__list"><li>Kurogane</li></ul>
-        <p class="rank__note" data-t="g1n">Decisión final en alianzas, expulsiones, y estrategia de guerra.</p>
-      </article>
-      <article class="rank">
-        <div class="rank__top"><h3 class="rank__ttl" data-t="g2">Segundos</h3><span class="rank__count">02</span></div>
-        <ul class="rank__list"><li>V1PER</li><li>NoraX</li></ul>
-        <p class="rank__note" data-t="g2n">Dirigen la guerra cuando el líder no está, y llevan el banco del clan.</p>
-      </article>
-      <article class="rank">
-        <div class="rank__top"><h3 class="rank__ttl" data-t="g3">Oficiales</h3><span class="rank__count">04</span></div>
-        <ul class="rank__list"><li>ShadowFang</li><li>Mireia</li><li>Draco77</li><li>Tanko</li></ul>
-        <p class="rank__note" data-t="g3n">Reclutan, resuelven conflictos, y reparten los objetivos del asedio.</p>
-      </article>
-      <article class="rank">
-        <div class="rank__top"><h3 class="rank__ttl" data-t="g4">Veteranos</h3><span class="rank__count">12</span></div>
-        <ul class="rank__list"><li data-t="g4l">Más de seis meses en el clan</li></ul>
-        <p class="rank__note" data-t="g4n">Acceso al canal de estrategia y voto en las alianzas de servidor.</p>
-      </article>
-      <article class="rank">
-        <div class="rank__top"><h3 class="rank__ttl" data-t="g5">Miembros</h3><span class="rank__count">24</span></div>
-        <ul class="rank__list"><li data-t="g5l">Plantilla estable</li></ul>
-        <p class="rank__note" data-t="g5n">Derechos completos de clan, tienda, y rally.</p>
-      </article>
-      <article class="rank">
-        <div class="rank__top"><h3 class="rank__ttl" data-t="g6">Reclutas</h3><span class="rank__count">04</span></div>
-        <ul class="rank__list"><li data-t="g6l">Primeras dos semanas</li></ul>
-        <p class="rank__note" data-t="g6n">Periodo de prueba. Se valora actividad y participación, no poder.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="sec" id="operaciones">
-    <div class="sec__head">
-      <span class="eyebrow" data-t="s4.eye">04 · Semana tipo</span>
-      <h2 data-t="s4.h">Calendario de operaciones</h2>
-      <p data-t="s4.p">Horas peninsulares. En Latinoamérica resta seis horas para México, y cinco para Colombia y Perú.</p>
-    </div>
-    <div class="tablewrap">
-      <table>
-        <thead>
-          <tr><th scope="col" data-t="th1">Día</th><th scope="col" data-t="th2">Operación</th><th scope="col" data-t="th3">Hora</th><th scope="col" data-t="th4">Asistencia</th></tr>
-        </thead>
-        <tbody>
-          <tr><td data-t="d1">Lunes</td><td data-t="o1">Recolección y reparto de recursos</td><td class="time" data-t="allday">Todo el día</td><td><span class="pill pill--free" data-t="free">Libre</span></td></tr>
-          <tr><td data-t="d2">Martes</td><td data-t="o2">Asedio a puestos infectados</td><td class="time">21:30</td><td><span class="pill pill--ok" data-t="rec">Recomendada</span></td></tr>
-          <tr><td data-t="d3">Miércoles</td><td data-t="o3">Donación al clan y tienda</td><td class="time" data-t="allday">Todo el día</td><td><span class="pill pill--ok" data-t="rec">Recomendada</span></td></tr>
-          <tr><td data-t="d4">Jueves</td><td data-t="o4">Preparación de tropas y revisión de escudos</td><td class="time">22:00</td><td><span class="pill pill--ok" data-t="rec">Recomendada</span></td></tr>
-          <tr class="key"><td data-t="d5">Viernes</td><td data-t="o5">Guerra de clanes</td><td class="time">21:00</td><td><span class="pill pill--must" data-t="must">Obligatoria</span></td></tr>
-          <tr><td data-t="d6">Sábado</td><td data-t="o6">Jefe de clan y rally coordinado</td><td class="time">20:00</td><td><span class="pill pill--ok" data-t="rec">Recomendada</span></td></tr>
-          <tr><td data-t="d7">Domingo</td><td data-t="o7">Torneo interno y descanso</td><td class="time">19:00</td><td><span class="pill pill--free" data-t="free">Libre</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="sec" id="tablon">
-    <div class="sec__head">
-      <span class="eyebrow" data-t="s5.eye">05 · Tablón</span>
-      <h2 data-t="s5.h">Últimos anuncios</h2>
-      <p data-t="s5.p">Lo importante se anuncia aquí y en Discord a la vez. Si no está en los dos sitios, no es oficial.</p>
-    </div>
-    <div class="posts">
-      <article class="post">
-        <span class="post__date">06.09.2026</span>
-        <div>
-          <h3 data-t="a1t">Ganada la guerra contra [VRX]</h3>
-          <p data-t="a1d">Cerramos la jornada 34 con 28 victorias. Mención a los que entraron de madrugada a rematar el último puesto, sin eso no salían las cuentas.</p>
-        </div>
-      </article>
-      <article class="post">
-        <span class="post__date">02.09.2026</span>
-        <div>
-          <h3 data-t="a2t">Nuevo requisito de refugio para reclutas</h3>
-          <p data-t="a2d">Subimos el mínimo de nivel 20 a nivel 25. Los reclutas que ya están dentro mantienen su plaza sin cambios.</p>
-        </div>
-      </article>
-      <article class="post">
-        <span class="post__date">28.08.2026</span>
-        <div>
-          <h3 data-t="a3t">Alianza de no agresión con [KRN] y [S7]</h3>
-          <p data-t="a3d">Acordada hasta el final de temporada. No atacar sus bases ni sus recolectores, aunque estén sin escudo. Cualquier incidente, avisad a un oficial antes de responder.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="join" id="alta">
-    <div>
-      <span class="eyebrow" data-t="s6.eye">06 · Alistarse</span>
-      <h2 data-t="s6.h">Hay 3 plazas libres</h2>
-      <p data-t="s6.p">Entra en el Discord, preséntate en el canal de solicitudes, y dinos tu nombre en el juego, tu nivel de refugio, y a qué hora sueles jugar. Un oficial te responde el mismo día.</p>
-      <p class="join__id"><span data-t="s6.find">Búscanos en el juego como</span> <b>[DsL] Demon Slayer League</b>, <span data-t="s6.srv">servidor</span> <b>770</b></p>
-    </div>
-    <div class="hero__cta">
-      <a class="btn btn--solid" href="#alta" data-t="s6.cta">Entrar al Discord</a>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap foot">
-    <p>[DsL] Demon Slayer League · <span data-t="f.srv">Servidor 770</span><br><span data-t="f.sub">Clan de jugadores de Last Z: Survival Shooter</span></p>
-    <p class="draft" data-t="f.draft">Maqueta de propuesta. Nombres, cifras, y anuncios son de ejemplo, y se sustituyen por los reales antes de publicar.</p>
+<noscript>
+  <div class="wrap" style="padding-top:60px">
+    <h1>[DsL] Demon Slayer League</h1>
+    <p style="color:#8A9AAE">Servidor 770 de Last Z: Survival Shooter. Activa JavaScript para ver la web completa.</p>
   </div>
-</footer>
+</noscript>
 
-<script src="assets/js/i18n.js"></script>
 <script src="assets/js/app.js"></script>

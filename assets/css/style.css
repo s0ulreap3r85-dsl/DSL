@@ -273,3 +273,5 @@ footer{margin-top:clamp(56px,8vw,96px);border-top:1px solid var(--line);padding:
 @media(prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important}
 }
+
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

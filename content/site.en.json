@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "language": "English",
+    "direction": "ltr",
+    "brand": "DsL",
+    "brandAccent": "770",
+    "badge": "DRAFT"
+  },
+  "nav": [
+    {
+      "target": "clan",
+      "label": "The clan"
+    },
+    {
+      "target": "protocolos",
+      "label": "Protocols"
+    },
+    {
+      "target": "mando",
+      "label": "Command"
+    },
+    {
+      "target": "operaciones",
+      "label": "Operations"
+    },
+    {
+      "target": "tablon",
+      "label": "Board"
+    },
+    {
+      "target": "alta",
+      "label": "Enlist"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Last Z: Survival Shooter · Server 770",
+    "title": "Demon Slayer",
+    "subtitle": "League",
+    "lead": "We are the clan holding sector 770. War every Friday, clan help around the clock, and a seat for anyone who shows up when it counts.",
+    "primaryButton": "Request to join",
+    "secondaryButton": "Read the protocols",
+    "countdownLabel": "Next clan war",
+    "countdownNote": "Friday 21:00, Spanish time",
+    "daysSuffix": "d"
+  },
+  "stats": [
+    {
+      "label": "Server",
+      "value": "770",
+      "note": ""
+    },
+    {
+      "label": "Members",
+      "value": "47",
+      "note": " / 50"
+    },
+    {
+      "label": "Clan power",
+      "value": "412",
+      "note": " M"
+    },
+    {
+      "label": "Wars won",
+      "value": "28",
+      "note": " / 34"
+    }
+  ],
+  "about": {
+    "eyebrow": "01 · Who we are",
+    "title": "An active clan, not a list of names",
+    "text": "We have been here since the server opened. We do not ask you to be the strongest, we ask you to show up. Join, help, and be there on Friday, and you have a seat for the long run.",
+    "requirements": [
+      {
+        "key": "Minimum shelter",
+        "value": "Level 25",
+        "note": "Below that we take you in as a recruit on trial."
+      },
+      {
+        "key": "Combat power",
+        "value": "8 M",
+        "note": "A guideline only, consistency matters more."
+      },
+      {
+        "key": "Language",
+        "value": "ES / EN",
+        "note": "War voice chat runs in Spanish."
+      },
+      {
+        "key": "Discord",
+        "value": "Required",
+        "note": "That is where attacks and shifts get coordinated."
+      }
+    ]
+  },
+  "rules": {
+    "eyebrow": "02 · Protocols",
+    "title": "The eight clan rules",
+    "text": "Short, clear, and no fine print. Breaking one gets you a warning, breaking the sixth does not.",
+    "items": [
+      {
+        "title": "Daily activity",
+        "text": "Log in at least once a day. If you will be away more than three days, say so on Discord and we hold your seat. Seven days of silence and the seat opens up."
+      },
+      {
+        "title": "Always hit clan help",
+        "text": "Tap help every time you log in. Five seconds that save everyone hours of building, and it is what separates a good clan from an average one."
+      },
+      {
+        "title": "Friday war is mandatory",
+        "text": "Spend your attacks before the window closes. If you cannot log in that day, say so in advance in the war channel and an officer covers your turn."
+      },
+      {
+        "title": "Respect, inside and out",
+        "text": "No insults, no racism, no disrespect, not in game chat, not on Discord, not in private. We do not argue here, we remove people."
+      },
+      {
+        "title": "Chat languages",
+        "text": "Spanish and English in general chat. If someone writes in another language, translate it before replying, do not ignore them."
+      },
+      {
+        "title": "No cheats, no shared accounts",
+        "text": "Third party software, bots, or handing your account to someone else. Immediate removal, no appeal. It is the one thing that can take the whole clan down."
+      },
+      {
+        "title": "The clan bank is for war",
+        "text": "Shared resources are kept for server events. Before spending from the common pool, ask an officer in the right channel."
+      },
+      {
+        "title": "Recruiting is an officer job",
+        "text": "If you know someone who fits, pass them to an officer and they decide. Nobody invites on their own, that is how we keep rival scouts out during war week."
+      }
+    ]
+  },
+  "command": {
+    "eyebrow": "03 · Chain of command",
+    "title": "Who decides what",
+    "text": "If you have a question, go up one step. If you have a problem with someone, message an officer directly, never general chat.",
+    "ranks": [
+      {
+        "title": "Leader",
+        "count": "01",
+        "members": [
+          "Kurogane"
+        ],
+        "note": "Final call on alliances, removals, and war strategy.",
+        "highlight": true
+      },
+      {
+        "title": "Co leaders",
+        "count": "02",
+        "members": [
+          "V1PER",
+          "NoraX"
+        ],
+        "note": "Run the war when the leader is away, and manage the clan bank.",
+        "highlight": false
+      },
+      {
+        "title": "Officers",
+        "count": "04",
+        "members": [
+          "ShadowFang",
+          "Mireia",
+          "Draco77",
+          "Tanko"
+        ],
+        "note": "Recruit, settle disputes, and assign siege targets.",
+        "highlight": false
+      },
+      {
+        "title": "Veterans",
+        "count": "12",
+        "members": [
+          "Over six months in the clan"
+        ],
+        "note": "Access to the strategy channel and a vote on server alliances.",
+        "highlight": false
+      },
+      {
+        "title": "Members",
+        "count": "24",
+        "members": [
+          "Core roster"
+        ],
+        "note": "Full clan, shop, and rally rights.",
+        "highlight": false
+      },
+      {
+        "title": "Recruits",
+        "count": "04",
+        "members": [
+          "First two weeks"
+        ],
+        "note": "Trial period. We look at activity and turnout, not power.",
+        "highlight": false
+      }
+    ]
+  },
+  "schedule": {
+    "eyebrow": "04 · Typical week",
+    "title": "Operations calendar",
+    "text": "Times are Spanish mainland. In Latin America subtract six hours for Mexico, and five for Colombia and Peru.",
+    "columns": [
+      "Day",
+      "Operation",
+      "Time",
+      "Attendance"
+    ],
+    "rows": [
+      {
+        "day": "Monday",
+        "operation": "Gathering and resource sharing",
+        "time": "All day",
+        "attendance": "Optional",
+        "level": "free",
+        "highlight": false
+      },
+      {
+        "day": "Tuesday",
+        "operation": "Siege on infected outposts",
+        "time": "21:30",
+        "attendance": "Recommended",
+        "level": "rec",
+        "highlight": false
+      },
+      {
+        "day": "Wednesday",
+        "operation": "Clan donations and shop",
+        "time": "All day",
+        "attendance": "Recommended",
+        "level": "rec",
+        "highlight": false
+      },
+      {
+        "day": "Thursday",
+        "operation": "Troop prep and shield check",
+        "time": "22:00",
+        "attendance": "Recommended",
+        "level": "rec",
+        "highlight": false
+      },
+      {
+        "day": "Friday",
+        "operation": "Clan war",
+        "time": "21:00",
+        "attendance": "Mandatory",
+        "level": "must",
+        "highlight": true
+      },
+      {
+        "day": "Saturday",
+        "operation": "Clan boss and coordinated rally",
+        "time": "20:00",
+        "attendance": "Recommended",
+        "level": "rec",
+        "highlight": false
+      },
+      {
+        "day": "Sunday",
+        "operation": "Internal tournament and rest",
+        "time": "19:00",
+        "attendance": "Optional",
+        "level": "free",
+        "highlight": false
+      }
+    ]
+  },
+  "board": {
+    "eyebrow": "05 · Board",
+    "title": "Latest announcements",
+    "text": "Anything important goes up here and on Discord at the same time. If it is not in both places, it is not official.",
+    "posts": [
+      {
+        "date": "06.09.2026",
+        "title": "War against [VRX] won",
+        "text": "We closed round 34 with 28 wins. Credit to the ones who logged in at dawn to finish the last outpost, without that the numbers did not add up."
+      },
+      {
+        "date": "02.09.2026",
+        "title": "New shelter requirement for recruits",
+        "text": "We are raising the minimum from level 20 to level 25. Recruits already inside keep their seat, nothing changes for them."
+      },
+      {
+        "date": "28.08.2026",
+        "title": "Non aggression pact with [KRN] and [S7]",
+        "text": "Agreed until the end of the season. Do not attack their bases or their gatherers, even unshielded. Any incident, tell an officer before you react."
+      }
+    ]
+  },
+  "join": {
+    "eyebrow": "06 · Enlist",
+    "title": "3 seats open",
+    "text": "Join the Discord, introduce yourself in the applications channel, and tell us your in game name, your shelter level, and when you usually play. An officer answers the same day.",
+    "findText": "Find us in game as",
+    "clanName": "[DsL] Demon Slayer League",
+    "serverText": "server",
+    "server": "770",
+    "buttonLabel": "Join the Discord",
+    "buttonUrl": "#alta"
+  },
+  "footer": {
+    "line1": "[DsL] Demon Slayer League · Server 770",
+    "line2": "Player clan of Last Z: Survival Shooter",
+    "draft": "Proposal mockup. Names, figures, and announcements are examples, and get replaced with the real ones before going live."
+  }
+}

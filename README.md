@@ -9,35 +9,32 @@ Sitio estático, sin base de datos y sin servidor. Se publica gratis, carga en m
 ## Qué hay dentro
 
 ```
-index.html              La página entera, con los textos en español
+content/languages.json  Los idiomas que ofrece la web
+content/site.es.json    Todo el contenido en español
+content/site.en.json    Lo mismo en inglés, y así uno por idioma
+index.html              El esqueleto de la página, casi vacío a propósito
 assets/css/style.css    Todo el diseño
-assets/js/i18n.js       Traducciones al resto de idiomas
-assets/js/app.js        Selector de idioma y contador de la guerra
-tools/build-preview.sh  Genera un fichero único para previsualizar
+assets/js/app.js        Pinta la web y lleva el contador
+tools/build-preview.sh  Genera un fichero único para enseñarla sin publicarla
 ```
+
+**Los textos no están en el código.** Viven en `content/`, un fichero por idioma, con la misma estructura en todos. Así se pueden editar sin tocar nada más, y así es como el panel de edición podrá modificarlos.
 
 ## Cómo cambiar los textos
 
-**El español** se edita directamente en `index.html`. Busca la frase que quieras cambiar y escríbela encima. No toques los atributos `data-t`, son las etiquetas que enlazan cada frase con sus traducciones.
+Cada fichero `content/site.XX.json` tiene las secciones de la web, con los mismos nombres que se ven en pantalla. Se edita el texto entre comillas y ya está.
 
-**El resto de idiomas** se editan en `assets/js/i18n.js`. Cada idioma es un bloque que empieza por su código, por ejemplo `en:{` para el inglés. Dentro, cada línea es una etiqueta y su texto.
+Cosas que se renumeran solas, así que no hay que tocarlas:
 
-Ejemplo, para cambiar el título de la primera norma:
+* Las normas se numeran solas. Si borras una, las siguientes se renumeran.
+* Los rangos, los días del calendario, y los anuncios funcionan igual. Añades o quitas elementos de la lista y la web se ajusta.
 
-```
-p1t:"Actividad diaria",        en index.html
-p1t:"Daily activity",          en assets/js/i18n.js, bloque en
-```
+Si un texto falta en un idioma, la web muestra el español en su lugar, nunca un hueco vacío.
 
-Si una frase no está traducida, la web muestra automáticamente la versión en español, así que nunca aparece un hueco vacío.
+## Cómo añadir un idioma
 
-## Cómo añadir un idioma nuevo
-
-1. En `assets/js/i18n.js`, copia un bloque de idioma completo y cámbiale el código de las dos primeras letras.
-2. Traduce los textos de dentro.
-3. En `index.html`, busca `<select id="lang">` y añade una línea más con el idioma nuevo.
-
-Si el idioma se escribe de derecha a izquierda, como el árabe, añade su código en `assets/js/app.js`, en la línea donde aparece `'ar'`. La web se da la vuelta sola.
+1. Copia `content/site.es.json` a `content/site.XX.json` y traduce los textos de dentro.
+2. Añade el idioma a `content/languages.json`, con su código, su nombre, y `ltr` o `rtl` según se escriba de izquierda a derecha o al revés.
 
 Si el idioma usa un alfabeto que no es latino, como el ruso, el chino, el japonés, el coreano, o el tailandés, hay que cargar una tipografía adicional en `index.html`. Avisa antes de traducir.
 
