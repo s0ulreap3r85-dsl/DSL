@@ -7,523 +7,503 @@
     "badge": "ENTWURF",
     "emblemAlt": "Wappen des DsL-Clans mit einem Adler und dem Motto Clan Server 770"
   },
-  "nav": [
-    {
-      "target": "clan",
-      "label": "Der Clan"
-    },
-    {
-      "target": "protocolos",
-      "label": "Anfänger"
-    },
-    {
-      "target": "mando",
-      "label": "Leitfäden"
-    },
-    {
-      "target": "operaciones",
-      "label": "Hauptquartier"
-    },
-    {
-      "target": "tablon",
-      "label": "Module"
-    },
-    {
-      "target": "alta",
-      "label": "Beitreten"
-    }
-  ],
-  "hero": {
+  "home": {
     "eyebrow": "Last Z: Survival Shooter · Server 770 · Staffel 1",
     "title": "Demon Slayer",
     "subtitle": "League",
-    "lead": "Die Leitfaden-Zentrale des Clans. Was man wissen muss, um auf 770 nicht verloren zu gehen, klar erklärt, in fünf Sprachen.",
-    "primaryButton": "Von vorne anfangen",
-    "secondaryButton": "Modul-Leitfaden",
+    "lead": "Wähle, wo du anfängst. Alles ist in deiner Sprache.",
+    "bannerAlt": "Wappen des Clans DsL Demon Slayer League, Server 770 von Last Z",
     "countdownLabel": "Nächster Clankrieg",
     "countdownNote": "Freitag 21:00, spanische Zeit",
     "daysSuffix": "T",
-    "bannerAlt": "Wappen des Clans DsL Demon Slayer League, Server 770 von Last Z"
+    "cards": [
+      {
+        "id": "normas",
+        "title": "Regeln",
+        "note": "Wie wir uns verhalten, drinnen und draußen"
+      },
+      {
+        "id": "anuncios",
+        "title": "Ankündigungen",
+        "note": "Das Neueste aus dem Clan"
+      },
+      {
+        "id": "basicas",
+        "title": "Grundlagen",
+        "note": "Für einen sauberen Start ab Tag eins"
+      },
+      {
+        "id": "avanzadas",
+        "title": "Fortgeschritten",
+        "note": "Systeme, die man beherrschen sollte"
+      },
+      {
+        "id": "info",
+        "title": "Wichtige Infos",
+        "note": "Tabellen und Werte zum Nachschlagen"
+      },
+      {
+        "id": "duelo",
+        "title": "Allianz-Duell",
+        "note": "Was an jedem Tag des Events zu tun ist"
+      }
+    ]
   },
-  "stats": [
+  "ui": {
+    "back": "Zurück",
+    "home": "Start",
+    "soon": "Inhalt kommt noch",
+    "soonText": "Dieser Bereich ist reserviert und bereit. Sobald FrosSit0 den Inhalt schickt, erscheint er hier in allen fünf Sprachen."
+  },
+  "pages": [
     {
-      "label": "Server",
-      "value": "770",
-      "note": ""
+      "id": "normas",
+      "title": "Regeln",
+      "intro": "",
+      "sections": [
+        {
+          "type": "soon"
+        }
+      ]
     },
     {
-      "label": "Staffel",
-      "value": "1",
-      "note": ""
+      "id": "anuncios",
+      "title": "Ankündigungen",
+      "intro": "",
+      "sections": [
+        {
+          "type": "soon"
+        }
+      ]
     },
     {
-      "label": "Leitfäden",
-      "value": "3",
-      "note": ""
+      "id": "basicas",
+      "title": "Grundlagen",
+      "intro": "Neun Dinge nach Wichtigkeit sortiert. Neu auf 770, fang hier an.",
+      "sections": [
+        {
+          "type": "list",
+          "title": "Anfänger-Leitfaden",
+          "intro": "",
+          "items": [
+            {
+              "title": "Dein Hauptquartier",
+              "text": "Deine Basis. Je höher, desto mehr wird freigeschaltet. Das HQ-Level erlaubt Helden fünf Level darüber, legt das Maximallevel aller anderen Gebäude fest, und erhöht das tägliche Plünderlimit bei anderen Basen. Priorität Nummer eins."
+            },
+            {
+              "title": "Ressourcen",
+              "text": "Nahrung, Holz und Metall entstehen von selbst oder kommen aus Minen und Überfällen. Wirklich schwierig sind Zenit, die Spezialwährung, und die Laborabzeichen. Auf die beiden gut aufpassen."
+            },
+            {
+              "title": "Lastwagen",
+              "text": "Schick nur die orangen los, die haben Spitzenqualität. Du verlierst keine Truppen, wenn sie geklaut werden, also kein echtes Risiko. Schick sie einzeln mit deiner besten Eskorte. Höchstens zweimal werden sie gestohlen."
+            },
+            {
+              "title": "Minen",
+              "text": "Werden außerhalb der Basis gefarmt. Im täglichen Event Minenschlacht suchst du Gold- und Kristallminen, und Kristall ist Heldenerfahrung. Du startest mit drei Angriffen pro Tag, später vier. Mit Diamanten kannst du neue Minen aufspüren. Tipp, schick nachts die zweite und dritte Armee zum Minen und halte die erste frei."
+            },
+            {
+              "title": "Helden",
+              "text": "Sie steigen mit Erfahrung, am besten in der Happy Hour. Waffen steigen mit anderen Materialwaffen, ohne Eisen auszugeben, mit Blick auf das wöchentliche VS. Drei Fraktionen laufen im Kreis, Schwingen der Dämmerung, Blutrose, und Wächter der Ordnung. Es beeinflusst nicht den Gegner, sondern den Bonus deiner eigenen Armee. Drei gleiche geben 105% Angriff, drei plus zwei gemischt 107%, vier gleiche 110%, und fünf gleiche 115%, der heilige Gral."
+            },
+            {
+              "title": "Truppen",
+              "text": "Werden in der Kaserne ausgebildet, greifen an und verteidigen. Jede Fraktion ist an einen Truppentyp gebunden, und diese Kaserne liegt hinter dem passenden Fraktionsgebäude, das zuerst freigeschaltet werden muss. Blutrose gibt Angreifer, Schwingen der Dämmerung geben Schützen, und Wächter der Ordnung geben Motorradfahrer."
+            },
+            {
+              "title": "Events",
+              "text": "Totale Vorbereitung, Zombie-Boss, Arena. Sie geben zusätzliche Belohnungen und sind nicht Pflicht, beschleunigen aber enorm. Der nächste Leitfaden geht sie einzeln durch."
+            },
+            {
+              "title": "HQ-Truhe",
+              "text": "Sie füllt sich von selbst für maximal acht Stunden. Danach sammelt sie nichts mehr, also nicht voll stehen lassen. Sie gibt Ressourcen und kostenlose Heldenwaffen. Das Einfachste, was man täglich abholen kann."
+            },
+            {
+              "title": "Profi-Tipps",
+              "text": "Allianzspenden, halte beim Spenden von Technologie den Knopf gedrückt, statt einzeln zu tippen, so bekommst du kritische Spenden mit x2, x5, x10, und einmal sogar x270. Zum Bewegen auf der Karte, wenn ein Helikopter erscheint, suche die nächste verbündete Basis, verstärke sie, und starte von dort, denn zwischen verbündeten Basen reist man dreimal schneller. Und zu den Dorfressourcen, Produktionsgebäude über Level 16 oder 17 zu bringen lohnt sich nicht, weil ein Angriff auf einen einzigen Gegner mehr bringt als vierundzwanzig Stunden Produktion."
+            }
+          ]
+        }
+      ]
     },
     {
-      "label": "Sprachen",
-      "value": "5",
-      "note": ""
+      "id": "avanzadas",
+      "title": "Fortgeschritten",
+      "intro": "Für Server 770, Staffel 1. Wir haben noch keine Ahnung, was das ist, aber wir wollen vorbereitet sein.",
+      "sections": [
+        {
+          "type": "list",
+          "title": "Leitfaden für die Fahrzeug-Module",
+          "intro": "",
+          "items": [
+            {
+              "title": "Zuerst, nichts verwechseln",
+              "text": "Wenn du schon weißt, dass Baupläne und Schraubenschlüssel die normalen Fahrzeug-Upgrades sind, perfekt, das gibt es weiterhin und ist nicht das, was hier erklärt wird. Module sind ein separates System."
+            },
+            {
+              "title": "Was ein Modul ist",
+              "text": "Denk an Fast and Furious. Du hast ein Auto, das schon gut ist, und tunst es weiter mit Motor, Rädern, Karosserie, Leistung. Module sind genau das, angewendet auf das Fahrzeug von Last Z. Es gibt sechs Typen, Radar, Räder, Panzerung, Solarbatterie, Nitro, und Artillerie. Du musst sie nicht auswendig lernen, verstehe nur, dass das Fahrzeug Module trägt, sie zusätzliche Werte geben, und man sie verbessern kann."
+            },
+            {
+              "title": "Woher sie kommen",
+              "text": "Lastwagen können Komponentenkisten transportieren. Im Allianz-Shop kostet die Zufällige Modulkiste Lv.1 4.500 Allianzmünzen und gibt ein zufälliges Außenmodul Lv.1. Sie tauchen auch bei Events, in Shops, bei Aktivitätsbelohnungen, und in verschiedenen Kisten auf. Es gibt keine einzige Quelle."
+            },
+            {
+              "title": "Was man damit macht",
+              "text": "Man kombiniert sie. Drei gleiche Module derselben Stufe ergeben eines der nächsten Stufe. Ein Modul Lv.2 braucht 3 von Lv.1, ein Lv.3 braucht 9, ein Lv.4 braucht 27, und ein Lv.5 braucht 81. Und das gilt nur für einen Typ. Bei mehreren Typen gleichzeitig versteht man, warum so viele Ressourcen nötig sind."
+            },
+            {
+              "title": "Und die Komponenten",
+              "text": "Das ist eine andere Ressource des Fahrzeugsystems. Sie kommen ebenfalls aus Kisten, Lastwagen, Events und Belohnungen. Modul und Komponente sind nicht dasselbe, wir behandeln sie als unterschiedliche Ressourcen, bis wir die komplette Oberfläche sehen."
+            },
+            {
+              "title": "Und die Chips",
+              "text": "Die gibt es, und sie sind auch keine Komponenten unter anderem Namen. Drei verschiedene Ressourcen, Module, Komponenten und Chips. Chips haben ihre eigene Progression, aber da 770 noch in Staffel 1 ist und uns die komplette Oberfläche fehlt, erfinden wir keine Erklärungen aus anderen Servern, die auf einer anderen Version laufen können. Sobald der Chip-Bildschirm da ist, erklären wir ihn."
+            },
+            {
+              "title": "Wann man das alles ausgibt",
+              "text": "Beim Event Alliance Duel gibt es den Tag des Modded Vehicle Boost, den berühmten Fahrzeug-Tag. An dem Tag bekommt man Punkte durch Komponentenkisten, Chipkisten, Baupläne, Schraubenschlüssel, und bestimmte Radar-Aufgaben. Die Kiste während des Events öffnen gibt die Ressource plus Punkte. An einem anderen Tag öffnen gibt nur die Ressource. Deshalb, hebe die Ressourcen für den Fahrzeug-Tag auf."
+            },
+            {
+              "title": "Was wir jetzt auf 770 machen",
+              "text": "Wir sind in Staffel 1, das System ist nicht komplett freigeschaltet, und das ist kein Problem. Die Aufgabe ist nicht, jetzt Experten zu sein, sondern das Zeug zu erkennen und nicht sinnlos auszugeben. Modulkiste, aufheben. Komponenten, aufheben. Chips, aufheben. Lastwagen mit passenden Kisten, nutzen. Modulkiste im Shop, abwägen. Baupläne und Schraubenschlüssel, für den Fahrzeug-Tag aufheben. Etwas Neues, das du nicht kennst, nicht anfassen."
+            },
+            {
+              "title": "Die wichtigste Regel",
+              "text": "Öffnet nichts einfach so. Bei einer neuen Kiste fragt zuerst, was ist das, wofür ist es, zählt es für ein Event, brauche ich es jetzt, und lohnt es sich aufzuheben. Wenn ihr es nicht wisst, hebt es auf, im Inventar läuft nichts ab."
+            },
+            {
+              "title": "Zusammenfassung für das verlorenste Clanmitglied",
+              "text": "Module sind Teile, um ein bereits fertiges Fahrzeug zu tunen. Mehrere Typen, jeder mit eigenen Boni. Man bekommt sie über Lastwagen, Kisten, Shops, Events und Belohnungen. Man verbessert sie, indem man gleiche derselben Stufe kombiniert. Komponenten sind eine weitere Ressource, Chips noch eine. Das alles ist unabhängig von den normalen Upgrades mit Bauplänen und Schraubenschlüsseln. Es gibt einen bestimmten Alliance-Duel-Tag fürs Fahrzeug, also aufheben. Wir müssen es nicht als Erste verstehen, wir müssen die sein, die sagen, das hatten wir seit Staffel 1 gespart."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "title": "Wichtige Infos",
+      "intro": "Alles auf dieser Seite haben Clanmitglieder geschrieben, die auf 770 spielen. Was wir noch nicht wissen, sagen wir offen, statt es zu erfinden.",
+      "sections": [
+        {
+          "type": "rank",
+          "title": "Die fünf Gebäude, die beim Ausbau die meiste Macht geben",
+          "intro": "Sortiert nach der Macht, die sie pro Stufe hinzufügen.",
+          "items": [
+            {
+              "title": "Rathaus (HQ)",
+              "text": ""
+            },
+            {
+              "title": "Labor",
+              "text": ""
+            },
+            {
+              "title": "Formationen",
+              "text": ""
+            },
+            {
+              "title": "Allianz-Zentrum",
+              "text": ""
+            },
+            {
+              "title": "Produktionszentrum",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "Was Macht bedeutet",
+          "intro": "Die Gesamtmacht kommt aus fünf getrennten Quellen. Gut zu wissen, welche du steigerst.",
+          "items": [
+            {
+              "title": "Gebäudemacht",
+              "text": ""
+            },
+            {
+              "title": "Technologiemacht",
+              "text": ""
+            },
+            {
+              "title": "Truppenmacht",
+              "text": ""
+            },
+            {
+              "title": "Heldenmacht",
+              "text": ""
+            },
+            {
+              "title": "Macht des modifizierten Fahrzeugs",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Freischaltbedingungen fürs Hauptquartier",
+          "intro": "Die zwei Gebäude, die jedes Level freischalten, von 1 bis 30.",
+          "columns": [
+            "Zum Freischalten",
+            "Bedingung 1",
+            "Bedingung 2"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Hauptquartier Level 1",
+                "—",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 2",
+                "—",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 3",
+                "—",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 4",
+                "Stadtmauer",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 5",
+                "Radar",
+                "Angriffslager"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 6",
+                "Militärzentrum",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 7",
+                "Allianz-Zentrum",
+                "Trainingsgelände"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 8",
+                "Labor",
+                "Angriffslager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 9",
+                "Labor",
+                "Notkrankenhaus"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 10",
+                "Labor",
+                "Schützenlager"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 11",
+                "Labor",
+                "Reiterlager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 12",
+                "Labor",
+                "Stadtmauer"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 13",
+                "Labor",
+                "Allianz-Zentrum"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 14",
+                "Labor",
+                "Angriffslager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 15",
+                "Labor",
+                "Schützenlager"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 16",
+                "Labor",
+                "Reiterlager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 17",
+                "Labor",
+                "Stadtmauer"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 18",
+                "Labor",
+                "Allianz-Zentrum"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 19",
+                "Labor",
+                "Angriffslager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 20",
+                "Labor",
+                "Schützenlager"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 21",
+                "Labor",
+                "Reiterlager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 22",
+                "Labor",
+                "Stadtmauer"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 23",
+                "Labor",
+                "Allianz-Zentrum"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 24",
+                "Labor",
+                "Angriffslager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 25",
+                "Labor",
+                "Schützenlager"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 26",
+                "Labor",
+                "Reiterlager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 27",
+                "Labor",
+                "Stadtmauer"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 28",
+                "Labor",
+                "Allianz-Zentrum"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 29",
+                "Labor",
+                "Angriffslager"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Hauptquartier Level 30",
+                "Labor",
+                "Schützenlager"
+              ],
+              "highlight": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duelo",
+      "title": "Allianz-Duell",
+      "intro": "",
+      "sections": [
+        {
+          "type": "soon"
+        }
+      ]
     }
   ],
-  "about": {
-    "eyebrow": "01 · Was es hier gibt",
-    "title": "Clan-Leitfäden, sonst nichts",
-    "text": "Alles auf dieser Seite haben Clanmitglieder geschrieben, die auf 770 spielen. Was wir noch nicht wissen, sagen wir offen, statt es zu erfinden.",
-    "imageAlt": "Clanmitglied erklärt an der Tafel die Arten von Macht",
-    "requirements": [
-      {
-        "key": "Anfänger-Leitfaden",
-        "value": "9 Punkte",
-        "note": "Die Grundlagen, für einen sauberen Start."
-      },
-      {
-        "key": "Modul-Leitfaden",
-        "value": "10 Punkte",
-        "note": "Das neue Fahrzeugsystem."
-      },
-      {
-        "key": "Hauptquartier",
-        "value": "30 Level",
-        "note": "Was jedes Level zum Freischalten braucht."
-      },
-      {
-        "key": "Geschrieben von",
-        "value": "FrosSit0",
-        "note": "Clanmitglied, Server 770."
-      }
-    ]
-  },
-  "rules": {
-    "eyebrow": "02 · Anfänger-Leitfaden",
-    "title": "Was uns am ersten Tag niemand gesagt hat",
-    "text": "Neun Dinge nach Wichtigkeit sortiert. Neu auf 770, fang hier an.",
-    "imageAlt": "Clanmitglied zeigt auf die Clanregeln",
-    "items": [
-      {
-        "title": "Dein Hauptquartier",
-        "text": "Deine Basis. Je höher, desto mehr wird freigeschaltet. Das HQ-Level erlaubt Helden fünf Level darüber, legt das Maximallevel aller anderen Gebäude fest, und erhöht das tägliche Plünderlimit bei anderen Basen. Priorität Nummer eins."
-      },
-      {
-        "title": "Ressourcen",
-        "text": "Nahrung, Holz und Metall entstehen von selbst oder kommen aus Minen und Überfällen. Wirklich schwierig sind Zenit, die Spezialwährung, und die Laborabzeichen. Auf die beiden gut aufpassen."
-      },
-      {
-        "title": "Lastwagen",
-        "text": "Schick nur die orangen los, die haben Spitzenqualität. Du verlierst keine Truppen, wenn sie geklaut werden, also kein echtes Risiko. Schick sie einzeln mit deiner besten Eskorte. Höchstens zweimal werden sie gestohlen."
-      },
-      {
-        "title": "Minen",
-        "text": "Werden außerhalb der Basis gefarmt. Im täglichen Event Minenschlacht suchst du Gold- und Kristallminen, und Kristall ist Heldenerfahrung. Du startest mit drei Angriffen pro Tag, später vier. Mit Diamanten kannst du neue Minen aufspüren. Tipp, schick nachts die zweite und dritte Armee zum Minen und halte die erste frei."
-      },
-      {
-        "title": "Helden",
-        "text": "Sie steigen mit Erfahrung, am besten in der Happy Hour. Waffen steigen mit anderen Materialwaffen, ohne Eisen auszugeben, mit Blick auf das wöchentliche VS. Drei Fraktionen laufen im Kreis, Schwingen der Dämmerung, Blutrose, und Wächter der Ordnung. Es beeinflusst nicht den Gegner, sondern den Bonus deiner eigenen Armee. Drei gleiche geben 105% Angriff, drei plus zwei gemischt 107%, vier gleiche 110%, und fünf gleiche 115%, der heilige Gral."
-      },
-      {
-        "title": "Truppen",
-        "text": "Werden in der Kaserne ausgebildet, greifen an und verteidigen. Jede Fraktion ist an einen Truppentyp gebunden, und diese Kaserne liegt hinter dem passenden Fraktionsgebäude, das zuerst freigeschaltet werden muss. Blutrose gibt Angreifer, Schwingen der Dämmerung geben Schützen, und Wächter der Ordnung geben Motorradfahrer."
-      },
-      {
-        "title": "Events",
-        "text": "Totale Vorbereitung, Zombie-Boss, Arena. Sie geben zusätzliche Belohnungen und sind nicht Pflicht, beschleunigen aber enorm. Der nächste Leitfaden geht sie einzeln durch."
-      },
-      {
-        "title": "HQ-Truhe",
-        "text": "Sie füllt sich von selbst für maximal acht Stunden. Danach sammelt sie nichts mehr, also nicht voll stehen lassen. Sie gibt Ressourcen und kostenlose Heldenwaffen. Das Einfachste, was man täglich abholen kann."
-      },
-      {
-        "title": "Profi-Tipps",
-        "text": "Allianzspenden, halte beim Spenden von Technologie den Knopf gedrückt, statt einzeln zu tippen, so bekommst du kritische Spenden mit x2, x5, x10, und einmal sogar x270. Zum Bewegen auf der Karte, wenn ein Helikopter erscheint, suche die nächste verbündete Basis, verstärke sie, und starte von dort, denn zwischen verbündeten Basen reist man dreimal schneller. Und zu den Dorfressourcen, Produktionsgebäude über Level 16 oder 17 zu bringen lohnt sich nicht, weil ein Angriff auf einen einzigen Gegner mehr bringt als vierundzwanzig Stunden Produktion."
-      }
-    ]
-  },
-  "command": {
-    "eyebrow": "03 · Bibliothek",
-    "title": "Die Leitfäden, und in welchen Sprachen",
-    "text": "Jeden Leitfaden schreibt jemand aus dem Clan, übersetzt in die Sprachen, die wir intern sprechen. Fehlt deine, sag es im Discord.",
-    "imageAlt": "Strategiehandbuch des Clans mit Rängen und Aufgaben",
-    "ranks": [
-      {
-        "title": "Anfänger",
-        "count": "9",
-        "members": [
-          "Español",
-          "English",
-          "العربية"
-        ],
-        "note": "HQ, Ressourcen, Lastwagen, Minen, Helden, Truppen, Events, Truhe, Tipps.",
-        "highlight": true
-      },
-      {
-        "title": "Fahrzeug-Module",
-        "count": "10",
-        "members": [
-          "Español",
-          "English",
-          "Français",
-          "Deutsch",
-          "العربية"
-        ],
-        "note": "Das neue Fahrzeugsystem, was man aufhebt, und wann man es ausgibt.",
-        "highlight": false
-      },
-      {
-        "title": "Hauptquartier",
-        "count": "30",
-        "members": [
-          "Español",
-          "English",
-          "Français",
-          "Deutsch"
-        ],
-        "note": "Welche zwei Gebäude jedes Level freischalten.",
-        "highlight": false
-      },
-      {
-        "title": "Was Macht bedeutet",
-        "count": "5",
-        "members": [
-          "Español",
-          "English"
-        ],
-        "note": "Gebäude, Technologie, Truppen, Helden, und modifiziertes Fahrzeug.",
-        "highlight": false
-      },
-      {
-        "title": "Gebäude mit der meisten Macht",
-        "count": "5",
-        "members": [
-          "Español",
-          "English",
-          "العربية"
-        ],
-        "note": "Rathaus, Labor, Formationen, Allianz-Zentrum, und Produktion.",
-        "highlight": false
-      },
-      {
-        "title": "In Arbeit",
-        "count": "—",
-        "members": [
-          "Events",
-          "Fraktionen"
-        ],
-        "note": "Die nächsten Clan-Leitfäden werden gerade geschrieben.",
-        "highlight": false
-      }
-    ]
-  },
-  "schedule": {
-    "eyebrow": "04 · Nachschlagen",
-    "title": "Freischaltbedingungen fürs Hauptquartier",
-    "text": "Die zwei Gebäude, die jedes Hauptquartier-Level freischalten, von 1 bis 30.",
-    "imageAlt": "Kriegsvorbereitungen, Fahrzeuge, Truppen und Bewaffnung des Clans",
-    "columns": [
-      "Zum Freischalten",
-      "Bedingung 1",
-      "Bedingung 2"
-    ],
-    "rows": [
-      {
-        "cells": [
-          "Hauptquartier Level 1",
-          "—",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 2",
-          "—",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 3",
-          "—",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 4",
-          "Stadtmauer",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 5",
-          "Radar",
-          "Angriffslager"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 6",
-          "Militärzentrum",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 7",
-          "Allianz-Zentrum",
-          "Trainingsgelände"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 8",
-          "Labor",
-          "Angriffslager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 9",
-          "Labor",
-          "Notkrankenhaus"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 10",
-          "Labor",
-          "Schützenlager"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 11",
-          "Labor",
-          "Reiterlager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 12",
-          "Labor",
-          "Stadtmauer"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 13",
-          "Labor",
-          "Allianz-Zentrum"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 14",
-          "Labor",
-          "Angriffslager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 15",
-          "Labor",
-          "Schützenlager"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 16",
-          "Labor",
-          "Reiterlager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 17",
-          "Labor",
-          "Stadtmauer"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 18",
-          "Labor",
-          "Allianz-Zentrum"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 19",
-          "Labor",
-          "Angriffslager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 20",
-          "Labor",
-          "Schützenlager"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 21",
-          "Labor",
-          "Reiterlager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 22",
-          "Labor",
-          "Stadtmauer"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 23",
-          "Labor",
-          "Allianz-Zentrum"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 24",
-          "Labor",
-          "Angriffslager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 25",
-          "Labor",
-          "Schützenlager"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 26",
-          "Labor",
-          "Reiterlager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 27",
-          "Labor",
-          "Stadtmauer"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 28",
-          "Labor",
-          "Allianz-Zentrum"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 29",
-          "Labor",
-          "Angriffslager"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "Hauptquartier Level 30",
-          "Labor",
-          "Schützenlager"
-        ],
-        "highlight": true
-      }
-    ]
-  },
-  "board": {
-    "eyebrow": "05 · Modul-Leitfaden",
-    "title": "Die Fahrzeug-Module, ohne Rätsel",
-    "text": "Für Server 770, Staffel 1. Wir haben noch keine Ahnung, was das ist, aber wir wollen vorbereitet sein.",
-    "posts": [
-      {
-        "date": "01",
-        "title": "Zuerst, nichts verwechseln",
-        "text": "Wenn du schon weißt, dass Baupläne und Schraubenschlüssel die normalen Fahrzeug-Upgrades sind, perfekt, das gibt es weiterhin und ist nicht das, was hier erklärt wird. Module sind ein separates System."
-      },
-      {
-        "date": "02",
-        "title": "Was ein Modul ist",
-        "text": "Denk an Fast and Furious. Du hast ein Auto, das schon gut ist, und tunst es weiter mit Motor, Rädern, Karosserie, Leistung. Module sind genau das, angewendet auf das Fahrzeug von Last Z. Es gibt sechs Typen, Radar, Räder, Panzerung, Solarbatterie, Nitro, und Artillerie. Du musst sie nicht auswendig lernen, verstehe nur, dass das Fahrzeug Module trägt, sie zusätzliche Werte geben, und man sie verbessern kann."
-      },
-      {
-        "date": "03",
-        "title": "Woher sie kommen",
-        "text": "Lastwagen können Komponentenkisten transportieren. Im Allianz-Shop kostet die Zufällige Modulkiste Lv.1 4.500 Allianzmünzen und gibt ein zufälliges Außenmodul Lv.1. Sie tauchen auch bei Events, in Shops, bei Aktivitätsbelohnungen, und in verschiedenen Kisten auf. Es gibt keine einzige Quelle."
-      },
-      {
-        "date": "04",
-        "title": "Was man damit macht",
-        "text": "Man kombiniert sie. Drei gleiche Module derselben Stufe ergeben eines der nächsten Stufe. Ein Modul Lv.2 braucht 3 von Lv.1, ein Lv.3 braucht 9, ein Lv.4 braucht 27, und ein Lv.5 braucht 81. Und das gilt nur für einen Typ. Bei mehreren Typen gleichzeitig versteht man, warum so viele Ressourcen nötig sind."
-      },
-      {
-        "date": "05",
-        "title": "Und die Komponenten",
-        "text": "Das ist eine andere Ressource des Fahrzeugsystems. Sie kommen ebenfalls aus Kisten, Lastwagen, Events und Belohnungen. Modul und Komponente sind nicht dasselbe, wir behandeln sie als unterschiedliche Ressourcen, bis wir die komplette Oberfläche sehen."
-      },
-      {
-        "date": "06",
-        "title": "Und die Chips",
-        "text": "Die gibt es, und sie sind auch keine Komponenten unter anderem Namen. Drei verschiedene Ressourcen, Module, Komponenten und Chips. Chips haben ihre eigene Progression, aber da 770 noch in Staffel 1 ist und uns die komplette Oberfläche fehlt, erfinden wir keine Erklärungen aus anderen Servern, die auf einer anderen Version laufen können. Sobald der Chip-Bildschirm da ist, erklären wir ihn."
-      },
-      {
-        "date": "07",
-        "title": "Wann man das alles ausgibt",
-        "text": "Beim Event Alliance Duel gibt es den Tag des Modded Vehicle Boost, den berühmten Fahrzeug-Tag. An dem Tag bekommt man Punkte durch Komponentenkisten, Chipkisten, Baupläne, Schraubenschlüssel, und bestimmte Radar-Aufgaben. Die Kiste während des Events öffnen gibt die Ressource plus Punkte. An einem anderen Tag öffnen gibt nur die Ressource. Deshalb, hebe die Ressourcen für den Fahrzeug-Tag auf."
-      },
-      {
-        "date": "08",
-        "title": "Was wir jetzt auf 770 machen",
-        "text": "Wir sind in Staffel 1, das System ist nicht komplett freigeschaltet, und das ist kein Problem. Die Aufgabe ist nicht, jetzt Experten zu sein, sondern das Zeug zu erkennen und nicht sinnlos auszugeben. Modulkiste, aufheben. Komponenten, aufheben. Chips, aufheben. Lastwagen mit passenden Kisten, nutzen. Modulkiste im Shop, abwägen. Baupläne und Schraubenschlüssel, für den Fahrzeug-Tag aufheben. Etwas Neues, das du nicht kennst, nicht anfassen."
-      },
-      {
-        "date": "09",
-        "title": "Die wichtigste Regel",
-        "text": "Öffnet nichts einfach so. Bei einer neuen Kiste fragt zuerst, was ist das, wofür ist es, zählt es für ein Event, brauche ich es jetzt, und lohnt es sich aufzuheben. Wenn ihr es nicht wisst, hebt es auf, im Inventar läuft nichts ab."
-      },
-      {
-        "date": "10",
-        "title": "Zusammenfassung für das verlorenste Clanmitglied",
-        "text": "Module sind Teile, um ein bereits fertiges Fahrzeug zu tunen. Mehrere Typen, jeder mit eigenen Boni. Man bekommt sie über Lastwagen, Kisten, Shops, Events und Belohnungen. Man verbessert sie, indem man gleiche derselben Stufe kombiniert. Komponenten sind eine weitere Ressource, Chips noch eine. Das alles ist unabhängig von den normalen Upgrades mit Bauplänen und Schraubenschlüsseln. Es gibt einen bestimmten Alliance-Duel-Tag fürs Fahrzeug, also aufheben. Wir müssen es nicht als Erste verstehen, wir müssen die sein, die sagen, das hatten wir seit Staffel 1 gespart."
-      }
-    ]
-  },
   "join": {
     "eyebrow": "06 · Beitreten",
     "title": "Komm in den Clan",
@@ -537,7 +517,7 @@
   },
   "footer": {
     "line1": "[DsL] Demon Slayer League · Server 770",
-    "line2": "Clan-Leitfäden für Last Z: Survival Shooter · by FrosSit0",
+    "line2": "Clan-Leitfäden · by FrosSit0",
     "draft": "Entwurf zur Designauswahl. Die Leitfäden sind echt, die Zahlen im Zähler und im Kopfbereich noch nicht."
   }
 }

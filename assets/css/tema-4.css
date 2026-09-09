@@ -1,0 +1,23 @@
+/* Expediente: papel hueso, tipografia de maquina, sello rojo. */
+:root{
+  --bg:#E9E3D5;--surface:#F1ECE0;--surface2:#DFD8C7;--line:#B9B09B;
+  --fg:#17140F;--muted:#5B5445;--acc:#A8271C;--warn:#A8271C;
+  --head-bg:#E9E3D5;--head-fg:#17140F;--head-muted:#5B5445;--head-line:#17140F;
+  --font-display:"Zilla Slab","Noto Naskh Arabic",Georgia,serif;
+  --font-body:"Zilla Slab","Noto Naskh Arabic",Georgia,serif;
+  --font-mono:"Courier Prime","Noto Naskh Arabic",Courier,monospace;
+  --radius:0;--radius-in:0;--bw:1px;--tt:none;--ls:0;--fw:700;
+  --img-filter:grayscale(.9) sepia(.32) contrast(1.06);
+  --war-bg:transparent;--key-bg:rgba(168,39,28,.07);
+  --card-pad:8px;--card-in:8px;--card-lift:translateY(-2px);
+  --shadow:0 2px 0 rgba(23,20,15,.16);
+}
+.site{border-bottom-width:2px}
+.card__frame{background:#FFFDF8;padding:6px;border:1px solid var(--line)}
+.page__frame{background:#FFFDF8;padding:8px;transform:rotate(-1.2deg)}
+.war{border:3px double var(--acc);transform:rotate(-.6deg);display:inline-flex}
+.war__time{color:var(--acc)}
+.block__t{border-bottom:1px solid var(--line);padding-bottom:8px}
+.item::before{color:var(--acc)}
+td:first-child{font-weight:700}
+@media(prefers-reduced-motion:reduce){.page__frame,.war{transform:none}}

@@ -35,10 +35,12 @@
     "w": 800,
     "h": 800
   },
-  "secciones": {
-    "clan": "poder",
-    "protocolos": "normas",
-    "mando": "academia",
-    "operaciones": "guerra"
+  "tarjetas": {
+    "normas": "normas",
+    "anuncios": "anuncios",
+    "basicas": "poder",
+    "avanzadas": "academia",
+    "info": "info",
+    "duelo": "guerra"
   }
 }

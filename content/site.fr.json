@@ -7,523 +7,503 @@
     "badge": "BROUILLON",
     "emblemAlt": "Emblème du clan DsL avec un aigle et la devise Clan Server 770"
   },
-  "nav": [
-    {
-      "target": "clan",
-      "label": "Le clan"
-    },
-    {
-      "target": "protocolos",
-      "label": "Débutants"
-    },
-    {
-      "target": "mando",
-      "label": "Guides"
-    },
-    {
-      "target": "operaciones",
-      "label": "QG"
-    },
-    {
-      "target": "tablon",
-      "label": "Modules"
-    },
-    {
-      "target": "alta",
-      "label": "Rejoindre"
-    }
-  ],
-  "hero": {
+  "home": {
     "eyebrow": "Last Z: Survival Shooter · Serveur 770 · Saison 1",
     "title": "Demon Slayer",
     "subtitle": "League",
-    "lead": "Le centre de guides du clan. Ce qu'il faut savoir pour ne pas se perdre sur le 770, expliqué sans détour, en cinq langues.",
-    "primaryButton": "Commencer par le début",
-    "secondaryButton": "Guide des modules",
+    "lead": "Choisis par où commencer. Tout est dans ta langue.",
+    "bannerAlt": "Écusson du clan DsL Demon Slayer League, serveur 770 de Last Z",
     "countdownLabel": "Prochaine guerre de clans",
     "countdownNote": "Vendredi 21:00, heure espagnole",
     "daysSuffix": "j",
-    "bannerAlt": "Écusson du clan DsL Demon Slayer League, serveur 770 de Last Z"
+    "cards": [
+      {
+        "id": "normas",
+        "title": "Règles",
+        "note": "Comment on se comporte, dedans et dehors"
+      },
+      {
+        "id": "anuncios",
+        "title": "Annonces",
+        "note": "Les dernières nouvelles du clan"
+      },
+      {
+        "id": "basicas",
+        "title": "Guides de base",
+        "note": "Pour bien démarrer dès le premier jour"
+      },
+      {
+        "id": "avanzadas",
+        "title": "Guides avancés",
+        "note": "Les systèmes à maîtriser"
+      },
+      {
+        "id": "info",
+        "title": "Infos importantes",
+        "note": "Tableaux et données consultés souvent"
+      },
+      {
+        "id": "duelo",
+        "title": "Duel d'alliances",
+        "note": "Quoi faire chaque jour de l'événement"
+      }
+    ]
   },
-  "stats": [
+  "ui": {
+    "back": "Retour",
+    "home": "Accueil",
+    "soon": "Contenu à venir",
+    "soonText": "Cette section est réservée et prête à remplir. Dès que FrosSit0 envoie le contenu, il apparaît ici dans les cinq langues."
+  },
+  "pages": [
     {
-      "label": "Serveur",
-      "value": "770",
-      "note": ""
+      "id": "normas",
+      "title": "Règles",
+      "intro": "",
+      "sections": [
+        {
+          "type": "soon"
+        }
+      ]
     },
     {
-      "label": "Saison",
-      "value": "1",
-      "note": ""
+      "id": "anuncios",
+      "title": "Annonces",
+      "intro": "",
+      "sections": [
+        {
+          "type": "soon"
+        }
+      ]
     },
     {
-      "label": "Guides",
-      "value": "3",
-      "note": ""
+      "id": "basicas",
+      "title": "Guides de base",
+      "intro": "Neuf choses par ordre d'importance. Nouveau sur le 770, commence ici.",
+      "sections": [
+        {
+          "type": "list",
+          "title": "Guide débutants",
+          "intro": "",
+          "items": [
+            {
+              "title": "Ton QG",
+              "text": "Ta base. Plus il est haut, plus tu débloques. Le niveau de QG te permet de monter les héros cinq niveaux au-dessus, fixe le niveau maximum de tous les autres bâtiments, et augmente la limite quotidienne de pillage sur les autres bases. Priorité numéro un."
+            },
+            {
+              "title": "Ressources",
+              "text": "Nourriture, bois et métal se produisent seuls ou viennent des mines et des pillages. Les vraies difficultés sont le Zénith, la monnaie spéciale, et les insignes de laboratoire. Prends soin de ces deux-là."
+            },
+            {
+              "title": "Camions",
+              "text": "N'envoie que les oranges, la meilleure qualité. Tu ne perds pas de troupes s'ils se font voler, donc aucun risque réel. Envoie-les un par un avec ta meilleure armée d'escorte. Ils peuvent être volés deux fois au maximum."
+            },
+            {
+              "title": "Mines",
+              "text": "Ça se farme hors de ta base. Dans l'événement quotidien Bataille des Mines tu cherches des mines d'Or et de Cristal, et le Cristal c'est de l'expérience pour les héros. Tu commences avec trois attaques par jour, puis quatre. Tu peux dépenser des diamants pour en détecter de nouvelles. Astuce, la nuit envoie miner la deuxième et la troisième armée, et garde la première libre."
+            },
+            {
+              "title": "Héros",
+              "text": "Ils montent avec l'expérience, de préférence en happy hour. Les armes se montent avec d'autres armes de matériau, sans dépenser de fer, en pensant au VS hebdomadaire. Trois factions tournent en cycle, Ailes de l'Aube, Rose de Sang, et Gardiens de l'Ordre. Ça n'affecte pas l'adversaire, ça affecte le bonus de ta propre armée. Trois de la même faction donnent 105% d'attaque, trois plus deux mixtes 107%, quatre identiques 110%, et cinq identiques 115%, le graal."
+            },
+            {
+              "title": "Troupes",
+              "text": "Entraînées à la caserne, elles attaquent et défendent. Chaque faction est liée à un type de troupe, et cette caserne se trouve derrière le bâtiment de faction correspondant, qu'il faut débloquer d'abord. Rose de Sang donne des Assaillants, Ailes de l'Aube des Tireurs, et Gardiens de l'Ordre des Motards."
+            },
+            {
+              "title": "Événements",
+              "text": "Préparation Totale, Boss Zombie, Arène. Ils donnent des récompenses en plus et ne sont pas obligatoires, mais ils accélèrent beaucoup. Le prochain guide les passe un par un."
+            },
+            {
+              "title": "Coffre de QG",
+              "text": "Il se remplit tout seul jusqu'à huit heures maximum. Après il n'accumule plus rien, donc ne le laisse pas plein. Il donne des ressources et des armes de héros gratuites. Le plus facile à récupérer chaque jour."
+            },
+            {
+              "title": "Astuces de vétéran",
+              "text": "Dons d'alliance, quand tu donnes de la technologie garde le bouton appuyé au lieu de cliquer un par un, c'est comme ça qu'on obtient des critiques x2, x5, x10, et une fois même x270. Pour te déplacer, quand un hélicoptère apparaît cherche la base alliée la plus proche, renforce-la, et pars de là, car on voyage trois fois plus vite entre bases alliées. Et pour les ressources du village, monter les bâtiments de production au-dessus du niveau 16 ou 17 ne vaut pas le coup, car attaquer un seul joueur ennemi rapporte plus que vingt-quatre heures de production."
+            }
+          ]
+        }
+      ]
     },
     {
-      "label": "Langues",
-      "value": "5",
-      "note": ""
+      "id": "avanzadas",
+      "title": "Guides avancés",
+      "intro": "Pour le serveur 770, saison 1. On ne sait pas encore ce que c'est, mais on veut être prêts.",
+      "sections": [
+        {
+          "type": "list",
+          "title": "Guide des modules du véhicule",
+          "intro": "",
+          "items": [
+            {
+              "title": "D'abord, ne mélangeons pas tout",
+              "text": "Si tu sais déjà que plans et clés à molette sont les améliorations normales du véhicule, parfait, ça existe toujours et ce n'est pas ce qu'on explique ici. Les modules sont un système à part."
+            },
+            {
+              "title": "C'est quoi un module",
+              "text": "Pense à Fast and Furious. Tu prends une voiture déjà bien et tu la tunes encore plus avec moteur, roues, carrosserie, performance. Les modules, c'est ça appliqué au véhicule de Last Z. Il y a six types, Radar, Roues, Blindage, Batterie Solaire, Nitro, et Artillerie. Pas besoin de les mémoriser, retiens juste que le véhicule porte des modules, qu'ils donnent des statistiques en plus, et qu'on peut les améliorer."
+            },
+            {
+              "title": "D'où ils viennent",
+              "text": "Les camions peuvent transporter des coffres de composants. À la boutique d'alliance, la Caisse Aléatoire de Modules Nv.1 coûte 4 500 pièces d'alliance et donne un module extérieur Nv.1 au hasard. Ils apparaissent aussi dans des événements, boutiques, récompenses d'activités, et différents coffres. Il n'y a pas une seule source."
+            },
+            {
+              "title": "Qu'en faire",
+              "text": "On les combine. Trois modules identiques du même niveau donnent un module du niveau suivant. Un module Nv.2 demande 3 Nv.1, un Nv.3 en demande 9, un Nv.4 en demande 27, et un Nv.5 en demande 81. Et ça, c'est pour un seul type. Avec plusieurs types à la fois, on comprend pourquoi il faut autant de ressources."
+            },
+            {
+              "title": "Et les composants",
+              "text": "C'est une autre ressource du système du véhicule. Ils viennent aussi des coffres, camions, événements et récompenses. Module et composant ne sont pas la même chose, on les traite comme des ressources différentes jusqu'à voir l'interface complète."
+            },
+            {
+              "title": "Et les chips",
+              "text": "Ça existe, et ce ne sont pas non plus des composants sous un autre nom. Trois ressources distinctes, modules, composants et chips. Les chips ont leur propre progression, mais comme le 770 est encore en saison 1 et qu'on n'a pas l'interface complète, on n'invente pas d'explications tirées d'autres serveurs qui peuvent être sur une autre version. Quand l'écran des chips arrivera, on expliquera."
+            },
+            {
+              "title": "Quand dépenser tout ça",
+              "text": "Dans l'événement Alliance Duel il y a le jour du Modded Vehicle Boost, le fameux jour du véhicule. Ce jour-là on gagne des points en utilisant coffres de composants, coffres de chips, plans, clés à molette, et certaines tâches radar. Ouvrir le coffre pendant l'événement donne la ressource et des points. L'ouvrir un autre jour ne donne que la ressource. Donc garde tes ressources pour le jour du véhicule."
+            },
+            {
+              "title": "Ce qu'on fait sur le 770 maintenant",
+              "text": "On est en saison 1, le système n'est pas totalement débloqué, et ce n'est pas grave. La mission n'est pas d'être experts, c'est de savoir les reconnaître et ne pas les gaspiller. Caisse de module, garder. Composants, garder. Chips, garder. Camion avec coffres liés, en profiter. Caisse en boutique, évaluer. Plans et clés à molette, garder pour le jour du véhicule. Un truc nouveau que tu ne connais pas, ne pas toucher."
+            },
+            {
+              "title": "La règle la plus importante",
+              "text": "N'ouvrez rien juste comme ça. Face à un nouveau coffre, demandez-vous d'abord ce que c'est, à quoi ça sert, si ça compte pour un événement, si vous en avez besoin maintenant, et si ça vaut le coup de le garder. Si vous ne savez pas, gardez-le, ça ne périme pas dans l'inventaire."
+            },
+            {
+              "title": "Résumé pour le plus perdu du clan",
+              "text": "Les modules sont des pièces pour tuner un véhicule déjà monté. Plusieurs types, chacun avec ses bonus. On les obtient via camions, coffres, boutiques, événements et récompenses. On les améliore en combinant des identiques du même niveau. Les composants sont une autre ressource, les chips encore une autre. Tout ça est indépendant des améliorations normales de plans et clés. Il y a un jour d'Alliance Duel dédié au véhicule, donc il faut garder. On n'a pas besoin d'être les premiers à comprendre, on a besoin d'être ceux qui diront, on avait déjà tout gardé depuis la saison 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "title": "Infos importantes",
+      "intro": "Tout ce site a été écrit par des membres du clan qui jouent sur le 770. Si on ne sait pas encore quelque chose, on le dit, on ne l'invente pas.",
+      "sections": [
+        {
+          "type": "rank",
+          "title": "Les cinq bâtiments qui donnent le plus de puissance",
+          "intro": "Classés par la puissance ajoutée à chaque niveau.",
+          "items": [
+            {
+              "title": "Mairie (QG)",
+              "text": ""
+            },
+            {
+              "title": "Laboratoire",
+              "text": ""
+            },
+            {
+              "title": "Formations",
+              "text": ""
+            },
+            {
+              "title": "Centre d'Alliance",
+              "text": ""
+            },
+            {
+              "title": "Centre de Production",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "cards",
+          "title": "Qu'est-ce que la puissance",
+          "intro": "La puissance totale vient de cinq sources distinctes. Autant savoir laquelle tu montes.",
+          "items": [
+            {
+              "title": "Puissance des bâtiments",
+              "text": ""
+            },
+            {
+              "title": "Puissance technologique",
+              "text": ""
+            },
+            {
+              "title": "Puissance des troupes",
+              "text": ""
+            },
+            {
+              "title": "Puissance des héros",
+              "text": ""
+            },
+            {
+              "title": "Puissance du véhicule modifié",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "table",
+          "title": "Conditions de déblocage des QG",
+          "intro": "Les deux bâtiments nécessaires pour débloquer chaque niveau, du 1 au 30.",
+          "columns": [
+            "Pour débloquer",
+            "Condition 1",
+            "Condition 2"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "QG Niveau 1",
+                "—",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 2",
+                "—",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 3",
+                "—",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 4",
+                "Mur de la ville",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 5",
+                "Radar",
+                "Camp d'assaut"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "QG Niveau 6",
+                "Centre militaire",
+                "—"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 7",
+                "Centre d'Alliances",
+                "Terrain d'entraînement"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 8",
+                "Laboratoire",
+                "Camp d'assaut"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 9",
+                "Laboratoire",
+                "Hôpital d'urgence"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 10",
+                "Laboratoire",
+                "Camp de tireurs"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "QG Niveau 11",
+                "Laboratoire",
+                "Camp de cavaliers"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 12",
+                "Laboratoire",
+                "Mur de la ville"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 13",
+                "Laboratoire",
+                "Centre d'Alliances"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 14",
+                "Laboratoire",
+                "Camp d'assaut"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 15",
+                "Laboratoire",
+                "Camp de tireurs"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "QG Niveau 16",
+                "Laboratoire",
+                "Camp de cavaliers"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 17",
+                "Laboratoire",
+                "Mur de la ville"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 18",
+                "Laboratoire",
+                "Centre d'Alliances"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 19",
+                "Laboratoire",
+                "Camp d'assaut"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 20",
+                "Laboratoire",
+                "Camp de tireurs"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "QG Niveau 21",
+                "Laboratoire",
+                "Camp de cavaliers"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 22",
+                "Laboratoire",
+                "Mur de la ville"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 23",
+                "Laboratoire",
+                "Centre d'Alliances"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 24",
+                "Laboratoire",
+                "Camp d'assaut"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 25",
+                "Laboratoire",
+                "Camp de tireurs"
+              ],
+              "highlight": true
+            },
+            {
+              "cells": [
+                "QG Niveau 26",
+                "Laboratoire",
+                "Camp de cavaliers"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 27",
+                "Laboratoire",
+                "Mur de la ville"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 28",
+                "Laboratoire",
+                "Centre d'Alliances"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 29",
+                "Laboratoire",
+                "Camp d'assaut"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "QG Niveau 30",
+                "Laboratoire",
+                "Camp de tireurs"
+              ],
+              "highlight": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "duelo",
+      "title": "Duel d'alliances",
+      "intro": "",
+      "sections": [
+        {
+          "type": "soon"
+        }
+      ]
     }
   ],
-  "about": {
-    "eyebrow": "01 · Ce qui est ici",
-    "title": "Des guides de clan, rien de plus",
-    "text": "Tout ce site a été écrit par des membres du clan qui jouent sur le 770. Si on ne sait pas encore quelque chose, on le dit, on ne l'invente pas.",
-    "imageAlt": "Membre du clan expliquant au tableau les types de puissance",
-    "requirements": [
-      {
-        "key": "Guide débutants",
-        "value": "9 points",
-        "note": "Les bases, pour ne pas mal commencer."
-      },
-      {
-        "key": "Guide des modules",
-        "value": "10 points",
-        "note": "Le nouveau système du véhicule."
-      },
-      {
-        "key": "Quartiers généraux",
-        "value": "30 niveaux",
-        "note": "Ce qu'il faut pour chaque niveau."
-      },
-      {
-        "key": "Écrit par",
-        "value": "FrosSit0",
-        "note": "Membre du clan, serveur 770."
-      }
-    ]
-  },
-  "rules": {
-    "eyebrow": "02 · Guide débutants",
-    "title": "Ce qu'on aurait aimé savoir le premier jour",
-    "text": "Neuf choses par ordre d'importance. Nouveau sur le 770, commence ici.",
-    "imageAlt": "Membre du clan montrant les règles de vie du clan",
-    "items": [
-      {
-        "title": "Ton QG",
-        "text": "Ta base. Plus il est haut, plus tu débloques. Le niveau de QG te permet de monter les héros cinq niveaux au-dessus, fixe le niveau maximum de tous les autres bâtiments, et augmente la limite quotidienne de pillage sur les autres bases. Priorité numéro un."
-      },
-      {
-        "title": "Ressources",
-        "text": "Nourriture, bois et métal se produisent seuls ou viennent des mines et des pillages. Les vraies difficultés sont le Zénith, la monnaie spéciale, et les insignes de laboratoire. Prends soin de ces deux-là."
-      },
-      {
-        "title": "Camions",
-        "text": "N'envoie que les oranges, la meilleure qualité. Tu ne perds pas de troupes s'ils se font voler, donc aucun risque réel. Envoie-les un par un avec ta meilleure armée d'escorte. Ils peuvent être volés deux fois au maximum."
-      },
-      {
-        "title": "Mines",
-        "text": "Ça se farme hors de ta base. Dans l'événement quotidien Bataille des Mines tu cherches des mines d'Or et de Cristal, et le Cristal c'est de l'expérience pour les héros. Tu commences avec trois attaques par jour, puis quatre. Tu peux dépenser des diamants pour en détecter de nouvelles. Astuce, la nuit envoie miner la deuxième et la troisième armée, et garde la première libre."
-      },
-      {
-        "title": "Héros",
-        "text": "Ils montent avec l'expérience, de préférence en happy hour. Les armes se montent avec d'autres armes de matériau, sans dépenser de fer, en pensant au VS hebdomadaire. Trois factions tournent en cycle, Ailes de l'Aube, Rose de Sang, et Gardiens de l'Ordre. Ça n'affecte pas l'adversaire, ça affecte le bonus de ta propre armée. Trois de la même faction donnent 105% d'attaque, trois plus deux mixtes 107%, quatre identiques 110%, et cinq identiques 115%, le graal."
-      },
-      {
-        "title": "Troupes",
-        "text": "Entraînées à la caserne, elles attaquent et défendent. Chaque faction est liée à un type de troupe, et cette caserne se trouve derrière le bâtiment de faction correspondant, qu'il faut débloquer d'abord. Rose de Sang donne des Assaillants, Ailes de l'Aube des Tireurs, et Gardiens de l'Ordre des Motards."
-      },
-      {
-        "title": "Événements",
-        "text": "Préparation Totale, Boss Zombie, Arène. Ils donnent des récompenses en plus et ne sont pas obligatoires, mais ils accélèrent beaucoup. Le prochain guide les passe un par un."
-      },
-      {
-        "title": "Coffre de QG",
-        "text": "Il se remplit tout seul jusqu'à huit heures maximum. Après il n'accumule plus rien, donc ne le laisse pas plein. Il donne des ressources et des armes de héros gratuites. Le plus facile à récupérer chaque jour."
-      },
-      {
-        "title": "Astuces de vétéran",
-        "text": "Dons d'alliance, quand tu donnes de la technologie garde le bouton appuyé au lieu de cliquer un par un, c'est comme ça qu'on obtient des critiques x2, x5, x10, et une fois même x270. Pour te déplacer, quand un hélicoptère apparaît cherche la base alliée la plus proche, renforce-la, et pars de là, car on voyage trois fois plus vite entre bases alliées. Et pour les ressources du village, monter les bâtiments de production au-dessus du niveau 16 ou 17 ne vaut pas le coup, car attaquer un seul joueur ennemi rapporte plus que vingt-quatre heures de production."
-      }
-    ]
-  },
-  "command": {
-    "eyebrow": "03 · Bibliothèque",
-    "title": "Les guides, et dans quelles langues",
-    "text": "Chaque guide est écrit par quelqu'un du clan et traduit dans les langues qu'on parle à l'intérieur. Si la tienne manque, dis-le sur Discord.",
-    "imageAlt": "Manuel de stratégie du clan avec les rangs et les rôles",
-    "ranks": [
-      {
-        "title": "Débutants",
-        "count": "9",
-        "members": [
-          "Español",
-          "English",
-          "العربية"
-        ],
-        "note": "QG, ressources, camions, mines, héros, troupes, événements, coffre, astuces.",
-        "highlight": true
-      },
-      {
-        "title": "Modules du véhicule",
-        "count": "10",
-        "members": [
-          "Español",
-          "English",
-          "Français",
-          "Deutsch",
-          "العربية"
-        ],
-        "note": "Le nouveau système du véhicule, quoi garder, et quand le dépenser.",
-        "highlight": false
-      },
-      {
-        "title": "Quartiers généraux",
-        "count": "30",
-        "members": [
-          "Español",
-          "English",
-          "Français",
-          "Deutsch"
-        ],
-        "note": "Quels deux bâtiments débloquent chaque niveau.",
-        "highlight": false
-      },
-      {
-        "title": "Qu'est-ce que la puissance",
-        "count": "5",
-        "members": [
-          "Español",
-          "English"
-        ],
-        "note": "Bâtiment, technologie, troupes, héros, et véhicule modifié.",
-        "highlight": false
-      },
-      {
-        "title": "Bâtiments les plus puissants",
-        "count": "5",
-        "members": [
-          "Español",
-          "English",
-          "العربية"
-        ],
-        "note": "Mairie, laboratoire, formations, centre d'alliance, et production.",
-        "highlight": false
-      },
-      {
-        "title": "À venir",
-        "count": "—",
-        "members": [
-          "Événements",
-          "Factions"
-        ],
-        "note": "Les prochains guides du clan sont déjà en cours d'écriture.",
-        "highlight": false
-      }
-    ]
-  },
-  "schedule": {
-    "eyebrow": "04 · Référence",
-    "title": "Conditions de déblocage des QG",
-    "text": "Les deux bâtiments nécessaires pour débloquer chaque niveau de QG, du 1 au 30.",
-    "imageAlt": "Préparatifs de guerre, véhicules, troupes et armement du clan",
-    "columns": [
-      "Pour débloquer",
-      "Condition 1",
-      "Condition 2"
-    ],
-    "rows": [
-      {
-        "cells": [
-          "QG Niveau 1",
-          "—",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 2",
-          "—",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 3",
-          "—",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 4",
-          "Mur de la ville",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 5",
-          "Radar",
-          "Camp d'assaut"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "QG Niveau 6",
-          "Centre militaire",
-          "—"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 7",
-          "Centre d'Alliances",
-          "Terrain d'entraînement"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 8",
-          "Laboratoire",
-          "Camp d'assaut"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 9",
-          "Laboratoire",
-          "Hôpital d'urgence"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 10",
-          "Laboratoire",
-          "Camp de tireurs"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "QG Niveau 11",
-          "Laboratoire",
-          "Camp de cavaliers"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 12",
-          "Laboratoire",
-          "Mur de la ville"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 13",
-          "Laboratoire",
-          "Centre d'Alliances"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 14",
-          "Laboratoire",
-          "Camp d'assaut"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 15",
-          "Laboratoire",
-          "Camp de tireurs"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "QG Niveau 16",
-          "Laboratoire",
-          "Camp de cavaliers"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 17",
-          "Laboratoire",
-          "Mur de la ville"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 18",
-          "Laboratoire",
-          "Centre d'Alliances"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 19",
-          "Laboratoire",
-          "Camp d'assaut"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 20",
-          "Laboratoire",
-          "Camp de tireurs"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "QG Niveau 21",
-          "Laboratoire",
-          "Camp de cavaliers"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 22",
-          "Laboratoire",
-          "Mur de la ville"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 23",
-          "Laboratoire",
-          "Centre d'Alliances"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 24",
-          "Laboratoire",
-          "Camp d'assaut"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 25",
-          "Laboratoire",
-          "Camp de tireurs"
-        ],
-        "highlight": true
-      },
-      {
-        "cells": [
-          "QG Niveau 26",
-          "Laboratoire",
-          "Camp de cavaliers"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 27",
-          "Laboratoire",
-          "Mur de la ville"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 28",
-          "Laboratoire",
-          "Centre d'Alliances"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 29",
-          "Laboratoire",
-          "Camp d'assaut"
-        ],
-        "highlight": false
-      },
-      {
-        "cells": [
-          "QG Niveau 30",
-          "Laboratoire",
-          "Camp de tireurs"
-        ],
-        "highlight": true
-      }
-    ]
-  },
-  "board": {
-    "eyebrow": "05 · Guide des modules",
-    "title": "Les modules du véhicule, sans mystère",
-    "text": "Pour le serveur 770, saison 1. On ne sait pas encore ce que c'est, mais on veut être prêts.",
-    "posts": [
-      {
-        "date": "01",
-        "title": "D'abord, ne mélangeons pas tout",
-        "text": "Si tu sais déjà que plans et clés à molette sont les améliorations normales du véhicule, parfait, ça existe toujours et ce n'est pas ce qu'on explique ici. Les modules sont un système à part."
-      },
-      {
-        "date": "02",
-        "title": "C'est quoi un module",
-        "text": "Pense à Fast and Furious. Tu prends une voiture déjà bien et tu la tunes encore plus avec moteur, roues, carrosserie, performance. Les modules, c'est ça appliqué au véhicule de Last Z. Il y a six types, Radar, Roues, Blindage, Batterie Solaire, Nitro, et Artillerie. Pas besoin de les mémoriser, retiens juste que le véhicule porte des modules, qu'ils donnent des statistiques en plus, et qu'on peut les améliorer."
-      },
-      {
-        "date": "03",
-        "title": "D'où ils viennent",
-        "text": "Les camions peuvent transporter des coffres de composants. À la boutique d'alliance, la Caisse Aléatoire de Modules Nv.1 coûte 4 500 pièces d'alliance et donne un module extérieur Nv.1 au hasard. Ils apparaissent aussi dans des événements, boutiques, récompenses d'activités, et différents coffres. Il n'y a pas une seule source."
-      },
-      {
-        "date": "04",
-        "title": "Qu'en faire",
-        "text": "On les combine. Trois modules identiques du même niveau donnent un module du niveau suivant. Un module Nv.2 demande 3 Nv.1, un Nv.3 en demande 9, un Nv.4 en demande 27, et un Nv.5 en demande 81. Et ça, c'est pour un seul type. Avec plusieurs types à la fois, on comprend pourquoi il faut autant de ressources."
-      },
-      {
-        "date": "05",
-        "title": "Et les composants",
-        "text": "C'est une autre ressource du système du véhicule. Ils viennent aussi des coffres, camions, événements et récompenses. Module et composant ne sont pas la même chose, on les traite comme des ressources différentes jusqu'à voir l'interface complète."
-      },
-      {
-        "date": "06",
-        "title": "Et les chips",
-        "text": "Ça existe, et ce ne sont pas non plus des composants sous un autre nom. Trois ressources distinctes, modules, composants et chips. Les chips ont leur propre progression, mais comme le 770 est encore en saison 1 et qu'on n'a pas l'interface complète, on n'invente pas d'explications tirées d'autres serveurs qui peuvent être sur une autre version. Quand l'écran des chips arrivera, on expliquera."
-      },
-      {
-        "date": "07",
-        "title": "Quand dépenser tout ça",
-        "text": "Dans l'événement Alliance Duel il y a le jour du Modded Vehicle Boost, le fameux jour du véhicule. Ce jour-là on gagne des points en utilisant coffres de composants, coffres de chips, plans, clés à molette, et certaines tâches radar. Ouvrir le coffre pendant l'événement donne la ressource et des points. L'ouvrir un autre jour ne donne que la ressource. Donc garde tes ressources pour le jour du véhicule."
-      },
-      {
-        "date": "08",
-        "title": "Ce qu'on fait sur le 770 maintenant",
-        "text": "On est en saison 1, le système n'est pas totalement débloqué, et ce n'est pas grave. La mission n'est pas d'être experts, c'est de savoir les reconnaître et ne pas les gaspiller. Caisse de module, garder. Composants, garder. Chips, garder. Camion avec coffres liés, en profiter. Caisse en boutique, évaluer. Plans et clés à molette, garder pour le jour du véhicule. Un truc nouveau que tu ne connais pas, ne pas toucher."
-      },
-      {
-        "date": "09",
-        "title": "La règle la plus importante",
-        "text": "N'ouvrez rien juste comme ça. Face à un nouveau coffre, demandez-vous d'abord ce que c'est, à quoi ça sert, si ça compte pour un événement, si vous en avez besoin maintenant, et si ça vaut le coup de le garder. Si vous ne savez pas, gardez-le, ça ne périme pas dans l'inventaire."
-      },
-      {
-        "date": "10",
-        "title": "Résumé pour le plus perdu du clan",
-        "text": "Les modules sont des pièces pour tuner un véhicule déjà monté. Plusieurs types, chacun avec ses bonus. On les obtient via camions, coffres, boutiques, événements et récompenses. On les améliore en combinant des identiques du même niveau. Les composants sont une autre ressource, les chips encore une autre. Tout ça est indépendant des améliorations normales de plans et clés. Il y a un jour d'Alliance Duel dédié au véhicule, donc il faut garder. On n'a pas besoin d'être les premiers à comprendre, on a besoin d'être ceux qui diront, on avait déjà tout gardé depuis la saison 1."
-      }
-    ]
-  },
   "join": {
     "eyebrow": "06 · Rejoindre",
     "title": "Entre dans le clan",
@@ -537,7 +517,7 @@
   },
   "footer": {
     "line1": "[DsL] Demon Slayer League · Serveur 770",
-    "line2": "Guides du clan pour Last Z: Survival Shooter · by FrosSit0",
+    "line2": "Guides du clan · by FrosSit0",
     "draft": "Brouillon pour choisir le design. Les guides sont réels, les chiffres du compteur et de l'en-tête ne le sont pas encore."
   }
 }

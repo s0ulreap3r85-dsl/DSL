@@ -1,8 +1,11 @@
-/* Parte comun a todos los disenos: carga los contenidos, gestiona el idioma,
-   y lleva el contador de la guerra. Cada diseno solo aporta su render. */
+/* Nucleo comun a los cinco disenos. Carga los contenidos, detecta el idioma,
+   pinta la portada y las paginas, y lleva el contador de la guerra.
+   Cada diseno solo aporta su hoja de estilos. */
 
 window.DSL = (function () {
   'use strict';
+
+  var DATA = null, MEDIA = null, CTX = null;
 
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
@@ -14,11 +17,35 @@ window.DSL = (function () {
     (kids || []).forEach(function (c) { if (c) n.appendChild(c); });
     return n;
   }
-
   function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function assets() { return window.ASSET_BASE || ''; }
 
-  /* proxima guerra, viernes a las 21:00 */
+  /* ---------- imagenes ---------- */
+  function pic(file, alt, cls, sizes, eager) {
+    var base = (MEDIA && MEDIA.base) || 'assets/img/';
+    var conf = (MEDIA && MEDIA[file]) || { widths: [400, 800], w: 800, h: 800 };
+    var name = conf.file || file;
+    var ws = conf.widths || [400, 800];
+    return el('img', {
+      src: assets() + base + name + '-' + ws[ws.length - 1] + '.webp',
+      srcset: ws.map(function (w) {
+        return assets() + base + name + '-' + w + '.webp ' + w + 'w';
+      }).join(', '),
+      sizes: sizes || '(max-width: 700px) 50vw, 380px',
+      alt: alt || '', class: cls || null,
+      loading: eager ? 'eager' : 'lazy',
+      fetchpriority: eager ? 'high' : null,
+      decoding: 'async', width: conf.w, height: conf.h
+    });
+  }
+  function cardImage(id, alt) {
+    var f = MEDIA && MEDIA.tarjetas && MEDIA.tarjetas[id];
+    return f ? pic(f, alt, 'card__img') : null;
+  }
+
+  /* ---------- contador ---------- */
+  var cdNode = null, cdSuffix = 'd';
   function nextWar() {
     var n = new Date();
     var t = new Date(n.getFullYear(), n.getMonth(), n.getDate(), 21, 0, 0, 0);
@@ -26,8 +53,7 @@ window.DSL = (function () {
     if (t <= n) t.setDate(t.getDate() + 7);
     return t;
   }
-
-  var cdNode = null, cdSuffix = 'd', target = nextWar();
+  var target = nextWar();
   function pad(v) { return String(v).padStart(2, '0'); }
   function tick() {
     if (!cdNode || !cdNode.isConnected) return;
@@ -39,44 +65,177 @@ window.DSL = (function () {
   }
   setInterval(tick, 1000);
 
-  function countdown(node, suffix) {
-    cdNode = node; cdSuffix = suffix || 'd'; tick(); return node;
-  }
+  /* ---------- cabecera y pie ---------- */
+  function header(d) {
+    var brand = el('a', { class: 'site__brand', href: '#/' }, [
+      pic('emblema', d.meta.emblemAlt, 'site__crest', '34px', true),
+      el('span', { class: 'site__name' }, [
+        document.createTextNode(d.meta.brand + ' '),
+        el('em', { text: d.meta.brandAccent })
+      ])
+    ]);
 
-  /* imagenes. media guarda las rutas, el alt viene traducido del idioma */
-  var MEDIA = null;
-  function assets() { return window.ASSET_BASE || ''; }
+    var nav = el('nav', { class: 'site__nav' }, d.pages.map(function (p) {
+      return el('a', { href: '#/' + p.id, text: p.title });
+    }));
 
-  function pic(name, alt, cls, sizes) {
-    var m = MEDIA || { base: 'assets/img/', ilustraciones: { widths: [400, 800], w: 800, h: 800 } };
-    var conf = m[name] || m.ilustraciones;
-    var file = conf.file || name;
-    var ws = conf.widths || [800];
-    var src = assets() + m.base + file + '-' + ws[ws.length - 1] + '.webp';
-    var set = ws.map(function (w) {
-      return assets() + m.base + file + '-' + w + '.webp ' + w + 'w';
-    }).join(', ');
-    /* el banner y el emblema se ven nada mas entrar, no se difieren */
-    var first = name === 'banner' || name === 'emblema';
-    return el('img', {
-      src: src, srcset: set, sizes: sizes || '(max-width: 700px) 100vw, 800px',
-      alt: alt || '', class: cls || null,
-      loading: first ? 'eager' : 'lazy',
-      fetchpriority: name === 'banner' ? 'high' : null,
-      decoding: 'async', width: conf.w, height: conf.h
+    var sel = el('select', { class: 'site__lang', 'aria-label': 'Idioma' });
+    CTX.languages.forEach(function (l) {
+      sel.appendChild(el('option', { value: l.code, text: l.name }));
     });
+    sel.value = CTX.current;
+    sel.addEventListener('change', function () { CTX.setLang(sel.value); });
+
+    return el('header', { class: 'site' }, [
+      el('div', { class: 'site__in' }, [
+        brand,
+        d.meta.badge ? el('span', { class: 'site__badge', text: d.meta.badge }) : null,
+        nav,
+        sel
+      ])
+    ]);
   }
 
-  function sectionImage(id, alt, cls) {
-    var m = MEDIA;
-    if (!m || !m.secciones || !m.secciones[id]) return null;
-    return pic(m.secciones[id], alt, cls);
+  function footer(d) {
+    return el('footer', { class: 'site-foot' }, [
+      el('div', { class: 'wrap' }, [
+        el('p', null, [document.createTextNode(d.footer.line1), el('br'),
+                       document.createTextNode(d.footer.line2)]),
+        d.footer.draft ? el('p', { class: 'draft', text: d.footer.draft }) : null
+      ])
+    ]);
   }
 
-  function texture() {
-    var m = MEDIA;
-    if (!m || !m.textura) return null;
-    return assets() + m.base + m.textura.file + '-' + m.textura.widths[0] + '.webp';
+  /* ---------- portada ---------- */
+  function home(d) {
+    cdSuffix = d.home.daysSuffix || 'd';
+    var cd = el('div', { class: 'war__time' });
+
+    var cards = el('div', { class: 'cards' }, d.home.cards.map(function (c) {
+      return el('a', { class: 'card', href: '#/' + c.id }, [
+        el('span', { class: 'card__frame' }, [cardImage(c.id, '')]),
+        el('span', { class: 'card__title', text: c.title }),
+        c.note ? el('span', { class: 'card__note', text: c.note }) : null
+      ]);
+    }));
+
+    var v = el('main', { class: 'view view--home' }, [
+      el('div', { class: 'banner' }, [pic('banner', d.home.bannerAlt, 'banner__img', '100vw', true)]),
+      el('div', { class: 'wrap' }, [
+        el('h1', { class: 'sr' , text: d.home.title + ' ' + d.home.subtitle }),
+        el('p', { class: 'home__lead', text: d.home.lead }),
+        cards,
+        el('aside', { class: 'war' }, [
+          el('span', { class: 'war__label', text: d.home.countdownLabel }),
+          cd,
+          el('span', { class: 'war__note', text: d.home.countdownNote })
+        ])
+      ])
+    ]);
+    cdNode = cd;
+    return v;
+  }
+
+  /* ---------- bloques de una pagina ---------- */
+  function blockList(s) {
+    return el('ol', { class: 'items' }, s.items.map(function (it) {
+      return el('li', { class: 'item' }, [
+        el('h3', { class: 'item__t', text: it.title }),
+        it.text ? el('p', { class: 'item__d', text: it.text }) : null
+      ]);
+    }));
+  }
+  function blockRank(s) {
+    return el('ol', { class: 'rank' }, s.items.map(function (it, i) {
+      return el('li', { class: 'rank__row' }, [
+        el('span', { class: 'rank__n', text: String(i + 1) }),
+        el('span', { class: 'rank__t', text: it.title }),
+        el('span', { class: 'rank__bar' }, [
+          el('span', { class: 'rank__fill', style: 'width:' + (100 - i * 16) + '%' })
+        ])
+      ]);
+    }));
+  }
+  function blockCards(s) {
+    return el('div', { class: 'tiles' }, s.items.map(function (it) {
+      return el('div', { class: 'tile' }, [
+        el('span', { class: 'tile__t', text: it.title }),
+        it.text ? el('span', { class: 'tile__d', text: it.text }) : null
+      ]);
+    }));
+  }
+  function blockTable(s) {
+    return el('div', { class: 'tablewrap' }, [
+      el('table', null, [
+        el('thead', null, [el('tr', null, (s.columns || []).map(function (c) {
+          return el('th', { scope: 'col', text: c });
+        }))]),
+        el('tbody', null, (s.rows || []).map(function (r) {
+          return el('tr', r.highlight ? { class: 'key' } : null,
+            r.cells.map(function (c, i) {
+              return el('td', i > 0 ? { class: 'soft' } : null, [document.createTextNode(c)]);
+            }));
+        }))
+      ])
+    ]);
+  }
+  function blockSoon(s, d) {
+    return el('div', { class: 'soon' }, [
+      el('span', { class: 'soon__t', text: d.ui.soon }),
+      el('p', { class: 'soon__d', text: d.ui.soonText })
+    ]);
+  }
+
+  function page(d, id) {
+    var p = null;
+    d.pages.forEach(function (x) { if (x.id === id) p = x; });
+    if (!p) return home(d);
+
+    var img = MEDIA && MEDIA.tarjetas && MEDIA.tarjetas[p.id];
+    var blocks = p.sections.map(function (s) {
+      var body = s.type === 'list'  ? blockList(s)
+               : s.type === 'rank'  ? blockRank(s)
+               : s.type === 'cards' ? blockCards(s)
+               : s.type === 'table' ? blockTable(s)
+               : blockSoon(s, d);
+      return el('section', { class: 'block block--' + s.type }, [
+        s.title ? el('h2', { class: 'block__t', text: s.title }) : null,
+        s.intro ? el('p', { class: 'block__i', text: s.intro }) : null,
+        body
+      ]);
+    });
+
+    return el('main', { class: 'view view--page' }, [
+      el('div', { class: 'wrap' }, [
+        el('a', { class: 'back', href: '#/', text: '← ' + d.ui.back }),
+        el('header', { class: 'page__head' }, [
+          img ? el('span', { class: 'page__frame' }, [pic(img, '', 'page__img', '160px', true)]) : null,
+          el('div', null, [
+            el('h1', { class: 'page__t', text: p.title }),
+            p.intro ? el('p', { class: 'page__i', text: p.intro }) : null
+          ])
+        ])
+      ].concat(blocks.map(function (b) { return b; })))
+    ]);
+  }
+
+  /* ---------- enrutado ---------- */
+  function currentId() {
+    var h = (location.hash || '').replace(/^#\/?/, '').split('?')[0];
+    return h || '';
+  }
+
+  function draw() {
+    var d = DATA;
+    var root = document.getElementById('root');
+    var id = currentId();
+    root.textContent = '';
+    root.appendChild(header(d));
+    root.appendChild(id ? page(d, id) : home(d));
+    root.appendChild(footer(d));
+    document.documentElement.setAttribute('dir', d.meta.direction || 'ltr');
+    document.body.setAttribute('data-view', id || 'home');
+    tick();
   }
 
   function fetchJSON(url) {
@@ -86,20 +245,16 @@ window.DSL = (function () {
     });
   }
 
-  /* arranque. render recibe (contenido, contexto) */
-  function init(render) {
+  function start() {
     var base = window.CONTENT_BASE || 'content/';
     var packed = document.getElementById('bundled-content');
     var bundle = packed ? JSON.parse(packed.textContent) : null;
-    var root = document.documentElement;
 
-    var getLangs = bundle ? Promise.resolve(bundle.languages)
-                          : fetchJSON(base + 'languages.json');
+    var getLangs = bundle ? Promise.resolve(bundle.languages) : fetchJSON(base + 'languages.json');
     var getMedia = bundle ? Promise.resolve(bundle.media)
                           : fetchJSON(base + 'media.json').catch(function () { return null; });
-    var getContent = function (code) {
-      return bundle ? Promise.resolve(bundle.content[code])
-                    : fetchJSON(base + 'site.' + code + '.json');
+    var getSite = function (c) {
+      return bundle ? Promise.resolve(bundle.content[c]) : fetchJSON(base + 'site.' + c + '.json');
     };
 
     return Promise.all([getLangs, getMedia]).then(function (res) {
@@ -111,27 +266,22 @@ window.DSL = (function () {
       var current = codes.indexOf(saved) >= 0 ? saved
                   : codes.indexOf(guess) >= 0 ? guess : codes[0];
 
-      var ctx = {
+      CTX = {
         languages: langs,
         get current() { return current; },
         setLang: function (code) {
           current = code;
           store('dsl770.lang', code);
-          root.setAttribute('lang', code);
-          return getContent(code).then(function (d) {
-            root.setAttribute('dir', d.meta.direction || 'ltr');
-            render(d, ctx);
-          });
+          document.documentElement.setAttribute('lang', code);
+          return getSite(code).then(function (d) { DATA = d; draw(); });
         }
       };
 
-      root.setAttribute('lang', current);
-      return getContent(current).then(function (d) {
-        root.setAttribute('dir', d.meta.direction || 'ltr');
-        render(d, ctx);
-      });
+      window.addEventListener('hashchange', function () { draw(); window.scrollTo(0, 0); });
+      document.documentElement.setAttribute('lang', current);
+      return getSite(current).then(function (d) { DATA = d; draw(); });
     }).catch(function (e) {
-      document.body.appendChild(el('p', {
+      document.getElementById('root').appendChild(el('p', {
         style: 'padding:40px;font-family:system-ui;color:#888',
         text: 'No se ha podido cargar el contenido. Recarga la página.'
       }));
@@ -139,18 +289,7 @@ window.DSL = (function () {
     });
   }
 
-  /* selector de idioma listo para usar, cada diseno lo coloca donde quiera */
-  function langSelect(ctx, className) {
-    var s = el('select', { class: className || '', 'aria-label': 'Idioma' });
-    ctx.languages.forEach(function (l) {
-      s.appendChild(el('option', { value: l.code, text: l.name }));
-    });
-    s.value = ctx.current;
-    s.addEventListener('change', function () { ctx.setLang(s.value); });
-    return s;
-  }
-
-  return { el: el, init: init, countdown: countdown, langSelect: langSelect,
-           store: store, load: load, pic: pic, sectionImage: sectionImage,
-           texture: texture, media: function () { return MEDIA; } };
+  return { start: start, el: el };
 })();
+
+document.addEventListener('DOMContentLoaded', function () { DSL.start(); });

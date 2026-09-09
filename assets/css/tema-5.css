@@ -1,0 +1,26 @@
+/* Manga: vinetas de borde grueso y sombra dura, tramas, rojo sobre blanco. */
+:root{
+  --bg:#FBFAF7;--surface:#FFF;--surface2:#EFEDE7;--line:#121212;
+  --fg:#121212;--muted:#5E5E5E;--acc:#D6202A;--warn:#D6202A;
+  --head-bg:#FBFAF7;--head-fg:#121212;--head-muted:#5E5E5E;--head-line:#121212;
+  --font-display:"Bebas Neue","Noto Kufi Arabic",Impact,sans-serif;
+  --font-body:"Zen Kaku Gothic New","Noto Sans Arabic",sans-serif;
+  --font-mono:"Zen Kaku Gothic New",monospace;
+  --radius:0;--radius-in:0;--bw:3px;--tt:none;--ls:.02em;--fw:400;
+  --img-filter:grayscale(1) contrast(1.45) brightness(1.06);
+  --war-bg:var(--acc);--key-bg:rgba(214,32,42,.1);
+  --card-pad:0;--card-in:14px;--card-lift:translate(-2px,-2px);
+  --shadow:6px 6px 0 #121212;--shadow-hover:9px 9px 0 var(--acc);
+}
+.site{border-bottom-width:3px}
+.site__name em{color:var(--acc)}
+.site__badge{background:var(--acc);color:#FFF;border-color:var(--acc);transform:rotate(-3deg)}
+.card__title{padding-top:12px;font-size:26px}
+.card:nth-child(3n+1) .card__frame{background-image:radial-gradient(circle,#12121233 1.1px,transparent 1.2px);
+  background-size:6px 6px}
+.war{color:#FFF;border-color:#121212;box-shadow:6px 6px 0 #121212}
+.war__label,.war__note{color:#FFF}
+.war__time{color:#FFF}
+.page__t{font-size:clamp(38px,8vw,80px)}
+.item::before{color:var(--acc);font-size:15px}
+.rank__n{color:var(--acc);font-size:32px}

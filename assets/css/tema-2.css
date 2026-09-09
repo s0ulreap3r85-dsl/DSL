@@ -1,0 +1,24 @@
+/* Cartel de guerra: amarillo senal sobre negro, bloques planos, sin curvas. */
+:root{
+  --bg:#0A0A0A;--surface:#111;--surface2:#1A1A18;--line:#2A2A28;
+  --fg:#F5F3EE;--muted:#A9A69E;--acc:#F2E900;--warn:#E0281E;
+  --head-bg:#F2E900;--head-fg:#0A0A0A;--head-muted:#0A0A0A;--head-line:#0A0A0A;
+  --font-display:"Anton","Noto Kufi Arabic",Impact,sans-serif;
+  --font-body:"Archivo","Noto Sans Arabic",Arial,sans-serif;
+  --font-mono:"Archivo",monospace;
+  --radius:0;--radius-in:0;--bw:3px;--tt:uppercase;--ls:.01em;--fw:400;
+  --img-filter:grayscale(1) contrast(1.35) brightness(1.06);
+  --war-bg:var(--warn);--key-bg:rgba(224,40,30,.14);
+  --card-pad:0;--card-in:14px;--card-lift:translate(-3px,-3px);
+  --shadow:6px 6px 0 #000;--shadow-hover:9px 9px 0 var(--acc);
+}
+.site__badge{background:var(--warn);color:#F5F3EE;border-color:var(--warn)}
+.site__name em{color:#E0281E}
+.site__lang{background:#0A0A0A;color:#F2E900;border-color:#0A0A0A}
+.card{border-color:#F5F3EE}
+.card:hover{border-color:var(--acc)}
+.card__title{padding-top:10px}
+.war{color:#F5F3EE;border-color:#F5F3EE}
+.war__label,.war__note{color:#F5F3EE}
+.page__t{font-size:clamp(38px,8vw,86px)}
+.item::before{color:var(--acc);font-size:16px}

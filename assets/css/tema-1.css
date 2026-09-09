@@ -1,0 +1,18 @@
+/* Panel de mando: grafito azulado, tipografia condensada, reticula tecnica. */
+:root{
+  --bg:#080B10;--surface:#121821;--surface2:#1B2430;--line:#26313F;
+  --fg:#E6EDF5;--muted:#8A9AAE;--acc:#21D4FD;--warn:#FF5A1F;
+  --head-bg:rgba(8,11,16,.88);--head-fg:#E6EDF5;--head-muted:#8A9AAE;--head-line:#26313F;
+  --font-display:"Saira Condensed","Noto Kufi Arabic","Arial Narrow",sans-serif;
+  --font-body:"Barlow","Noto Sans Arabic",Arial,sans-serif;
+  --font-mono:"JetBrains Mono",Consolas,monospace;
+  --radius:2px;--radius-in:2px;--bw:1px;--tt:uppercase;--ls:.01em;--fw:700;
+  --img-filter:saturate(.9) contrast(1.04);
+  --war-bg:rgba(255,90,31,.06);--key-bg:rgba(255,90,31,.07);
+  --card-pad:10px;--card-in:6px;
+}
+.site{backdrop-filter:blur(10px)}
+body{background-color:var(--bg);
+  background-image:linear-gradient(rgba(8,11,16,.94),rgba(8,11,16,.94)),url("../img/textura.webp");
+  background-size:auto,520px;background-attachment:fixed}
+.war{border-inline-start-width:3px}

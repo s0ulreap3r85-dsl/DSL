@@ -16,52 +16,30 @@ La web usa la secuencia de las tres versiones coincidentes. Conviene que el auto
 
 ```
 content/languages.json  Los idiomas que ofrece la web
-content/site.es.json    Todo el contenido en español
-content/site.en.json    Lo mismo en inglés, y así uno por idioma
-index.html              El esqueleto de la página, casi vacío a propósito
-assets/css/style.css    Todo el diseño
-assets/js/app.js        Pinta la web y lleva el contador
-tools/build-preview.sh  Genera un fichero único para enseñarla sin publicarla
+content/site.es.json    Todo el contenido en español, y uno igual por idioma
+content/media.json      Qué imagen lleva cada tarjeta
+assets/css/base.css     La estructura, común a los cinco diseños
+assets/css/tema-N.css   La identidad de cada diseño
+assets/js/core.js       Carga el contenido, detecta el idioma, y pinta
+index.html              La portada, casi vacía a propósito
+d/1 ... d/5             Los cinco diseños en pruebas
 ```
 
-**Los textos no están en el código.** Viven en `content/`, un fichero por idioma, con la misma estructura en todos. Así se pueden editar sin tocar nada más, y así es como el panel de edición podrá modificarlos.
+**Cómo funciona.** Hay una portada con la imagen de cabecera y una rejilla de tarjetas. Cada tarjeta lleva a su sección, y la dirección cambia a algo como `#/basicas`, así que las secciones se pueden enlazar y compartir por separado.
+
+El idioma se detecta solo a partir del navegador del visitante y se recuerda para la próxima visita. Todo el contenido está en los cinco idiomas, así que nadie ve una mezcla.
 
 ## Cómo cambiar los textos
 
-Cada fichero `content/site.XX.json` tiene las secciones de la web, con los mismos nombres que se ven en pantalla. Se edita el texto entre comillas y ya está.
+Cada fichero `content/site.XX.json` tiene la portada y las páginas. Se edita el texto entre comillas y ya está.
 
-Cosas que se renumeran solas, así que no hay que tocarlas:
+Para añadir un punto a una guía, se añade un elemento más a su lista. La numeración se calcula sola, así que no hay que renumerar nada.
 
-* Las normas se numeran solas. Si borras una, las siguientes se renumeran.
-* Los rangos, los días del calendario, y los anuncios funcionan igual. Añades o quitas elementos de la lista y la web se ajusta.
+Las secciones marcadas con `"type": "soon"` son las que todavía no tienen contenido. En cuanto se sustituyan por una lista, dejan de mostrar el aviso.
 
-Si un texto falta en un idioma, la web muestra el español en su lugar, nunca un hueco vacío.
+## Cómo cambiar una imagen de tarjeta
 
-## Cómo añadir un idioma
-
-1. Copia `content/site.es.json` a `content/site.XX.json` y traduce los textos de dentro.
-2. Añade el idioma a `content/languages.json`, con su código, su nombre, y `ltr` o `rtl` según se escriba de izquierda a derecha o al revés.
-
-Si el idioma usa un alfabeto que no es latino, como el ruso, el chino, el japonés, el coreano, o el tailandés, hay que cargar una tipografía adicional en `index.html`. Avisa antes de traducir.
-
-## Las imágenes
-
-Están en `assets/img/`, ya optimizadas. Las originales pesaban casi 10 MB entre todas, y comprimidas se quedan en 2 MB, con dos tamaños de cada una para que el móvil se descargue la pequeña.
-
-```
-banner-1920.webp / banner-960.webp     El banner del clan
-emblema-800.webp / emblema-160.webp    El escudo, también se usa de icono
-textura.webp                           El fondo metálico
-normas / guias / academia / guerra     Las cuatro ilustraciones
-compartir.jpg                          La imagen que sale al pegar el enlace
-icono-192.png / icono-512.png          Iconos de la pantalla de inicio del móvil
-```
-
-Qué ilustración va en cada sección se decide en `content/media.json`. El texto alternativo de cada imagen, el que leen los buscadores y los lectores de pantalla, va traducido en cada `content/site.XX.json`.
-
-Para cambiar una imagen basta con sustituir el fichero manteniendo el nombre. Si es una foto nueva, hay que generar los dos tamaños en formato webp.
-
-**Pendiente al cambiar de dirección:** la etiqueta `og:image` de cada `index.html` lleva la dirección completa escrita a mano. Cuando la web pase a Cloudflare hay que actualizarla, si no la vista previa al compartir el enlace seguirá apuntando a la dirección vieja.
+En `content/media.json`, el bloque `tarjetas` dice qué imagen usa cada sección. Para cambiarla, se pone el nombre de otra de las que hay en `assets/img/`, sin el tamaño ni la extensión.
 
 ## Cómo se publica
 
@@ -89,6 +67,8 @@ bash tools/build-preview.sh
 
 ## Pendientes
 
+* [ ] Imagen propia para la tarjeta de Anuncios, ahora usa el emblema
+* [ ] Contenido de Normas, Anuncios, y Duelo de alianzas
 * [ ] Confirmar si hacen falta más idiomas, ahora hay cinco
 * [ ] Que el autor revise la tabla española de cuarteles generales
 * [ ] Cifras reales de la cabecera, ahora dicen servidor, temporada, guías, e idiomas

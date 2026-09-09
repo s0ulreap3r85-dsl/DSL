@@ -1,0 +1,20 @@
+/* Terminal: fosforo verde sobre negro, todo monoespaciado. */
+:root{
+  --bg:#050A06;--surface:#081109;--surface2:#0C1B0F;--line:#122415;
+  --fg:#BFE8CC;--muted:#5F9E74;--acc:#3CFF7A;--warn:#FF4A3D;
+  --head-bg:#050A06;--head-fg:#3CFF7A;--head-muted:#1E7F3C;--head-line:#122415;
+  --font-display:"IBM Plex Mono","Noto Sans Arabic",monospace;
+  --font-body:"IBM Plex Mono","Noto Sans Arabic",monospace;
+  --font-mono:"IBM Plex Mono",monospace;
+  --radius:0;--radius-in:0;--bw:1px;--tt:none;--ls:0;--fw:700;
+  --img-filter:grayscale(1) contrast(1.2) brightness(.95);
+  --war-bg:#160604;--key-bg:#0C1B0F;--card-pad:8px;--card-in:6px;
+}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;
+  background:repeating-linear-gradient(180deg,rgba(60,255,122,.05) 0 1px,transparent 1px 3px)}
+.card__frame,.page__frame,.banner{background:#0A2413;position:relative}
+.card__img,.page__img,.banner__img{mix-blend-mode:luminosity;opacity:.9}
+.card__title::before{content:"› ";color:var(--acc)}
+.block__t::before{content:"$ ";color:var(--muted)}
+.page__t::before{content:"~/";color:var(--muted);font-size:.6em}
+.site__nav a::before{content:"/"}
