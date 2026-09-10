@@ -29,6 +29,18 @@ d/1 ... d/5             Los cinco diseños en pruebas
 
 El idioma se detecta solo a partir del navegador del visitante y se recuerda para la próxima visita. Todo el contenido está en los cinco idiomas, así que nadie ve una mezcla.
 
+## Aviso importante sobre el panel
+
+El panel guarda **solo los campos declarados** en `admin/config.yml`. Si el contenido tiene un campo que no está declarado ahí, desaparece la primera vez que alguien pulse guardar, y sin avisar de nada.
+
+Por eso, cada vez que se añada un campo nuevo al contenido hay que declararlo también en el panel. Para comprobarlo:
+
+```
+python3 tools/revisar-campos.py
+```
+
+Si algo falta, lo dice y explica dónde se arregla.
+
 ## Cómo cambiar los textos
 
 Cada fichero `content/site.XX.json` tiene la portada y las páginas. Se edita el texto entre comillas y ya está.

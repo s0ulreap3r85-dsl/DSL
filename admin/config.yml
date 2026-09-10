@@ -89,6 +89,11 @@ collections:
               - { label: Inicio, name: home, widget: string, i18n: true }
               - { label: "Título de sección sin contenido", name: soon, widget: string, i18n: true }
               - { label: "Texto de sección sin contenido", name: soonText, widget: text, i18n: true }
+              - { label: "Instalar, título del cartel", name: installTitle, widget: string, i18n: true }
+              - { label: "Instalar, explicación", name: installText, widget: text, i18n: true }
+              - { label: "Instalar, botón", name: installButton, widget: string, i18n: true }
+              - { label: "Instalar, descartar", name: installLater, widget: string, i18n: true }
+              - { label: "Instalar, instrucciones para iPhone", name: installIos, widget: text, i18n: true }
 
           - label: Secciones
             name: pages

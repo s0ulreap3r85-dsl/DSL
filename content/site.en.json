@@ -50,7 +50,12 @@
     "back": "Back",
     "home": "Home",
     "soon": "Content on the way",
-    "soonText": "This section is reserved and ready to fill. As soon as FrosSit0 sends the content, it shows up here in all five languages."
+    "soonText": "This section is reserved and ready to fill. As soon as FrosSit0 sends the content, it shows up here in all five languages.",
+    "installTitle": "Add it to your phone",
+    "installText": "It installs like an app, with the clan crest, and opens without the browser bar.",
+    "installButton": "Install",
+    "installLater": "Not now",
+    "installIos": "Tap the share button, then Add to Home Screen."
   },
   "pages": [
     {
