@@ -8,7 +8,8 @@ body{
   background:var(--bg);color:var(--fg);font-family:var(--font-body);
   font-size:16px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:var(--maxw,1180px);margin:0 auto;padding:0 var(--gut)}
+.wrap{max-width:var(--maxw,1180px);margin:0 auto;
+  padding-inline:max(var(--gut), env(safe-area-inset-left), env(safe-area-inset-right))}
 :root{--gut:clamp(16px,4vw,52px)}
 img{max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -23,7 +24,8 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
 /* ---------- cabecera ---------- */
 .site{position:sticky;top:0;z-index:30;background:var(--head-bg);
   border-bottom:var(--bw) solid var(--head-line)}
-.site__in{max-width:var(--maxw,1180px);margin:0 auto;padding:9px var(--gut);
+.site__in{max-width:var(--maxw,1180px);margin:0 auto;padding-block:9px;
+  padding-inline:max(var(--gut), env(safe-area-inset-left), env(safe-area-inset-right));
   display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .site__brand{display:flex;align-items:center;gap:10px;flex:none}
 .site__crest{width:34px;height:34px;object-fit:contain;display:block}
@@ -173,7 +175,7 @@ tr.key td:first-child{color:var(--warn)}
 
 /* ---------- pie ---------- */
 .site-foot{margin-top:clamp(36px,6vw,72px);border-top:var(--bw) solid var(--line);
-  padding:22px 0 44px}
+  padding:22px 0 calc(44px + env(safe-area-inset-bottom))}
 .site-foot p{margin:0;font-family:var(--font-mono);font-size:11.5px;color:var(--muted);line-height:1.85}
 .site-foot .draft{color:var(--warn);margin-top:8px}
 
