@@ -2,26 +2,31 @@
   {
     "code": "es",
     "name": "Español",
+    "flag": "🇪🇸",
     "direction": "ltr"
   },
   {
     "code": "en",
     "name": "English",
+    "flag": "🇬🇧",
     "direction": "ltr"
   },
   {
     "code": "fr",
     "name": "Français",
+    "flag": "🇫🇷",
     "direction": "ltr"
   },
   {
     "code": "de",
     "name": "Deutsch",
+    "flag": "🇩🇪",
     "direction": "ltr"
   },
   {
     "code": "ar",
     "name": "العربية",
+    "flag": "🇸🇦",
     "direction": "rtl"
   }
 ]

@@ -21,6 +21,15 @@ i18n:
   locales: [es, en, fr, de, ar]
   default_locale: es
 
+# La vista previa lateral mostraba los campos, no la web. Se apaga, y en
+# su lugar se usa el enlace de arriba para ver la web de verdad.
+site_url: https://dsl.dsl770.workers.dev
+display_url: https://dsl.dsl770.workers.dev
+logo_url: https://dsl.dsl770.workers.dev/assets/img/icono-192.png
+
+editor:
+  preview: false
+
 collections:
   - name: web
     label: La web
@@ -180,3 +189,22 @@ collections:
               - { label: Primera línea, name: line1, widget: string, i18n: true }
               - { label: Segunda línea, name: line2, widget: string, i18n: true }
               - { label: "Aviso (déjalo vacío para quitarlo)", name: draft, widget: text, required: false, i18n: true }
+
+  - name: imagenes
+    label: Imágenes
+    files:
+      - name: tarjetas
+        label: Imágenes de las tarjetas
+        file: content/tarjetas.json
+        format: json
+        description: >
+          La imagen de cada tarjeta de la portada. Se puede elegir una que ya
+          esté subida o subir una nueva. Lo mejor son imágenes cuadradas.
+          Las mismas imágenes valen para todos los idiomas.
+        fields:
+          - { label: Normas, name: normas, widget: image }
+          - { label: Anuncios, name: anuncios, widget: image }
+          - { label: Guías básicas, name: basicas, widget: image }
+          - { label: Guías avanzadas, name: avanzadas, widget: image }
+          - { label: Información importante, name: info, widget: image }
+          - { label: Duelo de alianzas, name: duelo, widget: image }

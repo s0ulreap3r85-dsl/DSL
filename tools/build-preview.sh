@@ -12,6 +12,7 @@ core = open('assets/js/core.js', encoding='utf-8').read()
 
 langs = json.load(open('content/languages.json', encoding='utf-8'))
 bundle = {'languages': langs, 'media': json.load(open('content/media.json', encoding='utf-8')),
+          'tarjetas': json.load(open('content/tarjetas.json', encoding='utf-8')),
           'content': {l['code']: json.load(open('content/site.%s.json' % l['code'], encoding='utf-8'))
                       for l in langs if os.path.exists('content/site.%s.json' % l['code'])}}
 

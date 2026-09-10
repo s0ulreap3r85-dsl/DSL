@@ -50,7 +50,12 @@
     "back": "Zurück",
     "home": "Start",
     "soon": "Inhalt kommt noch",
-    "soonText": "Dieser Bereich ist reserviert und bereit. Sobald FrosSit0 den Inhalt schickt, erscheint er hier in allen fünf Sprachen."
+    "soonText": "Dieser Bereich ist reserviert und bereit. Sobald FrosSit0 den Inhalt schickt, erscheint er hier in allen fünf Sprachen.",
+    "installTitle": "Aufs Handy legen",
+    "installText": "Sie installiert sich wie eine App, mit dem Clanwappen, und öffnet ohne Browserleiste.",
+    "installButton": "Installieren",
+    "installLater": "Jetzt nicht",
+    "installIos": "Tippe auf Teilen und dann auf Zum Home-Bildschirm."
   },
   "pages": [
     {

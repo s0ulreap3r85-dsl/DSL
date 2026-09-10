@@ -42,7 +42,7 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
 .site__nav a:hover{color:var(--head-fg);border-bottom-color:var(--acc)}
 .site__lang{font-family:var(--font-mono);font-size:16px;background:var(--surface2);
   color:var(--fg);border:1px solid var(--line);border-radius:var(--radius);
-  padding:7px 8px;cursor:pointer;min-height:40px;max-width:46vw}
+  padding:7px 8px;cursor:pointer;min-height:40px;max-width:52vw}
 @media(min-width:1021px){.site__lang{font-size:12px;min-height:0}}
 @media(max-width:1020px){
   .site__in{gap:8px 12px;padding:8px var(--gut)}
@@ -180,3 +180,28 @@ tr.key td:first-child{color:var(--warn)}
 .site-foot .draft{color:var(--warn);margin-top:8px}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- cartel para instalar en el movil ---------- */
+.instalar{
+  position:fixed;z-index:60;
+  inset-inline:12px;bottom:calc(12px + env(safe-area-inset-bottom));
+  background:var(--surface);border:var(--bw) solid var(--acc);border-radius:var(--radius);
+  padding:14px;display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;
+  box-shadow:0 10px 34px rgba(0,0,0,.5);
+  animation:sube .28s ease-out both;
+}
+@keyframes sube{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.instalar__icono{width:48px;height:48px;border-radius:var(--radius);display:block}
+.instalar__txt strong{display:block;font-family:var(--font-display);font-size:17px;
+  text-transform:var(--tt,none);letter-spacing:var(--ls,0)}
+.instalar__txt p{margin:3px 0 0;font-size:13px;color:var(--muted);line-height:1.45}
+.instalar__btns{grid-column:1 / -1;display:flex;gap:8px;justify-content:flex-end}
+.instalar__si,.instalar__no{
+  font-family:var(--font-display);font-size:14px;letter-spacing:var(--ls,0);
+  text-transform:var(--tt,none);padding:9px 18px;border-radius:var(--radius);
+  cursor:pointer;min-height:40px;border:1px solid var(--acc)}
+.instalar__si{background:var(--acc);color:var(--bg)}
+.instalar__no{background:transparent;color:var(--muted);border-color:var(--line)}
+@media(min-width:620px){
+  .instalar{inset-inline:auto 16px;width:340px}
+}

@@ -5,7 +5,7 @@
 window.DSL = (function () {
   'use strict';
 
-  var DATA = null, MEDIA = null, CTX = null;
+  var DATA = null, MEDIA = null, TARJETAS = null, CTX = null;
 
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
@@ -24,6 +24,23 @@ window.DSL = (function () {
   /* ---------- imagenes ---------- */
   function pic(file, alt, cls, sizes, eager) {
     var base = (MEDIA && MEDIA.base) || 'assets/img/';
+
+    /* si es una ruta completa, por ejemplo una imagen subida desde el
+       panel, se usa tal cual y no se buscan los dos tamanos */
+    if (/[\/.]/.test(file)) {
+      var ruta = file.charAt(0) === '/' ? assets().replace(/\/$/, '') + file : assets() + file;
+      var pequena = /-800\.webp$/.test(ruta) ? ruta.replace(/-800\.webp$/, '-400.webp') : null;
+      return el('img', {
+        src: ruta,
+        srcset: pequena ? pequena + ' 400w, ' + ruta + ' 800w' : null,
+        sizes: pequena ? (sizes || '(max-width: 700px) 50vw, 380px') : null,
+        alt: alt || '', class: cls || null,
+        loading: eager ? 'eager' : 'lazy',
+        fetchpriority: eager ? 'high' : null,
+        decoding: 'async'
+      });
+    }
+
     var conf = (MEDIA && MEDIA[file]) || { widths: [400, 800], w: 800, h: 800 };
     var name = conf.file || file;
     var ws = conf.widths || [400, 800];
@@ -40,7 +57,7 @@ window.DSL = (function () {
     });
   }
   function cardImage(id, alt) {
-    var f = MEDIA && MEDIA.tarjetas && MEDIA.tarjetas[id];
+    var f = TARJETAS && TARJETAS[id];
     return f ? pic(f, alt, 'card__img') : null;
   }
 
@@ -60,7 +77,10 @@ window.DSL = (function () {
 
     var sel = el('select', { class: 'site__lang', 'aria-label': 'Idioma' });
     CTX.languages.forEach(function (l) {
-      sel.appendChild(el('option', { value: l.code, text: l.name }));
+      sel.appendChild(el('option', {
+        value: l.code,
+        text: (l.flag ? l.flag + '  ' : '') + l.name
+      }));
     });
     sel.value = CTX.current;
     sel.addEventListener('change', function () { CTX.setLang(sel.value); });
@@ -163,7 +183,7 @@ window.DSL = (function () {
     d.pages.forEach(function (x) { if (x.id === id) p = x; });
     if (!p) return home(d);
 
-    var img = MEDIA && MEDIA.tarjetas && MEDIA.tarjetas[p.id];
+    var img = TARJETAS && TARJETAS[p.id];
     var blocks = p.sections.map(function (s) {
       var body = s.type === 'list'  ? blockList(s)
                : s.type === 'rank'  ? blockRank(s)
@@ -191,6 +211,59 @@ window.DSL = (function () {
     ]);
   }
 
+  /* ---------- cartel para instalar en el movil ---------- */
+  var instalable = null;
+
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    instalable = e;
+    if (DATA) pintarCartel(DATA);
+  });
+
+  function yaInstalada() {
+    return window.matchMedia('(display-mode: standalone)').matches ||
+           window.navigator.standalone === true;
+  }
+  function esIOS() {
+    return /iphone|ipad|ipod/i.test(navigator.userAgent) &&
+           !/crios|fxios/i.test(navigator.userAgent);
+  }
+
+  function pintarCartel(d) {
+    if (document.getElementById('instalar')) return;
+    if (yaInstalada() || load('dsl770.instalar') === 'no') return;
+    if (!instalable && !esIOS()) return;
+
+    var t = d.ui || {};
+    var caja = el('aside', { class: 'instalar', id: 'instalar', role: 'dialog',
+                             'aria-label': t.installTitle || '' }, [
+      el('img', { class: 'instalar__icono', src: assets() + 'assets/img/icono-192.png',
+                  alt: '', width: 48, height: 48 }),
+      el('div', { class: 'instalar__txt' }, [
+        el('strong', { text: t.installTitle || '' }),
+        el('p', { text: instalable ? (t.installText || '') : (t.installIos || '') })
+      ]),
+      el('div', { class: 'instalar__btns' },
+        (instalable ? [el('button', { class: 'instalar__si', type: 'button',
+                                      text: t.installButton || '' })] : []).concat([
+          el('button', { class: 'instalar__no', type: 'button', text: t.installLater || '' })
+        ]))
+    ]);
+
+    var si = caja.querySelector('.instalar__si');
+    if (si) si.addEventListener('click', function () {
+      caja.remove();
+      instalable.prompt();
+      instalable.userChoice.then(function () { instalable = null; });
+    });
+    caja.querySelector('.instalar__no').addEventListener('click', function () {
+      store('dsl770.instalar', 'no');
+      caja.remove();
+    });
+
+    document.body.appendChild(caja);
+  }
+
   /* ---------- enrutado ---------- */
   function currentId() {
     var h = (location.hash || '').replace(/^#\/?/, '').split('?')[0];
@@ -207,6 +280,7 @@ window.DSL = (function () {
     root.appendChild(footer(d));
     document.documentElement.setAttribute('dir', d.meta.direction || 'ltr');
     document.body.setAttribute('data-view', id || 'home');
+    if (!id) setTimeout(function () { pintarCartel(d); }, 2500);
   }
 
   function fetchJSON(url) {
@@ -224,13 +298,16 @@ window.DSL = (function () {
     var getLangs = bundle ? Promise.resolve(bundle.languages) : fetchJSON(base + 'languages.json');
     var getMedia = bundle ? Promise.resolve(bundle.media)
                           : fetchJSON(base + 'media.json').catch(function () { return null; });
+    var getTarjetas = bundle ? Promise.resolve(bundle.tarjetas)
+                          : fetchJSON(base + 'tarjetas.json').catch(function () { return null; });
     var getSite = function (c) {
       return bundle ? Promise.resolve(bundle.content[c]) : fetchJSON(base + 'site.' + c + '.json');
     };
 
-    return Promise.all([getLangs, getMedia]).then(function (res) {
+    return Promise.all([getLangs, getMedia, getTarjetas]).then(function (res) {
       var langs = res[0];
       MEDIA = res[1];
+      TARJETAS = res[2];
       var codes = langs.map(function (l) { return l.code; });
       var saved = load('dsl770.lang');
       var guess = (navigator.language || '').slice(0, 2).toLowerCase();

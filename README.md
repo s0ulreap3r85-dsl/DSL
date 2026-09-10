@@ -39,7 +39,9 @@ Las secciones marcadas con `"type": "soon"` son las que todavía no tienen conte
 
 ## Cómo cambiar una imagen de tarjeta
 
-En `content/media.json`, el bloque `tarjetas` dice qué imagen usa cada sección. Para cambiarla, se pone el nombre de otra de las que hay en `assets/img/`, sin el tamaño ni la extensión.
+Desde el panel de edición, en el apartado Imágenes. Se puede elegir una de las que ya están subidas o subir una nueva. Lo mejor son imágenes cuadradas.
+
+A mano se hace en `content/tarjetas.json`, que guarda la ruta de la imagen de cada tarjeta. Si la ruta acaba en `-800.webp`, la web busca sola la versión de 400 para los móviles.
 
 ## Cómo se publica
 
