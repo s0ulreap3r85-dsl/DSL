@@ -1,10 +1,10 @@
 {
   "meta": {
-    "language": "English",
-    "direction": "ltr",
     "brand": "DsL",
     "brandAccent": "770",
     "badge": "DRAFT",
+    "language": "English",
+    "direction": "ltr",
     "emblemAlt": "DsL clan emblem with an eagle and the motto Clan Server 770"
   },
   "home": {
@@ -59,7 +59,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     },
@@ -69,7 +70,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     },
@@ -496,7 +498,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     }

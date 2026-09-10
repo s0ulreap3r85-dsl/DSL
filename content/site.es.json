@@ -1,10 +1,10 @@
 {
   "meta": {
-    "language": "Español",
-    "direction": "ltr",
     "brand": "DsL",
     "brandAccent": "770",
-    "badge": "BORRADOR",
+    "badge": "BORR",
+    "language": "Español",
+    "direction": "ltr",
     "emblemAlt": "Emblema del clan DsL con un águila y el lema Clan Server 770"
   },
   "home": {
@@ -59,7 +59,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     },
@@ -69,7 +70,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     },
@@ -496,7 +498,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     }

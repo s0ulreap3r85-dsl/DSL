@@ -1,10 +1,10 @@
 {
   "meta": {
-    "language": "العربية",
-    "direction": "rtl",
     "brand": "DsL",
     "brandAccent": "770",
     "badge": "مسودة",
+    "language": "العربية",
+    "direction": "rtl",
     "emblemAlt": "شعار عشيرة DsL مع نسر وعبارة Clan Server 770"
   },
   "home": {
@@ -59,7 +59,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     },
@@ -69,7 +70,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     },
@@ -496,7 +498,8 @@
       "intro": "",
       "sections": [
         {
-          "type": "soon"
+          "type": "soon",
+          "nota": ""
         }
       ]
     }
