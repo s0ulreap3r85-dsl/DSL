@@ -1,0 +1,185 @@
+# Panel de edicion de la web del clan.
+#
+# ANTES DE QUE FUNCIONE hay que rellenar base_url con la direccion del
+# servicio de acceso. Sin eso, el panel carga pero no deja entrar.
+# Las instrucciones estan en el README, apartado "Panel de edicion".
+
+backend:
+  name: github
+  repo: s0ulreap3r85-dsl/DSL
+  branch: main
+  base_url: https://PENDIENTE.workers.dev
+  auth_endpoint: auth
+
+# las imagenes que se suban desde el panel van aqui
+media_folder: assets/img
+public_folder: /assets/img
+
+# el espanol es el idioma de partida, el resto son traducciones
+i18n:
+  structure: multiple_files
+  locales: [es, en, fr, de, ar]
+  default_locale: es
+
+collections:
+  - name: web
+    label: La web
+    i18n:
+      structure: multiple_files
+      locales: [es, en, fr, de, ar]
+      default_locale: es
+    files:
+      - name: contenido
+        label: Portada y secciones
+        file: content/site.{{locale}}.json
+        format: json
+        i18n: true
+        description: >
+          Escribe primero en español. Arriba tienes una pestaña por idioma
+          para ir traduciendo. Si dejas un texto vacío en otro idioma,
+          la web muestra el español en su lugar.
+        fields:
+          - label: Cabecera
+            name: meta
+            widget: object
+            i18n: true
+            fields:
+              - { label: Nombre del clan, name: brand, widget: string, i18n: duplicate }
+              - { label: Número de servidor, name: brandAccent, widget: string, i18n: duplicate }
+              - { label: "Etiqueta de aviso (déjala vacía para quitarla)", name: badge, widget: string, required: false, i18n: true }
+              - { label: Idioma, name: language, widget: string, i18n: true }
+              - { label: "Dirección de escritura (ltr o rtl)", name: direction, widget: select, options: [ltr, rtl], i18n: true }
+              - { label: Texto alternativo del escudo, name: emblemAlt, widget: string, i18n: true }
+
+          - label: Portada
+            name: home
+            widget: object
+            i18n: true
+            fields:
+              - { label: Línea de arriba, name: eyebrow, widget: string, i18n: true }
+              - { label: Nombre grande, name: title, widget: string, i18n: duplicate }
+              - { label: Segunda línea del nombre, name: subtitle, widget: string, i18n: duplicate }
+              - { label: Frase de bienvenida, name: lead, widget: text, i18n: true }
+              - { label: Texto alternativo del banner, name: bannerAlt, widget: string, i18n: true }
+              - { label: "Contador, título", name: countdownLabel, widget: string, i18n: true }
+              - { label: "Contador, aclaración", name: countdownNote, widget: string, i18n: true }
+              - { label: "Contador, abreviatura de día", name: daysSuffix, widget: string, i18n: true }
+              - label: Tarjetas de la portada
+                name: cards
+                widget: list
+                i18n: true
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Identificador (no lo cambies)", name: id, widget: string, i18n: duplicate }
+                  - { label: Título, name: title, widget: string, i18n: true }
+                  - { label: Frase debajo, name: note, widget: string, i18n: true }
+
+          - label: Botones y avisos
+            name: ui
+            widget: object
+            i18n: true
+            fields:
+              - { label: Volver, name: back, widget: string, i18n: true }
+              - { label: Inicio, name: home, widget: string, i18n: true }
+              - { label: "Título de sección sin contenido", name: soon, widget: string, i18n: true }
+              - { label: "Texto de sección sin contenido", name: soonText, widget: text, i18n: true }
+
+          - label: Secciones
+            name: pages
+            widget: list
+            i18n: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Identificador (no lo cambies)", name: id, widget: string, i18n: duplicate }
+              - { label: Título, name: title, widget: string, i18n: true }
+              - { label: Entradilla, name: intro, widget: text, required: false, i18n: true }
+              - label: Bloques
+                name: sections
+                widget: list
+                i18n: true
+                types:
+                  - label: Lista numerada
+                    name: list
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: Título del bloque, name: title, widget: string, required: false, i18n: true }
+                      - { label: Entradilla, name: intro, widget: text, required: false, i18n: true }
+                      - label: Puntos
+                        name: items
+                        widget: list
+                        i18n: true
+                        summary: "{{fields.title}}"
+                        fields:
+                          - { label: Título, name: title, widget: string, i18n: true }
+                          - { label: Texto, name: text, widget: text, i18n: true }
+                  - label: Clasificación
+                    name: rank
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: Título del bloque, name: title, widget: string, required: false, i18n: true }
+                      - { label: Entradilla, name: intro, widget: text, required: false, i18n: true }
+                      - label: Puestos
+                        name: items
+                        widget: list
+                        i18n: true
+                        summary: "{{fields.title}}"
+                        fields:
+                          - { label: Nombre, name: title, widget: string, i18n: true }
+                          - { label: Aclaración, name: text, widget: string, required: false, i18n: true }
+                  - label: Fichas
+                    name: cards
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: Título del bloque, name: title, widget: string, required: false, i18n: true }
+                      - { label: Entradilla, name: intro, widget: text, required: false, i18n: true }
+                      - label: Fichas
+                        name: items
+                        widget: list
+                        i18n: true
+                        summary: "{{fields.title}}"
+                        fields:
+                          - { label: Título, name: title, widget: string, i18n: true }
+                          - { label: Texto, name: text, widget: string, required: false, i18n: true }
+                  - label: Tabla
+                    name: table
+                    summary: "{{fields.title}}"
+                    fields:
+                      - { label: Título del bloque, name: title, widget: string, required: false, i18n: true }
+                      - { label: Entradilla, name: intro, widget: text, required: false, i18n: true }
+                      - { label: Cabeceras de columna, name: columns, widget: list, field: { label: Columna, name: c, widget: string }, i18n: true }
+                      - label: Filas
+                        name: rows
+                        widget: list
+                        i18n: true
+                        summary: "{{fields.cells}}"
+                        fields:
+                          - { label: Celdas, name: cells, widget: list, field: { label: Celda, name: c, widget: string }, i18n: true }
+                          - { label: Destacar la fila, name: highlight, widget: boolean, default: false, required: false, i18n: duplicate }
+                  - label: Sin contenido todavía
+                    name: soon
+                    fields:
+                      - { label: "No hay nada que rellenar aquí", name: nota, widget: string, required: false, i18n: true }
+
+          - label: Alistarse
+            name: join
+            widget: object
+            i18n: true
+            fields:
+              - { label: Línea de arriba, name: eyebrow, widget: string, i18n: true }
+              - { label: Título, name: title, widget: string, i18n: true }
+              - { label: Texto, name: text, widget: text, i18n: true }
+              - { label: "Frase antes del nombre", name: findText, widget: string, i18n: true }
+              - { label: Nombre del clan en el juego, name: clanName, widget: string, i18n: duplicate }
+              - { label: "Palabra servidor", name: serverText, widget: string, i18n: true }
+              - { label: Número de servidor, name: server, widget: string, i18n: duplicate }
+              - { label: Texto del botón, name: buttonLabel, widget: string, i18n: true }
+              - { label: "Enlace del botón (Discord)", name: buttonUrl, widget: string, i18n: duplicate }
+
+          - label: Pie
+            name: footer
+            widget: object
+            i18n: true
+            fields:
+              - { label: Primera línea, name: line1, widget: string, i18n: true }
+              - { label: Segunda línea, name: line2, widget: string, i18n: true }
+              - { label: "Aviso (déjalo vacío para quitarlo)", name: draft, widget: text, required: false, i18n: true }

@@ -43,17 +43,49 @@ En `content/media.json`, el bloque `tarjetas` dice qué imagen usa cada sección
 
 ## Cómo se publica
 
-El sitio se publica en Cloudflare Pages. Cada vez que se sube un cambio a la rama `main`, la web se actualiza sola en unos segundos, sin hacer nada más.
+La web se publica en Cloudflare Pages. Cada cambio que llega a la rama `main` se publica solo en un par de minutos, sin hacer nada más.
 
-Puesta en marcha, una sola vez, y la tiene que hacer el propietario del repositorio:
+Puesta en marcha, una sola vez, y la hace el propietario del repositorio:
 
-1. Crear una cuenta gratuita en dash.cloudflare.com
-2. Entrar en Workers and Pages, y pulsar Create, Pages, Connect to Git
-3. Autorizar el acceso a este repositorio
-4. Dejar la configuración de compilación vacía, es un sitio estático sin compilación
+1. Crear cuenta gratuita en `dash.cloudflare.com`
+2. Entrar en Workers and Pages, pulsar Create, luego Pages, luego Connect to Git
+3. Autorizar este repositorio
+4. Dejar vacías las opciones de compilación, es un sitio estático sin compilación
 5. Guardar
 
-A partir de ahí la web queda publicada en una dirección del tipo `dsl-770.pages.dev`.
+Queda publicada en una dirección del tipo `dsl-770.pages.dev`.
+
+**Después de publicar en Cloudflare** hay que actualizar la etiqueta `og:image` de `index.html`, que lleva la dirección escrita a mano. Si no, la vista previa al compartir el enlace seguirá apuntando a la dirección vieja.
+
+## Panel de edición
+
+En `/admin` hay un panel con formularios para cambiar los textos sin tocar código. Por detrás guarda los cambios en este repositorio, así que todo queda registrado y se puede deshacer.
+
+Para que funcione hacen falta dos cosas más, y las dos son gratis.
+
+### 1. Registrar la aplicación en GitHub
+
+1. Entrar en `github.com/settings/developers`, pestaña OAuth Apps, botón New OAuth App
+2. Nombre: `DsL 770 panel`
+3. Homepage URL: la dirección de la web
+4. Authorization callback URL: `https://dsl770-acceso.TUCUENTA.workers.dev/callback`
+5. Al guardar, GitHub da un Client ID y permite generar un Client Secret. Copiar los dos.
+
+### 2. Publicar el servicio de acceso
+
+El código está en `tools/acceso/`. Se publica en Cloudflare Workers:
+
+1. En Cloudflare, Workers and Pages, Create, Worker
+2. Nombre: `dsl770-acceso`
+3. Pegar el contenido de `tools/acceso/worker.js` y desplegar
+4. En Settings, Variables, añadir:
+   * `GITHUB_CLIENT_ID` con el identificador
+   * `GITHUB_CLIENT_SECRET` con la clave, marcada como secreta
+   * `ORIGENES` con la dirección de la web
+
+Por último, en `admin/config.yml` sustituir `https://PENDIENTE.workers.dev` por la dirección real del worker.
+
+A partir de ahí, quien entre en `/admin` con una cuenta de GitHub que tenga permiso en el repositorio puede editar la web.
 
 ## Ver la web en local
 
