@@ -8,7 +8,7 @@
   --font-mono:"JetBrains Mono",Consolas,monospace;
   --radius:2px;--radius-in:2px;--bw:1px;--tt:uppercase;--ls:.01em;--fw:700;
   --img-filter:saturate(.9) contrast(1.04);
-  --war-bg:rgba(255,90,31,.06);--key-bg:rgba(255,90,31,.07);
+  --key-bg:rgba(255,90,31,.07);
   --card-pad:10px;--card-in:6px;
 }
 .site{backdrop-filter:blur(10px)}
@@ -19,4 +19,3 @@ body{background-color:var(--bg);
 @media(max-width:900px){
   body{background-attachment:scroll,scroll;background-size:auto,300px}
 }
-.war{border-inline-start-width:3px}

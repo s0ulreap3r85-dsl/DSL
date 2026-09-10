@@ -61,9 +61,6 @@ collections:
               - { label: Segunda línea del nombre, name: subtitle, widget: string, i18n: duplicate }
               - { label: Frase de bienvenida, name: lead, widget: text, i18n: true }
               - { label: Texto alternativo del banner, name: bannerAlt, widget: string, i18n: true }
-              - { label: "Contador, título", name: countdownLabel, widget: string, i18n: true }
-              - { label: "Contador, aclaración", name: countdownNote, widget: string, i18n: true }
-              - { label: "Contador, abreviatura de día", name: daysSuffix, widget: string, i18n: true }
               - label: Tarjetas de la portada
                 name: cards
                 widget: list

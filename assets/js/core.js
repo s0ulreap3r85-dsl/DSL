@@ -44,27 +44,6 @@ window.DSL = (function () {
     return f ? pic(f, alt, 'card__img') : null;
   }
 
-  /* ---------- contador ---------- */
-  var cdNode = null, cdSuffix = 'd';
-  function nextWar() {
-    var n = new Date();
-    var t = new Date(n.getFullYear(), n.getMonth(), n.getDate(), 21, 0, 0, 0);
-    t.setDate(t.getDate() + ((5 - t.getDay() + 7) % 7));
-    if (t <= n) t.setDate(t.getDate() + 7);
-    return t;
-  }
-  var target = nextWar();
-  function pad(v) { return String(v).padStart(2, '0'); }
-  function tick() {
-    if (!cdNode || !cdNode.isConnected) return;
-    var ms = target - new Date();
-    if (ms <= 0) { target = nextWar(); ms = target - new Date(); }
-    var s = Math.floor(ms / 1000);
-    cdNode.textContent = Math.floor(s / 86400) + cdSuffix + ' ' +
-      pad(Math.floor(s % 86400 / 3600)) + ':' + pad(Math.floor(s % 3600 / 60)) + ':' + pad(s % 60);
-  }
-  setInterval(tick, 1000);
-
   /* ---------- cabecera y pie ---------- */
   function header(d) {
     var brand = el('a', { class: 'site__brand', href: '#/' }, [
@@ -108,9 +87,6 @@ window.DSL = (function () {
 
   /* ---------- portada ---------- */
   function home(d) {
-    cdSuffix = d.home.daysSuffix || 'd';
-    var cd = el('div', { class: 'war__time' });
-
     var cards = el('div', { class: 'cards' }, d.home.cards.map(function (c) {
       return el('a', { class: 'card', href: '#/' + c.id }, [
         el('span', { class: 'card__frame' }, [cardImage(c.id, '')]),
@@ -119,21 +95,14 @@ window.DSL = (function () {
       ]);
     }));
 
-    var v = el('main', { class: 'view view--home' }, [
+    return el('main', { class: 'view view--home' }, [
       el('div', { class: 'banner' }, [pic('banner', d.home.bannerAlt, 'banner__img', '100vw', true)]),
       el('div', { class: 'wrap' }, [
-        el('h1', { class: 'sr' , text: d.home.title + ' ' + d.home.subtitle }),
+        el('h1', { class: 'sr', text: d.home.title + ' ' + d.home.subtitle }),
         el('p', { class: 'home__lead', text: d.home.lead }),
-        cards,
-        el('aside', { class: 'war' }, [
-          el('span', { class: 'war__label', text: d.home.countdownLabel }),
-          cd,
-          el('span', { class: 'war__note', text: d.home.countdownNote })
-        ])
+        cards
       ])
     ]);
-    cdNode = cd;
-    return v;
   }
 
   /* ---------- bloques de una pagina ---------- */
@@ -238,7 +207,6 @@ window.DSL = (function () {
     root.appendChild(footer(d));
     document.documentElement.setAttribute('dir', d.meta.direction || 'ltr');
     document.body.setAttribute('data-view', id || 'home');
-    tick();
   }
 
   function fetchJSON(url) {

@@ -16,7 +16,7 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
   text-transform:var(--tt,none);letter-spacing:var(--ls,0);font-weight:var(--fw,700)}
 :root[dir="rtl"] h1,:root[dir="rtl"] h2,:root[dir="rtl"] h3,
 :root[dir="rtl"] .card__title,:root[dir="rtl"] .site__nav a,
-:root[dir="rtl"] .war__label,:root[dir="rtl"] th{text-transform:none;letter-spacing:0;line-height:1.3}
+:root[dir="rtl"] th{text-transform:none;letter-spacing:0;line-height:1.3}
 :focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
@@ -82,17 +82,6 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
   padding:0 var(--card-in,6px)}
 .card__note{font-size:13.5px;color:var(--muted);padding:0 var(--card-in,6px) 6px}
 
-.war{margin-top:clamp(26px,4vw,46px);border:var(--bw) solid var(--warn);
-  border-radius:var(--radius);padding:16px 18px;background:var(--war-bg,transparent);
-  display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-@media(max-width:560px){
-  .war{gap:4px;flex-direction:column;align-items:flex-start;padding:14px 16px}
-}
-.war__label{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--warn)}
-.war__time{font-family:var(--font-mono);font-size:clamp(24px,3.4vw,34px);font-weight:700;
-  font-variant-numeric:tabular-nums;white-space:nowrap;direction:ltr;color:var(--fg)}
-.war__note{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
 
 /* ---------- pagina interior ---------- */
 .view--page{padding-top:clamp(16px,3vw,28px)}
