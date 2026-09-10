@@ -14,5 +14,9 @@
 .site{backdrop-filter:blur(10px)}
 body{background-color:var(--bg);
   background-image:linear-gradient(rgba(8,11,16,.94),rgba(8,11,16,.94)),url("../img/textura.webp");
-  background-size:auto,520px;background-attachment:fixed}
+  background-size:auto,520px;background-attachment:fixed,fixed}
+/* en movil el fondo fijo va a tirones y iOS lo ignora, mejor que acompane al scroll */
+@media(max-width:900px){
+  body{background-attachment:scroll,scroll;background-size:auto,300px}
+}
 .war{border-inline-start-width:3px}

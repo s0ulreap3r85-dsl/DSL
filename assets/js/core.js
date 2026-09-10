@@ -173,7 +173,10 @@ window.DSL = (function () {
         el('tbody', null, (s.rows || []).map(function (r) {
           return el('tr', r.highlight ? { class: 'key' } : null,
             r.cells.map(function (c, i) {
-              return el('td', i > 0 ? { class: 'soft' } : null, [document.createTextNode(c)]);
+              return el('td', {
+                class: i > 0 ? 'soft' : null,
+                'data-label': (s.columns && s.columns[i]) || ''
+              }, [document.createTextNode(c)]);
             }));
         }))
       ])

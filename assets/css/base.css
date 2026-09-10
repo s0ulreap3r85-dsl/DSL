@@ -2,7 +2,9 @@
    los pone cada tema, aqui solo se coloca todo en su sitio. */
 
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{
+  overflow-x:hidden;
   background:var(--bg);color:var(--fg);font-family:var(--font-body);
   font-size:16px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased;
 }
@@ -31,23 +33,41 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
 .site__badge{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;
   border:1px solid var(--warn);color:var(--warn);padding:3px 7px;border-radius:var(--radius)}
 .site__nav{margin-inline-start:auto;display:flex;gap:16px;flex-wrap:wrap}
+.site__nav a{min-height:34px;display:flex;align-items:center}
 .site__nav a{font-family:var(--font-display);font-size:13px;font-weight:600;
   letter-spacing:var(--ls-nav,.06em);text-transform:var(--tt,none);color:var(--head-muted);
   padding:3px 0;border-bottom:2px solid transparent}
 .site__nav a:hover{color:var(--head-fg);border-bottom-color:var(--acc)}
-.site__lang{font-family:var(--font-mono);font-size:12px;background:var(--surface2);
-  color:var(--fg);border:1px solid var(--line);border-radius:var(--radius);padding:6px 8px;cursor:pointer}
-@media(max-width:1020px){.site__nav{display:none}.site__lang{margin-inline-start:auto}}
+.site__lang{font-family:var(--font-mono);font-size:16px;background:var(--surface2);
+  color:var(--fg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:7px 8px;cursor:pointer;min-height:40px;max-width:46vw}
+@media(min-width:1021px){.site__lang{font-size:12px;min-height:0}}
+@media(max-width:1020px){
+  .site__in{gap:8px 12px;padding:8px var(--gut)}
+  .site__lang{margin-inline-start:auto;order:2}
+  .site__nav{order:3;width:100%;margin-inline-start:0;flex-wrap:nowrap;overflow-x:auto;
+    gap:18px;padding-bottom:2px;scrollbar-width:none;
+    margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut)}
+  .site__nav::-webkit-scrollbar{display:none}
+  .site__nav a{white-space:nowrap;font-size:12.5px}
+}
 
 /* ---------- portada ---------- */
 .banner{border-bottom:var(--bw) solid var(--line);background:var(--surface);line-height:0;
   margin-bottom:clamp(22px,4vw,44px)}
 .banner__img{width:100%;height:auto;aspect-ratio:1920/500;object-fit:cover;display:block;
   filter:var(--img-filter,none)}
+@media(max-width:720px){.banner__img{aspect-ratio:16/9}}
 .home__lead{margin:0 0 clamp(20px,3vw,32px);max-width:56ch;color:var(--muted);font-size:17px}
 
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:clamp(12px,2vw,22px)}
+  gap:clamp(10px,2vw,22px)}
+@media(max-width:720px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .card__title{font-size:16px;line-height:1.15}
+  .card__note{font-size:12px;line-height:1.4}
+}
+@media(max-width:380px){.cards{grid-template-columns:1fr}}
 .card{display:flex;flex-direction:column;gap:10px;background:var(--surface);
   border:var(--bw) solid var(--line);border-radius:var(--radius);padding:var(--card-pad,12px);
   box-shadow:var(--shadow,none);transition:transform .16s,border-color .16s,box-shadow .16s}
@@ -65,6 +85,9 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
 .war{margin-top:clamp(26px,4vw,46px);border:var(--bw) solid var(--warn);
   border-radius:var(--radius);padding:16px 18px;background:var(--war-bg,transparent);
   display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+@media(max-width:560px){
+  .war{gap:4px;flex-direction:column;align-items:flex-start;padding:14px 16px}
+}
 .war__label{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;
   text-transform:uppercase;color:var(--warn)}
 .war__time{font-family:var(--font-mono);font-size:clamp(24px,3.4vw,34px);font-weight:700;
@@ -73,8 +96,9 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
 
 /* ---------- pagina interior ---------- */
 .view--page{padding-top:clamp(16px,3vw,28px)}
-.back{display:inline-block;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--acc);border-bottom:1px solid transparent}
+.back{display:inline-flex;align-items:center;min-height:44px;font-family:var(--font-mono);
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);
+  border-bottom:1px solid transparent}
 .back:hover{border-bottom-color:var(--acc)}
 .page__head{display:flex;align-items:center;gap:clamp(14px,3vw,28px);
   margin:clamp(16px,3vw,26px) 0 clamp(24px,4vw,40px);flex-wrap:wrap}
@@ -82,6 +106,11 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
   border-radius:var(--radius);background:var(--surface2);box-shadow:var(--shadow,none)}
 .page__img{width:clamp(96px,16vw,150px);height:auto;aspect-ratio:1/1;object-fit:cover;
   display:block;filter:var(--img-filter,none)}
+@media(max-width:560px){
+  .page__head{gap:14px}
+  .page__img{width:74px}
+  .page__i{width:100%}
+}
 .page__t{font-size:clamp(30px,5.5vw,58px)}
 .page__i{margin:12px 0 0;color:var(--muted);max-width:62ch}
 
@@ -117,8 +146,28 @@ h1,h2,h3{margin:0;font-family:var(--font-display);line-height:1.06;
 .tile__d{font-size:13.5px;color:var(--muted)}
 
 .tablewrap{overflow-x:auto;border:var(--bw) solid var(--line);border-radius:var(--radius)}
-table{width:100%;border-collapse:collapse;min-width:560px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;min-width:440px;background:var(--surface)}
 th,td{text-align:start;padding:12px 16px;border-bottom:1px solid var(--line)}
+/* en pantalla estrecha la tabla se apila, cada fila pasa a ser una ficha */
+@media(max-width:720px){
+  .tablewrap{overflow-x:visible;border:0;border-radius:0}
+  table{min-width:0;background:transparent;display:block}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  tbody{display:grid;gap:8px}
+  tr{display:block;background:var(--surface);border:var(--bw) solid var(--line);
+     border-radius:var(--radius);padding:10px 14px}
+  tr.key{border-color:var(--warn)}
+  td{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+     padding:5px 0;border-bottom:1px solid var(--line);font-size:13.5px;text-align:end}
+  tr td:last-child{border-bottom:0}
+  td:first-child{font-size:15px;padding-top:0;text-align:start;display:block;
+     border-bottom:1px solid var(--line);padding-bottom:7px;margin-bottom:3px}
+  td[data-label]:not(:first-child)::before{
+     content:attr(data-label);font-family:var(--font-mono);font-size:9.5px;
+     letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+     text-align:start;flex:none}
+  .soft{font-size:13px}
+}
 tbody tr:last-child td{border-bottom:0}
 th{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--muted);background:var(--surface2);font-weight:400}
