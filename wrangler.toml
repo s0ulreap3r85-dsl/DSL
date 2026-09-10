@@ -10,5 +10,11 @@ compatibility_date = "2026-09-01"
 directory = "./"
 binding = "ASSETS"
 
-# GITHUB_CLIENT_ID y ORIGENES se pueden poner aqui, no son secretos.
-# GITHUB_CLIENT_SECRET no, ese va como secreto en el panel de Cloudflare.
+# El identificador de la aplicacion de GitHub no es secreto, de hecho
+# viaja a la vista en la direccion de autorizacion. Va aqui a proposito,
+# para que no se pierda en cada despliegue.
+# La clave, GITHUB_CLIENT_SECRET, NO va aqui. Esa se guarda como secreto
+# en el panel de Cloudflare y sobrevive a los despliegues.
+[vars]
+GITHUB_CLIENT_ID = "Ov23liZgmDtaRLewLRNN"
+ORIGENES = "https://dsl.dsl770.workers.dev"
