@@ -1,8 +1,9 @@
 /**
- * Servicio de acceso del panel de edicion.
+ * Sirve la web del clan y hace de intermediario para entrar al panel.
  *
- * Hace de intermediario entre el panel y GitHub para que nadie tenga que
- * meter contrasenas en la web. Se publica gratis en Cloudflare Workers.
+ * Casi todas las peticiones son ficheros de la web y se responden desde
+ * ASSETS. Solo /auth y /callback llevan logica, y sirven para que nadie
+ * tenga que escribir contrasenas dentro de la web.
  *
  * Necesita dos variables de entorno, que se ponen en el panel de Cloudflare:
  *   GITHUB_CLIENT_ID      el identificador de la aplicacion de GitHub
@@ -18,11 +19,10 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === '/auth') return iniciar(url, env);
-    if (url.pathname === '/callback') return volver(url, env);
+    if (url.pathname === '/callback') return volver(request, url, env);
 
-    return new Response('Servicio de acceso del panel de edicion del clan DsL 770.', {
-      headers: { 'content-type': 'text/plain; charset=utf-8' },
-    });
+    // todo lo demas es la web
+    return env.ASSETS.fetch(request);
   },
 };
 
@@ -45,10 +45,10 @@ function iniciar(url, env) {
 }
 
 /* Paso 2: GitHub nos devuelve un codigo, lo cambiamos por una llave. */
-async function volver(url, env) {
+async function volver(request, url, env) {
   const codigo = url.searchParams.get('code');
   const estado = url.searchParams.get('state');
-  const guardado = (url.searchParams.get('cookie') || '').match(/estado=([^;]+)/);
+  const guardado = (request.headers.get('cookie') || '').match(/estado=([^;]+)/);
 
   if (!codigo) return responder({ error: 'Falta el código de GitHub' }, url, env);
   if (guardado && estado && guardado[1] !== estado) {

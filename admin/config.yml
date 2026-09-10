@@ -1,14 +1,14 @@
 # Panel de edicion de la web del clan.
 #
-# ANTES DE QUE FUNCIONE hay que rellenar base_url con la direccion del
-# servicio de acceso. Sin eso, el panel carga pero no deja entrar.
-# Las instrucciones estan en el README, apartado "Panel de edicion".
+# El acceso lo atiende la propia web, en /auth y /callback.
+# Para que funcione hay que registrar una aplicacion en GitHub y poner
+# sus credenciales en Cloudflare. Ver el README, apartado "Panel de edicion".
 
 backend:
   name: github
   repo: s0ulreap3r85-dsl/DSL
   branch: main
-  base_url: https://PENDIENTE.workers.dev
+  base_url: https://dsl.dsl770.workers.dev
   auth_endpoint: auth
 
 # las imagenes que se suban desde el panel van aqui

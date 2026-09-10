@@ -43,47 +43,33 @@ En `content/media.json`, el bloque `tarjetas` dice qué imagen usa cada sección
 
 ## Cómo se publica
 
-La web se publica en Cloudflare Pages. Cada cambio que llega a la rama `main` se publica solo en un par de minutos, sin hacer nada más.
+La web está en Cloudflare, en **https://dsl.dsl770.workers.dev**
 
-Puesta en marcha, una sola vez, y la hace el propietario del repositorio:
+Cada cambio que llega a la rama `main` se publica solo en un par de minutos. No hay que hacer nada más.
 
-1. Crear cuenta gratuita en `dash.cloudflare.com`
-2. Entrar en Workers and Pages, pulsar Create, luego Pages, luego Connect to Git
-3. Autorizar este repositorio
-4. Dejar vacías las opciones de compilación, es un sitio estático sin compilación
-5. Guardar
-
-Queda publicada en una dirección del tipo `dsl-770.pages.dev`.
-
-**Después de publicar en Cloudflare** hay que actualizar la etiqueta `og:image` de `index.html`, que lleva la dirección escrita a mano. Si no, la vista previa al compartir el enlace seguirá apuntando a la dirección vieja.
+El fichero `wrangler.toml` dice cómo se monta: el worker de `worker/index.js` sirve los ficheros del sitio y además atiende las dos rutas del panel de edición. El fichero `.assetsignore` marca lo que no se publica, como el README o las herramientas.
 
 ## Panel de edición
 
-En `/admin` hay un panel con formularios para cambiar los textos sin tocar código. Por detrás guarda los cambios en este repositorio, así que todo queda registrado y se puede deshacer.
+En **https://dsl.dsl770.workers.dev/admin** hay un panel con formularios para cambiar los textos sin tocar código. Por detrás guarda los cambios en este repositorio, así que todo queda registrado y se puede deshacer.
 
-Para que funcione hacen falta dos cosas más, y las dos son gratis.
+Para que deje entrar falta un paso, que solo se hace una vez.
 
-### 1. Registrar la aplicación en GitHub
+### Registrar la aplicación en GitHub
 
-1. Entrar en `github.com/settings/developers`, pestaña OAuth Apps, botón New OAuth App
-2. Nombre: `DsL 770 panel`
-3. Homepage URL: la dirección de la web
-4. Authorization callback URL: `https://dsl770-acceso.TUCUENTA.workers.dev/callback`
-5. Al guardar, GitHub da un Client ID y permite generar un Client Secret. Copiar los dos.
+1. Entrar en `github.com/settings/developers` con la cuenta **s0ulreap3r85-dsl**, pestaña OAuth Apps, botón New OAuth App
+2. Application name: `DsL 770 panel`
+3. Homepage URL: `https://dsl.dsl770.workers.dev`
+4. Authorization callback URL: `https://dsl.dsl770.workers.dev/callback`
+5. Guardar, copiar el Client ID, y generar un Client Secret
 
-### 2. Publicar el servicio de acceso
+### Guardar las credenciales en Cloudflare
 
-El código está en `tools/acceso/`. Se publica en Cloudflare Workers:
+En el panel de Cloudflare, dentro del proyecto `dsl`, en Settings, apartado de variables:
 
-1. En Cloudflare, Workers and Pages, Create, Worker
-2. Nombre: `dsl770-acceso`
-3. Pegar el contenido de `tools/acceso/worker.js` y desplegar
-4. En Settings, Variables, añadir:
-   * `GITHUB_CLIENT_ID` con el identificador
-   * `GITHUB_CLIENT_SECRET` con la clave, marcada como secreta
-   * `ORIGENES` con la dirección de la web
-
-Por último, en `admin/config.yml` sustituir `https://PENDIENTE.workers.dev` por la dirección real del worker.
+* `GITHUB_CLIENT_ID` con el identificador, como texto normal
+* `GITHUB_CLIENT_SECRET` con la clave, marcada como secreta
+* `ORIGENES` con `https://dsl.dsl770.workers.dev`
 
 A partir de ahí, quien entre en `/admin` con una cuenta de GitHub que tenga permiso en el repositorio puede editar la web.
 

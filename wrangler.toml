@@ -1,0 +1,14 @@
+# Como se publica la web en Cloudflare.
+# El worker sirve los ficheros del sitio y ademas atiende /auth y
+# /callback, que son los que dejan entrar al panel de edicion.
+
+name = "dsl"
+main = "worker/index.js"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+
+# GITHUB_CLIENT_ID y ORIGENES se pueden poner aqui, no son secretos.
+# GITHUB_CLIENT_SECRET no, ese va como secreto en el panel de Cloudflare.

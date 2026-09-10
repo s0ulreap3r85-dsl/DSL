@@ -1,0 +1,9 @@
+# Lo que no forma parte de la web publicada
+worker/
+tools/
+node_modules/
+.assetsignore
+.gitignore
+wrangler.toml
+README.md
+preview.html

@@ -1,9 +1,0 @@
-name = "dsl770-acceso"
-main = "worker.js"
-compatibility_date = "2026-01-01"
-
-# El identificador de la aplicacion de GitHub se puede poner aqui,
-# no es secreto. La clave NO, esa se guarda como secreto en Cloudflare.
-# [vars]
-# GITHUB_CLIENT_ID = "..."
-# ORIGENES = "https://dsl-770.pages.dev"
