@@ -96,11 +96,26 @@ window.DSL = (function () {
   }
 
   function footer(d) {
+    var boton = el('button', {
+      class: 'foot-instalar', type: 'button', id: 'foot-instalar',
+      text: (d.ui && d.ui.installButton) || ''
+    });
+    boton.hidden = !puedeInstalarse();
+    boton.addEventListener('click', function () {
+      if (instalable) {
+        instalable.prompt();
+        instalable.userChoice.then(function () { instalable = null; boton.hidden = true; });
+      } else {
+        pintarCartel(DATA, true);
+      }
+    });
+
     return el('footer', { class: 'site-foot' }, [
       el('div', { class: 'wrap' }, [
         el('p', null, [document.createTextNode(d.footer.line1), el('br'),
                        document.createTextNode(d.footer.line2)]),
-        d.footer.draft ? el('p', { class: 'draft', text: d.footer.draft }) : null
+        d.footer.draft ? el('p', { class: 'draft', text: d.footer.draft }) : null,
+        boton
       ])
     ]);
   }
@@ -215,9 +230,22 @@ window.DSL = (function () {
   var instalable = null;
 
   window.addEventListener('beforeinstallprompt', function (e) {
+    /* se para el aviso propio del navegador para sacar el del clan,
+       que lleva el escudo y esta traducido. Chrome deja una nota en la
+       consola avisando de esto, es lo esperado. */
     e.preventDefault();
     instalable = e;
+    var b = document.getElementById('foot-instalar');
+    if (b) b.hidden = false;
     if (DATA) pintarCartel(DATA);
+  });
+
+  window.addEventListener('appinstalled', function () {
+    instalable = null;
+    var b = document.getElementById('foot-instalar');
+    if (b) b.hidden = true;
+    var c = document.getElementById('instalar');
+    if (c) c.remove();
   });
 
   function yaInstalada() {
@@ -229,9 +257,14 @@ window.DSL = (function () {
            !/crios|fxios/i.test(navigator.userAgent);
   }
 
-  function pintarCartel(d) {
-    if (document.getElementById('instalar')) return;
-    if (yaInstalada() || load('dsl770.instalar') === 'no') return;
+  function puedeInstalarse() {
+    return !yaInstalada() && (instalable !== null || esIOS());
+  }
+
+  function pintarCartel(d, forzar) {
+    if (!d || document.getElementById('instalar')) return;
+    if (yaInstalada()) return;
+    if (!forzar && load('dsl770.instalar') === 'no') return;
     if (!instalable && !esIOS()) return;
 
     var t = d.ui || {};

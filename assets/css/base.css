@@ -205,3 +205,10 @@ tr.key td:first-child{color:var(--warn)}
 @media(min-width:620px){
   .instalar{inset-inline:auto 16px;width:340px}
 }
+
+.foot-instalar{
+  margin-top:14px;font-family:var(--font-display);font-size:13px;
+  text-transform:var(--tt,none);letter-spacing:var(--ls,.06em);
+  background:transparent;color:var(--acc);border:1px solid var(--acc);
+  border-radius:var(--radius);padding:8px 16px;cursor:pointer;min-height:38px}
+.foot-instalar:hover{background:var(--acc);color:var(--bg)}
