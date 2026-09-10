@@ -2,7 +2,7 @@
   "meta": {
     "brand": "DsL",
     "brandAccent": "770",
-    "badge": "BORR",
+    "badge": "TEXTO_EJEMPLO",
     "language": "Español",
     "direction": "ltr",
     "emblemAlt": "Emblema del clan DsL con un águila y el lema Clan Server 770"
@@ -50,12 +50,7 @@
     "back": "Volver",
     "home": "Inicio",
     "soon": "Contenido en camino",
-    "soonText": "Esta sección está reservada y lista para llenarse. En cuanto FrosSit0 pase el contenido, aparece aquí en los cinco idiomas.",
-    "installTitle": "Añádela a tu móvil",
-    "installText": "Se instala como una aplicación, con el escudo del clan, y se abre sin barra del navegador.",
-    "installButton": "Instalar",
-    "installLater": "Ahora no",
-    "installIos": "Pulsa el botón de compartir y luego Añadir a pantalla de inicio."
+    "soonText": "Esta sección está reservada y lista para llenarse. En cuanto FrosSit0 pase el contenido, aparece aquí en los cinco idiomas."
   },
   "pages": [
     {
