@@ -51,7 +51,13 @@ Las secciones marcadas con `"type": "soon"` son las que todavía no tienen conte
 
 ## Cómo cambiar una imagen de tarjeta
 
-Desde el panel de edición, en el apartado Imágenes. Se puede elegir una de las que ya están subidas o subir una nueva. Lo mejor son imágenes cuadradas.
+Desde el panel de edición, en el apartado Imágenes.
+
+**Dos avisos que importan.**
+
+No renombres ni edites imágenes desde la interfaz web de GitHub. GitHub trata esos ficheros como texto y los destruye, dejándolos en dos bytes. Si hay que renombrar una imagen, se borra y se vuelve a subir con el nombre bueno, o se avisa para hacerlo bien.
+
+Sube imágenes ya recortadas y de tamaño razonable. El panel guarda el fichero tal cual, sin encogerlo. Una foto de 3 MB en una tarjeta hace que la web tarde en abrir en el móvil. Lo ideal son imágenes cuadradas de unos 800 píxeles. Se puede elegir una de las que ya están subidas o subir una nueva. Lo mejor son imágenes cuadradas.
 
 A mano se hace en `content/tarjetas.json`, que guarda la ruta de la imagen de cada tarjeta. Si la ruta acaba en `-800.webp`, la web busca sola la versión de 400 para los móviles.
 
