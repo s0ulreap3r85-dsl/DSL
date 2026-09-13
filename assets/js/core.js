@@ -297,6 +297,43 @@ window.DSL = (function () {
     document.body.appendChild(caja);
   }
 
+  /* ---------- tipografia segun la escritura del idioma ----------
+     Las fuentes del diseno solo traen letras latinas y arabes. Para el
+     resto se carga una familia que si las tenga, solo cuando hace falta. */
+  var ESCRITURAS = {
+    greek:      { fam: 'Roboto+Condensed:wght@500;700&family=Noto+Sans:wght@400;600', d: '"Roboto Condensed"', b: '"Noto Sans"' },
+    cyrillic:   { fam: 'Roboto+Condensed:wght@500;700&family=Noto+Sans:wght@400;600', d: '"Roboto Condensed"', b: '"Noto Sans"' },
+    hebrew:     { fam: 'Noto+Sans+Hebrew:wght@400;700', d: '"Noto Sans Hebrew"', b: '"Noto Sans Hebrew"' },
+    devanagari: { fam: 'Noto+Sans+Devanagari:wght@400;700', d: '"Noto Sans Devanagari"', b: '"Noto Sans Devanagari"' },
+    thai:       { fam: 'Noto+Sans+Thai:wght@400;700', d: '"Noto Sans Thai"', b: '"Noto Sans Thai"' },
+    sc:         { fam: 'Noto+Sans+SC:wght@400;700', d: '"Noto Sans SC"', b: '"Noto Sans SC"' },
+    jp:         { fam: 'Noto+Sans+JP:wght@400;700', d: '"Noto Sans JP"', b: '"Noto Sans JP"' },
+    kr:         { fam: 'Noto+Sans+KR:wght@400;700', d: '"Noto Sans KR"', b: '"Noto Sans KR"' }
+  };
+
+  function aplicarEscritura(code) {
+    var r = document.documentElement;
+    var lang = null;
+    (CTX && CTX.languages || []).forEach(function (l) { if (l.code === code) lang = l; });
+    var script = (lang && lang.script) || 'latin';
+    var e = ESCRITURAS[script];
+    r.setAttribute('data-script', script);
+    if (!e) {
+      r.style.removeProperty('--font-display');
+      r.style.removeProperty('--font-body');
+      return;
+    }
+    var id = 'fuente-' + script;
+    if (!document.getElementById(id)) {
+      document.head.appendChild(el('link', {
+        id: id, rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=' + e.fam + '&display=swap'
+      }));
+    }
+    r.style.setProperty('--font-display', e.d + ', system-ui, sans-serif');
+    r.style.setProperty('--font-body', e.b + ', system-ui, sans-serif');
+  }
+
   /* ---------- enrutado ---------- */
   function currentId() {
     var h = (location.hash || '').replace(/^#\/?/, '').split('?')[0];
@@ -312,6 +349,7 @@ window.DSL = (function () {
     root.appendChild(id ? page(d, id) : home(d));
     root.appendChild(footer(d));
     document.documentElement.setAttribute('dir', d.meta.direction || 'ltr');
+    aplicarEscritura(CTX && CTX.current);
     document.body.setAttribute('data-view', id || 'home');
     if (!id) setTimeout(function () { pintarCartel(d); }, 2500);
   }
@@ -343,7 +381,8 @@ window.DSL = (function () {
       TARJETAS = res[2];
       var codes = langs.map(function (l) { return l.code; });
       var saved = load('dsl770.lang');
-      var guess = (navigator.language || '').slice(0, 2).toLowerCase();
+      var nav = (navigator.language || '').toLowerCase();
+      var guess = codes.indexOf(nav) >= 0 ? nav : nav.slice(0, 2);
       var current = codes.indexOf(saved) >= 0 ? saved
                   : codes.indexOf(guess) >= 0 ? guess : codes[0];
 

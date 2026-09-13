@@ -29,6 +29,20 @@ d/1 ... d/5             Los cinco diseños en pruebas
 
 El idioma se detecta solo a partir del navegador del visitante y se recuerda para la próxima visita. Todo el contenido está en los cinco idiomas, así que nadie ve una mezcla.
 
+## Idiomas
+
+Se gestionan desde **/admin/idiomas**, a la que se llega con el botón Idiomas del panel. Usa la misma cuenta de GitHub.
+
+* **Añadir:** se elige de una lista de 35 idiomas, cada uno con sus banderas posibles. El idioma nuevo empieza con todo el contenido copiado del español, y luego se traduce en el panel, en su pestaña. Si ya había textos guardados de ese idioma de una vez anterior, se conservan.
+* **Quitar:** pide escribir el nombre del idioma para confirmar, y borra todos sus textos. El español es el idioma base y no se puede quitar.
+* **Bandera:** se cambia desde la misma lista, sin tocar nada más.
+
+Cada operación se guarda como un único cambio en el repositorio, tocando a la vez `content/languages.json`, el fichero de textos del idioma, y las dos listas de idiomas de `admin/config.yml`. Si alguien guarda desde el panel justo en ese momento, la operación falla sin pisar nada y pide repetir.
+
+Para idiomas con otra escritura, como griego, ruso, hebreo, hindi, tailandés, chino, japonés, o coreano, la web carga sola una tipografía que tenga esas letras.
+
+La lista de idiomas disponibles está en `admin/idiomas/catalogo.js`. Las pruebas de esta parte se lanzan con `node tools/test-idiomas.js`.
+
 ## Aviso importante sobre el panel
 
 El panel guarda **solo los campos declarados** en `admin/config.yml`. Si el contenido tiene un campo que no está declarado ahí, desaparece la primera vez que alguien pulse guardar, y sin avisar de nada.

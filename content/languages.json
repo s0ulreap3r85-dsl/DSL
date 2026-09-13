@@ -27,6 +27,7 @@
     "code": "ar",
     "name": "العربية",
     "flag": "🇸🇦",
-    "direction": "rtl"
+    "direction": "rtl",
+    "script": "arabic"
   }
 ]

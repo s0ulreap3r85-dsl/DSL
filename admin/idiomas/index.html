@@ -1,0 +1,427 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#080B10">
+<title>Idiomas de la web</title>
+<link rel="icon" href="../../assets/img/favicon.png" sizes="48x48">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --bg:#080B10;--surface:#121821;--surface2:#1B2430;--line:#26313F;
+  --fg:#E6EDF5;--muted:#8A9AAE;--acc:#21D4FD;--warn:#FF5A1F;--ok:#3DDC97;
+  --display:"Saira Condensed","Arial Narrow",sans-serif;
+  --body:"Barlow",system-ui,sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+  --gut:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 max(var(--gut),env(safe-area-inset-left)) calc(48px + env(safe-area-inset-bottom))}
+a{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+button,select,input{font:inherit;color:inherit}
+[hidden]{display:none!important}
+
+.top{border-bottom:1px solid var(--line);background:rgba(8,11,16,.92);position:sticky;top:0;z-index:5;backdrop-filter:blur(8px)}
+.top__in{max-width:880px;margin:0 auto;padding:10px var(--gut);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.top__marca{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:20px;font-weight:700;
+  letter-spacing:.02em;text-transform:uppercase;color:var(--fg);text-decoration:none}
+.top__marca img{width:30px;height:30px}
+.top__links{margin-inline-start:auto;display:flex;gap:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.top__links a{text-decoration:none;color:var(--muted)}
+.top__links a:hover{color:var(--fg)}
+
+h1{font-family:var(--display);font-size:clamp(34px,6vw,52px);line-height:1;margin:32px 0 0;text-transform:uppercase;letter-spacing:.01em}
+.intro{color:var(--muted);max-width:60ch;margin:12px 0 0}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);
+  display:flex;align-items:baseline;gap:10px;margin:36px 0 12px}
+.eyebrow b{color:var(--muted);font-weight:400}
+
+.estado{min-height:0;margin:20px 0 0;padding:0;font-size:15px}
+.estado:not(:empty){padding:12px 14px;border:1px solid var(--line);border-inline-start-width:3px;background:var(--surface)}
+.estado[data-tipo="ok"]{border-inline-start-color:var(--ok)}
+.estado[data-tipo="error"]{border-inline-start-color:var(--warn)}
+.estado[data-tipo="trabajo"]{border-inline-start-color:var(--acc);color:var(--muted)}
+
+.acceso{margin-top:28px;border:1px solid var(--line);background:var(--surface);padding:22px}
+.acceso strong{font-family:var(--display);font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.acceso p{margin:6px 0 16px;color:var(--muted)}
+
+.btn{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--acc);background:var(--acc);color:var(--bg);padding:10px 20px;min-height:44px;cursor:pointer;border-radius:2px}
+.btn:hover:not(:disabled){background:#5CE4FF}
+.btn--suave{background:transparent;color:var(--acc)}
+.btn--suave:hover:not(:disabled){background:rgba(33,212,253,.1)}
+.btn--peligro{background:var(--warn);border-color:var(--warn);color:#fff}
+.btn--peligro:hover:not(:disabled){background:#ff7a47}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+.lista{list-style:none;margin:0;padding:0;border:1px solid var(--line);background:var(--line);display:grid;gap:1px}
+.fila{background:var(--surface);display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:10px 14px}
+.bandera{font-size:24px;line-height:1;background:var(--surface2);border:1px solid var(--line);border-radius:2px;
+  padding:4px 6px;min-height:44px;min-width:64px;cursor:pointer}
+.bandera:disabled{cursor:default}
+.fila__nombre{min-width:0}
+.fila__nombre b{display:block;font-weight:600;font-size:17px}
+.fila__nombre small{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.fila__lado{display:flex;align-items:center;gap:10px}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--line);padding:4px 8px;white-space:nowrap}
+.quitar{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:transparent;
+  border:1px solid var(--line);color:var(--muted);padding:8px 12px;min-height:40px;cursor:pointer;border-radius:2px}
+.quitar:hover:not(:disabled){border-color:var(--warn);color:var(--warn)}
+.quitar:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:560px){
+  .fila{grid-template-columns:auto 1fr;row-gap:8px}
+  .fila__lado{grid-column:1 / -1;justify-content:flex-end}
+}
+
+.buscar{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:11px 14px;min-height:46px;font-size:16px}
+.buscar::placeholder{color:var(--muted)}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin-top:10px}
+.opcion{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;text-align:start;background:var(--surface);
+  border:1px solid var(--line);border-radius:2px;padding:10px 12px;min-height:56px;cursor:pointer}
+.opcion:hover:not(:disabled){border-color:var(--acc)}
+.opcion:disabled{opacity:.4;cursor:not-allowed}
+.opcion__b{font-size:24px;line-height:1}
+.opcion__n{display:block;font-weight:600;line-height:1.25}
+.opcion__es{display:block;font-size:12.5px;color:var(--muted)}
+.vacio{color:var(--muted);padding:14px 0}
+
+dialog{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:2px;padding:0;
+  width:min(520px,calc(100vw - 24px));box-shadow:0 20px 60px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(3,5,8,.72)}
+.dlg{padding:22px}
+.dlg h2{font-family:var(--display);font-size:26px;text-transform:uppercase;letter-spacing:.02em;margin:0 0 10px;line-height:1.05}
+.dlg p{margin:10px 0;color:var(--muted)}
+.dlg p b{color:var(--fg)}
+.aviso{border:1px solid var(--warn);background:rgba(255,90,31,.08);padding:12px 14px;margin:14px 0;color:var(--fg)}
+.aviso strong{color:var(--warn);font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;display:block;font-size:15px}
+.campo{display:block;margin:14px 0 6px;font-size:14px;color:var(--muted)}
+.campo b{color:var(--fg)}
+.dlg input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:10px 12px;min-height:44px;font-size:16px}
+.dlg input:focus{border-color:var(--warn)}
+.banderas{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.banderas label{cursor:pointer}
+.banderas input{position:absolute;opacity:0;width:1px;height:1px}
+.banderas span{display:block;font-size:28px;line-height:1;padding:6px 8px;border:1px solid var(--line);border-radius:2px;background:var(--bg)}
+.banderas input:checked + span{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.banderas input:focus-visible + span{outline:2px solid var(--acc);outline-offset:2px}
+.dlg__btns{display:flex;justify-content:flex-end;gap:10px;margin-top:20px;flex-wrap:wrap}
+.pie{margin-top:40px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+</style>
+
+<header class="top">
+  <div class="top__in">
+    <a class="top__marca" href="../"><img src="../../assets/img/emblema-160.webp" alt="">DsL 770</a>
+    <nav class="top__links">
+      <a href="../">Panel</a>
+      <a href="../../" target="_blank" rel="noopener">Ver la web</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Idiomas de la web</h1>
+  <p class="intro">Añade o quita idiomas. Un idioma nuevo empieza con todo el contenido copiado del español, y después se traduce en el panel, en la pestaña de ese idioma.</p>
+
+  <p class="estado" id="estado" role="status" aria-live="polite"></p>
+
+  <section class="acceso" id="acceso" hidden>
+    <strong>Entra para gestionar los idiomas</strong>
+    <p>Usa la misma cuenta de GitHub con la que editas la web.</p>
+    <button class="btn" id="entrar" type="button">Entrar con GitHub</button>
+  </section>
+
+  <div id="gestion" hidden>
+    <h2 class="eyebrow">En la web <b id="cuantos"></b></h2>
+    <ul class="lista" id="activos"></ul>
+
+    <h2 class="eyebrow">Añadir un idioma</h2>
+    <input class="buscar" id="buscar" type="search" placeholder="Buscar, por ejemplo turco o Türkçe" aria-label="Buscar idioma" autocomplete="off">
+    <div class="rejilla" id="disponibles"></div>
+
+    <p class="pie">Cada cambio se guarda en el repositorio de la web y queda en su historial.</p>
+  </div>
+</main>
+
+<dialog id="dlg-anadir">
+  <form class="dlg" method="dialog">
+    <h2 id="anadir-titulo"></h2>
+    <p id="anadir-texto"></p>
+    <span class="campo">Bandera</span>
+    <div class="banderas" id="anadir-banderas"></div>
+    <div class="dlg__btns">
+      <button class="btn btn--suave" value="no" type="submit">Cancelar</button>
+      <button class="btn" value="si" type="submit" id="anadir-ok"></button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlg-quitar">
+  <form class="dlg" method="dialog">
+    <h2 id="quitar-titulo"></h2>
+    <div class="aviso">
+      <strong>No se puede deshacer</strong>
+      <span id="quitar-texto"></span>
+    </div>
+    <p>Si tienes el panel de edición abierto en otra pestaña, ciérralo antes. Si no, al guardar allí podría volver a crear este idioma.</p>
+    <label class="campo" for="quitar-confirma">Para confirmar, escribe <b id="quitar-palabra"></b></label>
+    <input id="quitar-confirma" type="text" autocomplete="off" autocapitalize="off" spellcheck="false">
+    <div class="dlg__btns">
+      <button class="btn btn--suave" value="no" type="submit">Cancelar</button>
+      <button class="btn btn--peligro" value="si" type="submit" id="quitar-ok" disabled>Quitar para siempre</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="catalogo.js"></script>
+<script src="logica.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.CatalogoIdiomas, L = window.LogicaIdiomas;
+  var porCodigo = {}; C.forEach(function (x) { porCodigo[x.code] = x; });
+  var cliente = null, activos = [], ocupado = false, REPO = null, RAMA = 'main';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === 'text') n.textContent = attrs[k];
+      else if (k === 'class') n.className = attrs[k];
+      else if (attrs[k] != null && attrs[k] !== false) n.setAttribute(k, attrs[k] === true ? '' : attrs[k]);
+    });
+    (kids || []).forEach(function (c) { if (c) n.appendChild(c); });
+    return n;
+  }
+  function sinAcentos(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
+  function infoDe(code) {
+    return porCodigo[code] || { code: code, name: code, nameEs: code, flags: [], direction: 'ltr' };
+  }
+  function avisar(texto, tipo) { var n = $('estado'); n.textContent = texto || ''; n.dataset.tipo = tipo || ''; }
+
+  function explicar(e) {
+    switch (e && e.tipo) {
+      case 'sesion': return 'La sesión ha caducado. Vuelve a entrar con GitHub.';
+      case 'permiso': return 'Tu cuenta de GitHub no tiene permiso para cambiar la web.';
+      case 'conflicto': return 'Alguien ha guardado cambios justo ahora. Recarga la página y vuelve a intentarlo, así no se pisa nada.';
+      case 'popup': return 'El navegador ha bloqueado la ventana de acceso. Permite ventanas emergentes en esta web y vuelve a pulsar.';
+      case 'duplicado': case 'base': case 'inexistente': case 'acceso': return e.message;
+      default: return 'No se ha podido guardar. ' + ((e && e.message) || '');
+    }
+  }
+
+  /* ---------- sesion ---------- */
+  function tokenGuardado() {
+    try { var t = sessionStorage.getItem('dsl770.gh'); if (t) return t; } catch (e) {}
+    try {
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (/cms/i.test(k) && /user/i.test(k)) {
+          var v = JSON.parse(localStorage.getItem(k));
+          if (v && v.token) return v.token;
+        }
+      }
+    } catch (e) {}
+    return null;
+  }
+
+  function entrarConGithub() {
+    return new Promise(function (ok, ko) {
+      var popup = window.open('/auth?provider=github&scope=repo,user', 'dsl770-acceso', 'width=620,height=720');
+      if (!popup) { var b = new Error('bloqueada'); b.tipo = 'popup'; return ko(b); }
+      function oir(e) {
+        if (e.origin !== location.origin || typeof e.data !== 'string') return;
+        var m = e.data.match(/^authorization:github:(success|error):([\s\S]*)$/);
+        if (!m) return;
+        window.removeEventListener('message', oir);
+        var datos = {}; try { datos = JSON.parse(m[2]); } catch (x) {}
+        if (m[1] === 'success' && datos.token) return ok(datos.token);
+        var f = new Error(datos.error || 'No se ha podido entrar'); f.tipo = 'acceso'; ko(f);
+      }
+      window.addEventListener('message', oir);
+    });
+  }
+
+  function conectar(token) {
+    cliente = L.crearCliente({ token: token, repo: REPO, rama: RAMA });
+    return cliente.permisos().then(function (puede) {
+      if (!puede) { var e = new Error('permiso'); e.tipo = 'permiso'; throw e; }
+      try { sessionStorage.setItem('dsl770.gh', token); } catch (x) {}
+      $('acceso').hidden = true;
+      $('gestion').hidden = false;
+      return recargar();
+    });
+  }
+
+  function pedirAcceso(motivo) {
+    try { sessionStorage.removeItem('dsl770.gh'); } catch (x) {}
+    $('gestion').hidden = true;
+    $('acceso').hidden = false;
+    avisar(motivo || '', motivo ? 'error' : '');
+  }
+
+  /* ---------- pintar ---------- */
+  function recargar() {
+    return L.listar(cliente).then(function (langs) {
+      activos = langs;
+      pintar();
+    });
+  }
+
+  function pintar() {
+    $('cuantos').textContent = String(activos.length);
+    var ul = $('activos'); ul.textContent = '';
+    activos.forEach(function (l) {
+      var info = infoDe(l.code);
+      var opciones = info.flags.slice();
+      if (l.flag && opciones.indexOf(l.flag) < 0) opciones.unshift(l.flag);
+      var sel = el('select', { class: 'bandera', 'aria-label': 'Bandera del ' + info.nameEs.toLowerCase(),
+                               disabled: ocupado || opciones.length < 2 });
+      opciones.forEach(function (f) { sel.appendChild(el('option', { value: f, text: f, selected: f === l.flag })); });
+      sel.addEventListener('change', function () { cambiarBandera(l.code, sel.value); });
+
+      var lado = el('span', { class: 'fila__lado' }, [
+        l.direction === 'rtl' ? el('span', { class: 'chip', text: 'derecha a izquierda' }) : null,
+        l.code === L.BASE
+          ? el('span', { class: 'chip', text: 'Idioma base' })
+          : (function () {
+              var b = el('button', { class: 'quitar', type: 'button', text: 'Quitar', disabled: ocupado });
+              b.addEventListener('click', function () { pedirQuitar(l); });
+              return b;
+            })()
+      ]);
+
+      ul.appendChild(el('li', { class: 'fila' }, [
+        sel,
+        el('span', { class: 'fila__nombre' }, [
+          el('b', { dir: 'auto', text: l.name }),
+          el('small', { text: (sinAcentos(info.nameEs) === sinAcentos(l.name) ? '' : info.nameEs + ' · ') + l.code })
+        ]),
+        lado
+      ]));
+    });
+    pintarDisponibles();
+  }
+
+  function pintarDisponibles() {
+    var q = sinAcentos($('buscar').value);
+    var usados = {}; activos.forEach(function (l) { usados[l.code] = true; });
+    var libres = C.filter(function (x) {
+      if (usados[x.code]) return false;
+      if (!q) return true;
+      return sinAcentos(x.nameEs).indexOf(q) >= 0 || sinAcentos(x.name).indexOf(q) >= 0 || x.code === q;
+    });
+    var cont = $('disponibles'); cont.textContent = '';
+    if (!libres.length) {
+      cont.appendChild(el('p', { class: 'vacio', text: q ? 'No hay ningún idioma con ese nombre en la lista.' : 'Ya están todos los idiomas de la lista.' }));
+      return;
+    }
+    libres.forEach(function (x) {
+      var b = el('button', { class: 'opcion', type: 'button', disabled: ocupado }, [
+        el('span', { class: 'opcion__b', text: x.flags[0] }),
+        el('span', null, [
+          el('span', { class: 'opcion__n', dir: 'auto', text: x.name }),
+          sinAcentos(x.nameEs) === sinAcentos(x.name) ? null : el('span', { class: 'opcion__es', text: x.nameEs })
+        ])
+      ]);
+      b.addEventListener('click', function () { pedirAnadir(x); });
+      cont.appendChild(b);
+    });
+  }
+
+  /* ---------- operaciones ---------- */
+  function trabajar(texto, fn) {
+    if (ocupado) return Promise.resolve();
+    ocupado = true; pintar(); avisar(texto, 'trabajo');
+    return fn().catch(function (e) {
+      if (e && e.tipo === 'sesion') return pedirAcceso(explicar(e));
+      avisar(explicar(e), 'error');
+    }).then(function () {
+      ocupado = false;
+      if (cliente && !$('gestion').hidden) return recargar().catch(function () { pintar(); });
+    });
+  }
+
+  function pedirAnadir(x) {
+    var d = $('dlg-anadir');
+    $('anadir-titulo').textContent = 'Añadir ' + x.nameEs.toLowerCase();
+    $('anadir-texto').textContent = 'Se crea copiando todo el contenido en español. En unos dos minutos la web lo ofrecerá, y en el panel aparecerá su pestaña para traducirlo.';
+    $('anadir-ok').textContent = 'Añadir ' + x.nameEs.toLowerCase();
+    var cont = $('anadir-banderas'); cont.textContent = '';
+    x.flags.forEach(function (f, i) {
+      cont.appendChild(el('label', null, [
+        el('input', { type: 'radio', name: 'bandera', value: f, checked: i === 0, 'aria-label': f }),
+        el('span', { text: f })
+      ]));
+    });
+    d.onclose = function () {
+      if (d.returnValue !== 'si') return;
+      var elegida = (d.querySelector('input[name="bandera"]:checked') || {}).value || x.flags[0];
+      trabajar('Añadiendo ' + x.nameEs.toLowerCase() + '…', function () {
+        return L.anadir(cliente, x, elegida).then(function (plan) {
+          $('buscar').value = '';
+          avisar('Añadido el ' + x.nameEs.toLowerCase() + '. En unos dos minutos aparece en la web. Recarga el panel para ver su pestaña y traducirlo.' +
+                 (plan.conservado ? ' Ya había textos guardados de ese idioma de otra vez, y se han mantenido.' : ''), 'ok');
+        });
+      });
+    };
+    d.returnValue = '';
+    d.showModal();
+  }
+
+  function pedirQuitar(l) {
+    var info = infoDe(l.code);
+    var palabra = sinAcentos(info.nameEs);
+    var d = $('dlg-quitar'), inp = $('quitar-confirma'), ok = $('quitar-ok');
+    $('quitar-titulo').textContent = 'Quitar ' + info.nameEs.toLowerCase();
+    $('quitar-texto').textContent = 'Se borrarán para siempre todos los textos en ' + info.nameEs.toLowerCase() +
+      ': la portada, las guías, las normas, los anuncios, todo lo traducido. La web dejará de ofrecer este idioma.';
+    $('quitar-palabra').textContent = palabra;
+    inp.value = ''; ok.disabled = true;
+    inp.oninput = function () { ok.disabled = sinAcentos(inp.value) !== palabra; };
+    d.onclose = function () {
+      if (d.returnValue !== 'si' || sinAcentos(inp.value) !== palabra) return;
+      trabajar('Quitando ' + info.nameEs.toLowerCase() + '…', function () {
+        return L.eliminar(cliente, l.code, info.nameEs).then(function () {
+          avisar('Quitado el ' + info.nameEs.toLowerCase() + '. Desaparece de la web en unos dos minutos. Recarga el panel antes de volver a guardar nada.', 'ok');
+        });
+      });
+    };
+    d.returnValue = '';
+    d.showModal();
+    inp.focus();
+  }
+
+  function cambiarBandera(code, flag) {
+    var info = infoDe(code);
+    trabajar('Cambiando la bandera…', function () {
+      return L.cambiarBandera(cliente, code, flag, info.nameEs).then(function () {
+        avisar('Bandera del ' + info.nameEs.toLowerCase() + ' cambiada. Se verá en la web en unos dos minutos.', 'ok');
+      });
+    });
+  }
+
+  /* ---------- arranque ---------- */
+  $('buscar').addEventListener('input', pintarDisponibles);
+  $('entrar').addEventListener('click', function () {
+    avisar('Esperando a GitHub…', 'trabajo');
+    entrarConGithub().then(conectar).catch(function (e) { pedirAcceso(explicar(e)); });
+  });
+
+  avisar('Cargando…', 'trabajo');
+  fetch('../config.yml', { cache: 'no-cache' }).then(function (r) { return r.text(); }).then(function (t) {
+    REPO = (t.match(/^\s*repo:\s*(\S+)/m) || [])[1];
+    RAMA = (t.match(/^\s*branch:\s*(\S+)/m) || [])[1] || 'main';
+    if (!REPO) throw new Error('No se encuentra el repositorio en la configuración del panel');
+    var token = tokenGuardado();
+    if (!token) return pedirAcceso('');
+    return conectar(token).then(function () { avisar('', ''); }).catch(function (e) {
+      pedirAcceso(e && (e.tipo === 'sesion' || e.tipo === 'permiso') ? explicar(e) : '');
+    });
+  }).catch(function (e) { avisar(explicar(e), 'error'); });
+})();
+</script>

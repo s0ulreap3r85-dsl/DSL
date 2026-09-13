@@ -4,3 +4,13 @@
 <title>Editar la web del clan</title>
 <link rel="icon" href="../assets/img/favicon.png" sizes="48x48">
 <script src="https://cdn.jsdelivr.net/npm/@sveltia/cms@0/dist/sveltia-cms.js" type="module"></script>
+
+<!-- acceso a la gestion de idiomas, que el panel no sabe hacer por si mismo -->
+<a class="dsl-idiomas" href="idiomas/">Idiomas</a>
+<style>
+.dsl-idiomas{position:fixed;inset-inline-end:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:9999;
+  font:600 13px/1 system-ui,sans-serif;letter-spacing:.04em;text-decoration:none;
+  background:#121821;color:#21D4FD;border:1px solid #21D4FD;border-radius:999px;padding:10px 16px;
+  box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.dsl-idiomas:hover{background:#21D4FD;color:#080B10}
+</style>

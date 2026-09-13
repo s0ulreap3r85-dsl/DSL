@@ -46,7 +46,8 @@ collections:
         description: >
           Escribe primero en español. Arriba tienes una pestaña por idioma
           para ir traduciendo. Si dejas un texto vacío en otro idioma,
-          la web muestra el español en su lugar.
+          la web muestra el español en su lugar. Para añadir o quitar
+          idiomas, usa el botón Idiomas de abajo a la derecha.
         fields:
           - label: Cabecera
             name: meta
